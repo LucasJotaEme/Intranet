@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SistemaController!{% endblock %}
+
+{% block body %}
+    
+    {{ parent() }}
+    {{ form_start(formulario, {'enctype':'multipart/form-data'})}}
+    {#{{ form_widget(formulario.documento, {attr: {accept:'application/pdf,.zip,.rar,.7zip',class: 'margenUpDown'} })}}#}
+    {{ form_end(formulario) }}  
+{% endblock %}
