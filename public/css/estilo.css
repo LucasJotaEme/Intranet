@@ -5,7 +5,7 @@
 nav{
     box-shadow: 5px 5px 18px #666;   
     margin-bottom: 50px;
-    background-color:#2B2B2B;
+    background-color:white;
 }
 
 
@@ -16,16 +16,25 @@ h3{
     margin-left: 15px;
 }
 
+h4{
+    color: white;
+    margin-left: 15px;
+}
+
+h6{
+    color: white;
+    margin-left: 15px;
+}
+
 
 
 /* SISTEMAS */
 
 .cuadroSistema{
-    
-    background-color: #EBEBEB;
+    background-image: linear-gradient(to right, #0B6A6F, #11ABB4 );
+    /* background-color: #0F9FA8;  */
     margin:10px 0px 10px 5px;
     padding:10px;
-    border-left: solid #0F9FA8 5px;
 }
 
 
