@@ -8,8 +8,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-//use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-//use Doctrine\ORM\EntityRepository;
 
 class SistemaType extends AbstractType
 {
@@ -17,7 +15,7 @@ class SistemaType extends AbstractType
     {
         $builder
             ->add('nombre')
-            ->add('logo',FileType::class,['required'=>true,'multiple'=>false])
+            ->add('logo',FileType::class,['data_class' => null,'required'=>false,'multiple'=>false])
             ->add('url')
             ->add('descripcion')
             ->add('Listo',SubmitType::class)

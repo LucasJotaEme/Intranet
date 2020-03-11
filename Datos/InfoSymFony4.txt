@@ -1,0 +1,15 @@
+SymFony4
+
+Actualizar para la BD: php bin/console doctrine:schema:update --force
+
+Crear Form: php bin/console make:form
+
+Crear base de datos: php bin/console doctrine:database:create
+
+Crear entidad: php bin/console make:entity
+
+Crear controlador: php bin/console make:controller
+
+Crear un user: php bin/console make:user
+
+Crear un login: php bin/console make:auth

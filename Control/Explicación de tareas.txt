@@ -1,0 +1,22 @@
+-Actualización de notebooks:
+
+	Configurar hora.
+	Instalar programas.
+		Chrome
+		Firefox
+		Adobe Reader
+	Actualización Windows.
+	Activar Windows.
+	  PNQ73-D7DX8-X9V9K-KM9QJ-33WXM
+	Activar Office.
+	  2016:::V4M7K-B6NXP-HG3TX-T92RJ-29XYB
+	  2013:::KBNDQ-7F8XD-RQ7WF-V4HDQ-MDTXV
+
+-Armar curso de PHP:
+
+	Como usar Symfony.
+	Instalación.
+	Crear una aplicación.
+
+-crontab -e
+	Habia que dar permisos de ejecucion con chmod +x

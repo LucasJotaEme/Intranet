@@ -1,0 +1,26 @@
+Prueba de personalizaciones.
+
+Poner soportes:
+	Valle
+	Fernando
+	Tato
+
+Averiguar soporte
+
+Desarrollar lo del pizzarron:
+	-Documentación y desarrollo.
+	-Diseño de base de datos.
+	-API REST
+
+
+TERMINADOS O SUSPENDIDO:
+
+Campus y guarani. SOLUCIONADO
+
+Notebooks. EN ESPERA
+
+Documentación Symfony SOLUCIONADO
+
+Buscar solución para reindexar automatico en Koha. SOLUCIONADO
+
+

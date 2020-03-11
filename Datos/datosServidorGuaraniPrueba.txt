@@ -1,0 +1,20 @@
+Ip servidor: 170.78.75.187
+Puerto: 22
+
+Usuario:lmaldonado
+Contraseña:UNRaf2019$
+
+
+Password : 44kJy36HjX //Conexion al servidor base de Datos
+
+
+CSS:
+Body: #F7F7F7 
+
+Autogestion: Guarani.css
+
+
+Preinscripcion:-
+Usuario: Admin
+Psw: unraf2019
+

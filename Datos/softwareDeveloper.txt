@@ -1,0 +1,6 @@
+Symfony 3.4
+Ionic 4 
+react native
+android nativo
+twig
+doctrin

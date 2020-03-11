@@ -1,0 +1,8 @@
+Ip servidor: 170.78.75.187
+Puerto: 8222
+
+Usuario:lmaldonado
+Contraseña:L5c1s22$$Pp
+
+
+Password : 44kJy36HjX //Conexion al servidor base de Datos

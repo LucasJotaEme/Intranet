@@ -16,11 +16,13 @@ class SistemaController extends AbstractController
     public function sistemas()
     {
         $em = $this->getDoctrine()->getManager();
+        $usuario = $this->getUser();
+        
         $sistemas= $em->getRepository(Sistema::class)->findAll();
         
         //Se obtiene los sistemas del usuario, y se lo pasa al .twig.
         return $this->render('sistema/acceso.html.twig', [
-            'sistemas' => $sistemas, 'tamanio' => count($sistemas)
+            'sistemas' => $sistemas, 'tamanio' => count($sistemas), 'sistemasUsuario' => $usuario->getSistemas()
         ]);
     }
     
@@ -38,12 +40,16 @@ class SistemaController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $sistema = $formulario->getData();
             
-            $imagen = $formulario->get('logo')->getData();
+            if ($sistema->getLogo()!=null){
+                $imagen = $formulario->get('logo')->getData();
             
-            $extensionArchivo=$imagen->guessExtension();
-            $nombreArchivo= time().".".$extensionArchivo;
-            $imagen->move("uploads",$nombreArchivo);
-            $sistema->setLogo($nombreArchivo);
+                $extensionArchivo=$imagen->guessExtension();
+                $nombreArchivo= time().".".$extensionArchivo;
+                $imagen->move("uploads",$nombreArchivo);
+                $sistema->setLogo($nombreArchivo);
+            }else{
+                $sistema->setLogo("iconoUnraf.png");
+            }
             
             $entityManager->persist($sistema);
             $entityManager->flush();
@@ -57,5 +63,55 @@ class SistemaController extends AbstractController
         return $this->render('sistema/nuevoSistema.html.twig', [
             'formulario' => $formulario->createView()
         ]);
+    }
+    
+    /**
+     * @Route("/admin/modificarSistema/{id}/", name="modificarSistema")
+     */
+    public function modificarSistema(Request $request,$id)
+    {
+        $manager = $this->getDoctrine()->getManager();
+        
+        
+        $sistema = $manager->getRepository(Sistema::class)->find($id); 
+        $urlLogo = $sistema->getLogo();
+        
+        $form = $this->createForm(SistemaType::class,$sistema);
+        
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() &&  $form->isValid()){
+            $sistema = $form->getData();
+            
+            if ($sistema->getLogo()!=null){
+                $imagen = $form->get('logo')->getData();
+                $extensionArchivo=$imagen->guessExtension();
+                $nombreArchivo= time().".".$extensionArchivo;
+                $imagen->move("uploads",$nombreArchivo);   
+                $sistema->setLogo($nombreArchivo);
+            }else{
+                $sistema->setLogo($urlLogo);
+            }
+            
+            $manager->flush();
+            
+            return $this->sistemas();
+        }
+        else{
+            return $this->render('sistema/modificarSistema.html.twig', [
+            'formulario' => $form->createView()
+        ]);
+        }
+    }
+    
+    /**
+     * @Route("/admin/eliminarSistema/{id}/", name="eliminarSistema")
+     */
+    public function quitarCompra(Request $request,$id){
+        $em = $this->getDoctrine()->getManager();
+        $sistema= $em->getRepository(Sistema::class)->find($id);
+        $em->remove($sistema);
+        $em->flush();
+        return $this->sistemas();
     }
 }
