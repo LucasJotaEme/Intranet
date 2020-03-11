@@ -37,18 +37,42 @@
 
     <div class="row" style="margin:auto;padding-left:40px;">
         <div class="container-fluid cuadroNovedades col-6">
-            <div  class="row">
+            
                 {% for sistema in sistemas %}
-                    <div  class="container-fluid col-{{12/tamanio}}">
-                        <div class="container-fluid cuadroSistema">
-                            <a href="{{sistema.url}}"><img class="imagenSistema" alt="logoSistema" src="{{asset(('uploads/'~ sistema.logo))}}" alt="Logo"></a>
-                            <a class="nombreSistema" href="{{sistema.url}}"><h4>{{ sistema.nombre }}</h4></a>
-                            <h6>{{ sistema.descripcion }}</h6>
-                        </div>
-                    </div>
+                        <div class="container">
+                            <div class="card cuadroSistema">
+                              <div class="row ">
+                                <div class="col-md-6">
+                                    <div class="card-img-bottom">
+                                        <img class="card-img-top" src="{{asset(('uploads/'~ sistema.logo))}}" alt="Card image cap">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="card-block">
+                                    <h4 class="card-title">{{ sistema.nombre }}</h4>
+                                    <p class="card-text">{{ sistema.descripcion }}</p>
+                                    <div class="btn-group">
+                                            <a class="btn btn-outline-success" href="{{sistema.url}}">Conectar</a>
+                                        
+                                        
+                                            <a class="btn btn-outline-primary" href="{{sistema.url}}"><img class="card-img-top" style="width:25px;" src="{{ asset("img/editar.png") }}" alt="Card image cap"></a>
+                                        
+                                        
+                                            <a class="btn btn-outline-primary" href="{{sistema.url}}"><img class="card-img-top" style="width:25px;" src="{{ asset("img/eliminar.png") }}" width="10"alt="Card image cap"></a>
+                                        
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
+                    
                 {% endfor %}
-            </div>
+            
         </div>
+        
+        
         <div class="cuadroNovedades col-6">
             KASLÑDKSALÑDJSAKDLÑSAJDKLSAJDKLSADJAS
             DSADJKSLADJSAKLDAS

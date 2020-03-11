@@ -37,6 +37,10 @@ h6{
     padding:10px;
 }
 
+.cuadroSistema:hover{
+    opacity: 0.8
+}
+
 
 .nombreSistema{
     color: #0F9FA8;

@@ -5,6 +5,9 @@
 {% block body %}
     
     {{ parent() }}
+    <div class="">
+        <h3 style="text-align:center;">Sistemas >> Nuevo sistema</h3>
+    </div>
     {{ form_start(formulario, {'enctype':'multipart/form-data'})}}
     {#{{ form_widget(formulario.documento, {attr: {accept:'application/pdf,.zip,.rar,.7zip',class: 'margenUpDown'} })}}#}
     {{ form_end(formulario) }}  
