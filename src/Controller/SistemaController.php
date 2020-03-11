@@ -20,7 +20,7 @@ class SistemaController extends AbstractController
         
         //Se obtiene los sistemas del usuario, y se lo pasa al .twig.
         return $this->render('sistema/acceso.html.twig', [
-            'sistemas' => $sistemas
+            'sistemas' => $sistemas, 'tamanio' => count($sistemas)
         ]);
     }
     
