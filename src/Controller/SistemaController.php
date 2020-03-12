@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Sistema;
+use App\Entity\User;
 use App\Form\SistemaType;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -114,4 +115,18 @@ class SistemaController extends AbstractController
         $em->flush();
         return $this->sistemas();
     }
+    
+    /**
+     * @Route("/admin/permisos/", name="permisos")
+     */
+    public function permisos(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $sistemas= $em->getRepository(Sistema::class)->findAll();
+        $usuarios= $em->getRepository(User::class)->findAll();
+        
+        return $this->render('sistema/permisos.html.twig', [
+            'sistemas' => $sistemas, 'usuarios' => $usuarios
+        ]);
+    }
+    
 }

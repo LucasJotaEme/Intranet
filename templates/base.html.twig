@@ -13,7 +13,7 @@
     </head>
     <body>
     {% block body %}
-    {% if is_granted('ROLE_ADMIN') %}
+        
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <a class="navbar-brand" href="{{path('sistemas')}}"><img src="{{asset("img/logo-transparente.png")}}" width="150" height="30" alt="Logo"></a>
@@ -21,6 +21,7 @@
         </div>
         <div class="mx-auto order-0 ">
             <ul class="navbar-nav ml-auto">
+                {% if is_granted('ROLE_ADMIN') %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle fuenteMenu" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sistemas
@@ -30,8 +31,9 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Permisos</a>
+                    <a class="nav-link" href="{{ path('permisos') }}">Permisos</a>
                 </li>
+                {% endif %}
             </ul>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
@@ -46,7 +48,6 @@
             </ul>
         </div>
     </nav>
-        {% endif %}
         {% endblock %}
         
         {% block notificaciones %}
@@ -72,7 +73,6 @@
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
             <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
             <script src="{{ asset("js/app.js") }}"></script>
-            
             <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
             <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
             <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>

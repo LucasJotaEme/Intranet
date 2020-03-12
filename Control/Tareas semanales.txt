@@ -1,3 +1,5 @@
+Hacer en la tabla docentes el cambio de legajo
+
 Prueba de personalizaciones.
 
 Poner soportes:

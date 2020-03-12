@@ -16,6 +16,8 @@ h3{
     margin-left: 15px;
 }
 
+
+
 h4{
     color: white;
     
@@ -23,12 +25,19 @@ h4{
 
 h6{
     color: white;
-    
 }
 
 
-
 /* SISTEMAS */
+
+.permisoSistemas{
+    filter: drop-shadow(4px 4px 8px #306086);
+    border-bottom: solid 0.5px white;
+    border-left: solid 5px #FEB413;
+    background-color: #0F9FA8;
+    padding:10px;
+    
+}
 
 .cuadroSistema{
     background-image: linear-gradient(to right, #0B6A6F, #11ABB4 );
@@ -38,12 +47,9 @@ h6{
 }
 
 .cuadroSistema:hover{
-    opacity: 0.8
+    opacity: 0.8;
 }
 
-.cuadroSistema:hover{
-    opacity: 0.8
-}
 
 .cuadroSistemaGris{
     background-image: linear-gradient(to right, #959595, #959595);
@@ -54,7 +60,7 @@ h6{
 }
 
 .cuadroSistemaGris:hover{
-    opacity: 0.8
+    opacity: 0.8;
 }
 
 
@@ -67,14 +73,14 @@ h6{
 }
 
 .imagenSistema{
-    width:420px;
-    height:200px;
+    /*width:420px;
+    height:200px;*/
     
 }
 
 .imagenGris{
-    width:420px;
-    height:200px;
+    /*width:420px;
+    height:200px;*/
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
