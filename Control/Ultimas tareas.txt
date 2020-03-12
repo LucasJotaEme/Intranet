@@ -1,3 +1,4 @@
--Agregar y quitar permisos.
+Lo ultimo fue lo de los permisos
 
--Ocultar los botones EDITAR Y ELIMINAR para los que no son administradores.
+-Modificar login.
+-Modificar interfaz de neuvo sistemas y editar sistemas.
