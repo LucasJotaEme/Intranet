@@ -34,11 +34,11 @@
                         </div>
                         {% if usuario in sistema.usuarios %}   
                             <div class="col-4" style="text-align:center;margin-bottom: 10px;">
-                                <a class="btn btn-danger" href="#">Quitar</a>
+                                <a class="btn btn-danger" href="{{path('quitarPermiso', {'idSistema': sistema.id, 'idUsuario': usuario.id})}}">Quitar</a>
                             </div>
                         {% else %}
                             <div class="col-4" style="text-align:center;margin-bottom: 10px;">
-                                <a class="btn btn-primary" href="#">Agregar</a>
+                                <a class="btn btn-primary" href="{{path('agregarPermiso', {'idSistema': sistema.id, 'idUsuario': usuario.id})}}">Agregar</a>
                             </div>
                         {% endif %}
                     </div>

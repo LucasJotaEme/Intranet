@@ -16,14 +16,14 @@
         
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            {# Este div es para dejar centrado Los botones #}
             <a class="navbar-brand" href="{{path('sistemas')}}"><img src="{{asset("img/logo-transparente.png")}}" width="150" height="30" alt="Logo"></a>
-            {# Este div es para dejar centrado lo otro importante #}
         </div>
         <div class="mx-auto order-0 ">
             <ul class="navbar-nav ml-auto">
                 {% if is_granted('ROLE_ADMIN') %}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle fuenteMenu" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="fuentecita nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sistemas
                     </a>
                     <div class="dropdown-menu itemMenu" aria-labelledby="navbarDropdownMenuLink">

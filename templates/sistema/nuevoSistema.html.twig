@@ -8,7 +8,47 @@
     <div class="">
         <h3 style="text-align:center;">Sistemas >> Nuevo sistema</h3>
     </div>
+    <div class="container formularioSistema">
     {{ form_start(formulario, {'enctype':'multipart/form-data'})}}
-    {#{{ form_widget(formulario.documento, {attr: {accept:'application/pdf,.zip,.rar,.7zip',class: 'margenUpDown'} })}}#}
+        <div class="form-group row">
+            <div class="col-sm-2 col-form-label">
+                Nombre:
+            </div>
+            <div class="col-sm-10">
+                {{ form_widget(formulario.nombre, {attr: {class: 'form-control'} })}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2 col-form-label">
+                Imágen del sistema:
+            </div>
+            <div class="col-sm-10">
+                {{ form_widget(formulario.logo, {attr: {accept:'application/.jpg,.jpeg,.png'}})}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2 col-form-label">
+                URL:
+            </div>
+            <div class="col-sm-10">
+                {{ form_widget(formulario.url, {attr: {class: 'form-control'} })}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2 col-form-label">
+                Descripción:
+            </div>
+            <div class="col-sm-10">
+                {{ form_widget(formulario.descripcion, {attr: {class: 'form-control'} })}}
+            </div>
+        </div>
+        {{ form_widget(formulario.Listo, {attr: {class: 'container-fluid btn btn-primary colorBoton'} })}}
+        
     {{ form_end(formulario) }}  
+    </div>
+    
+    {% block notificaciones %}
+        {{ parent() }}
+    {% endblock notificaciones %}
+
 {% endblock %}

@@ -100,7 +100,7 @@ class SistemaController extends AbstractController
         }
         else{
             return $this->render('sistema/modificarSistema.html.twig', [
-            'formulario' => $form->createView()
+            'formulario' => $form->createView(),'imagen' => $sistema->getLogo()
         ]);
         }
     }
@@ -127,6 +127,39 @@ class SistemaController extends AbstractController
         return $this->render('sistema/permisos.html.twig', [
             'sistemas' => $sistemas, 'usuarios' => $usuarios
         ]);
+    }
+    
+    /**
+     * @Route("/admin/permisos/agregar/{idSistema}/{idUsuario}", name="agregarPermiso")
+     */
+    public function agregarPermiso(Request $request,$idSistema,$idUsuario){
+        $usuario=new User();
+        $sistema=new Sistema();
+        $em = $this->getDoctrine()->getManager();
+        
+        $sistema= $em->getRepository(Sistema::class)->find($idSistema);
+        $usuario= $em->getRepository(User::class)->find($idUsuario);
+        $sistema->addUsuario($usuario);
+        
+        $em->flush();
+        
+        return $this->permisos($request);
+    }
+    
+    /**
+     * @Route("/admin/permisos/quitar/{idSistema}/{idUsuario}", name="quitarPermiso")
+     */
+    public function quitarPermiso(Request $request,$idSistema,$idUsuario){
+        
+        $em = $this->getDoctrine()->getManager();
+        
+        $sistema= $em->getRepository(Sistema::class)->find($idSistema);
+        $usuario= $em->getRepository(User::class)->find($idUsuario);
+        $sistema->removeUsuario($usuario);
+        
+        $em->flush();
+        
+        return $this->permisos($request);
     }
     
 }

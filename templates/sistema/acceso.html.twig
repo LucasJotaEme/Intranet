@@ -36,7 +36,7 @@
     </div>
 
     <div class="row" style="margin:auto;padding-left:40px;">
-        <div class="container-fluid cuadroNovedades col-6">
+        <div class="container-fluid col-6">
             
             {% for sistema in sistemas %}
                 <div class="container">
@@ -73,13 +73,14 @@
                         <div class="col-md-6">
                             <div class="card-block">
                                 <h4 class="card-title">{{ sistema.nombre }}</h4>
-                                <p class="card-text">{{ sistema.descripcion }}</p>
+                                <p class="card-text" style="color:#E1E1E1;">{{ sistema.descripcion }}</p>
 
                                 {% if sistema in sistemasUsuario %}
-                                    <a href="{{sistema.url}}"><h4 style="color:#FEB413;">Conectar</h4></a>
+                                    <a class="btn btn-warning" style="padding-left:45px; padding-right:45px;"  href="{{sistema.url}}">Conectar</a><br><br>
                                 {% else %}
                                     <h5 style="color:#A41616;">No tiene permisos</h5>
                                 {% endif %}
+                                
                                 {% if is_granted('ROLE_ADMIN') %}
                                     <a class="btn btn-dark" href="{{path('modificarSistema', {'id': sistema.id})}}"><img class="card-img-top" style="width:25px;" src="{{ asset("img/editar.png") }}" alt="Card image cap"></a>
                                     <a class="btn btn-danger" data-toggle="modal" href="#modal"><img class="card-img-top" style="width:25px;" src="{{ asset("img/eliminar.png") }}" width="10"alt="Card image cap"></a> 
@@ -96,8 +97,10 @@
         </div>
         
         
-        <div class="cuadroNovedades col-6">
-            <h1 style="color:grey; text-align:center;" >[Pendiente]</h1>
+        <div class="col-6">
+            <div class=" container-fluid  cuadroNovedades col-6">
+                <h1 style="text-align:center;">[Pendiente]</h1>
+            </div>
         </div>
     </div>
     <h5 style="margin-left:15px;color:grey;">Los permisos se solicitan a <b>soporte@unraf.edu.ar</b></h5>

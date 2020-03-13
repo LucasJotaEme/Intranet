@@ -1,4 +1,1 @@
-Lo ultimo fue lo de los permisos
 
--Modificar login.
--Modificar interfaz de neuvo sistemas y editar sistemas.
