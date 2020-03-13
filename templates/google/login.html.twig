@@ -1,14 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello GoogleController!{% endblock %}
+{% block title %}Intranet - Login{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="container-fluid">
-    <a href="{{ path("connect_google")}}">Iniciar sesión</a>
+<h1 class="fuente">INTRANET</h1>
+<h5 class="fuenteMasChica">Iniciar sesión con su cuenta de gmail:</h5>
+<div style="text-align:center;">
+<a class="btn btn-danger" href="{{ path("connect_google")}}"><img class="botonLogin" src="{{asset(('img/iconoUnraf.png'))}}" alt="Imagen del sistema">Ingresar</a>
 </div>
+{#<div class="degrade" style="">
+    <h1 style="padding:60px;color: white;">INTRANET</h1>
+</div>
+#}
 {% endblock %}

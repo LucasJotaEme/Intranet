@@ -1,5 +1,35 @@
 @charset "utf-8";
+/* LOGIN */
 
+.fuente{
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 110px;
+  padding: 10px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  color:#0F9FA8;
+}
+
+.botonLogin{
+    width: 40px;
+    text-align:center;
+}
+
+.fuenteMasChica {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 30px;
+  padding: 5px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  color:#0F9FA8;
+}
+
+
+.degrade{
+  background-image: linear-gradient(to right, #0F9FA8, #FEB413, #306086 );
+}
 
 /* BASE HTML */
 nav{
