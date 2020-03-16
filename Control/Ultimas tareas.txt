@@ -1,7 +1,4 @@
 Tareas para el fin de semana:
 
-Sistema de Licitaciones.
-
 Agregar SASS y cambiar el cartel.
 
-Modificar los colores del menú para que quede bien.

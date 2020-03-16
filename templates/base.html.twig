@@ -6,6 +6,7 @@
         {% block stylesheets %}
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             <link href="{{ asset("css/estilo.css") }}" rel="stylesheet" type="text/css">
+            <link href="{{ asset("css/compilado.css") }}" rel="stylesheet" type="text/css">
         {% endblock %}
         {% block icon %}
             <link rel="icon" href="{{ asset("img/iconoUnraf.png") }}">
@@ -23,11 +24,11 @@
             <ul class="navbar-nav ml-auto">
                 {% if is_granted('ROLE_ADMIN') %}
                 <li class="nav-item dropdown">
-                    <a class="fuentecita nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sistemas
                     </a>
                     <div class="dropdown-menu itemMenu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="{{ path('nuevoSistema') }}">Nuevo sistema</a>
+                      <a class="formMenu dropdown-item" href="{{ path('nuevoSistema') }}">Nuevo sistema</a>
                     </div>
                 </li>
                 <li class="nav-item">

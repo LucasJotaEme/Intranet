@@ -1,13 +1,6 @@
-Hacer en la tabla docentes el cambio de legajo
+
 
 Prueba de personalizaciones.
-
-Poner soportes:
-	Valle
-	Fernando
-	Tato
-
-Averiguar soporte
 
 Desarrollar lo del pizzarron:
 	-Documentación y desarrollo.
@@ -16,6 +9,8 @@ Desarrollar lo del pizzarron:
 
 
 TERMINADOS O SUSPENDIDO:
+
+Hacer en la tabla docentes el cambio de legajo. SOLUCIONADO
 
 Campus y guarani. SOLUCIONADO
 
