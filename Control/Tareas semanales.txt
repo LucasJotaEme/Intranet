@@ -1,12 +1,6 @@
-
+Busqueda de implementar un script para un backup automatico en linux, con un comando sheel y rotacion
 
 Prueba de personalizaciones.
-
-Desarrollar lo del pizzarron:
-	-Documentación y desarrollo.
-	-Diseño de base de datos.
-	-API REST
-
 
 TERMINADOS O SUSPENDIDO:
 
@@ -19,5 +13,7 @@ Notebooks. EN ESPERA
 Documentación Symfony SOLUCIONADO
 
 Buscar solución para reindexar automatico en Koha. SOLUCIONADO
+
+Desarrollar lo del pizzarron. SOLUCIONADO
 
 

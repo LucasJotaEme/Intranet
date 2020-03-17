@@ -1,24 +1,32 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseLogin.html.twig' %}
 
 {% block title %}Intranet - Login{% endblock %}
 
+
 {% block body %}
-<div>    
-    <p>
-      Spice up your type with CSS
-      <span>
-        INTRANET
-      </span>
-      &mdash; no JavaScript required &mdash;
-    </p>
-</div>
-{#<h1 class="fuente">INTRANET</h1>
-<h5 class="fuenteMasChica">Iniciar sesión con su cuenta de gmail:</h5>
-<div style="text-align:center;">
-<a class="btn btn-danger" href="{{ path("connect_google")}}"><img class="botonLogin" src="{{asset(('img/iconoUnraf.png'))}}" alt="Imagen del sistema">Ingresar</a>
-</div>
-<div class="degrade" style="">
-    <h1 style="padding:60px;color: white;">INTRANET</h1>
-</div>
-#}
+
+<div class="container cuadroLogin">
+    <svg viewBox="0 0 960 300">
+        <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="80%">Intranet</text>
+        </symbol>
+
+        <g class = "g-ants">
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+        </g>
+    </svg>
+
+    <div class="container" style="text-align:center;">
+    <section class=botones>
+      <h3 style="margin-bottom: 20px;">Iniciar sesión desde:</h3>
+      <div id="separar">
+          <a href="{{ path("connect_google")}}" class="boton3"><img style="width:50px;" src="{{ asset("img/logoGmail.png") }}" alt="Logo gmail">Gmail</a>
+      </div>
+    </section>
+    </div>
+</div>    
 {% endblock %}

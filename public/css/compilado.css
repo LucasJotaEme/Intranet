@@ -1,44 +1,179 @@
-body {
-  font: 400 1em/1.5 "Neuton";
-  color: rgba(255, 255, 255, 0.25);
-  text-align: center;
-  margin: 0; }
 
-p {
-  text-transform: uppercase;
-  letter-spacing: .5em;
-  display: inline-block;
-  border: 4px double rgba(255, 255, 255, 0.25);
-  border-width: 4px 0;
-  padding: 1.5em 0em;
-  position: absolute;
-  top: 18%;
-  left: 50%;
-  width: 40em;
-  margin: 0 0 0 -20em; }
-  p span {
-    font: 200 4em/1 "Oswald", sans-serif;
-    letter-spacing: 0;
-    padding: .25em 0 .325em;
+
+html, body{
+  height: 100%;
+  font-weight: 300;
+}
+
+body{
+  background-image: url('../img/iconoUnraf.png');
+  background-size:900px;
+  opacity: 0.9;
+  background-repeat: no-repeat; 
+  background-position: right bottom;
+  font-family: Arial;
+
+}
+
+.imagenLogin{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+svg {
     display: block;
+    font: 10.5em 'Intranet';
+    width: 960px;
+    height: 300px;
     margin: 0 auto;
-    text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
-    /* Clip Background Image */
-    background: url(http://f.cl.ly/items/010q3E1u3p2Q0j1L1S1o/animated_text_fill.png) repeat-y;
-    -webkit-background-clip: text;
-    background-clip: text;
-    /* Animate Background Image */
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: aitf 80s linear infinite;
-    /* Activate hardware acceleration for smoother animations */
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden; }
+}
 
-/* Animate Background Image */
-@-webkit-keyframes aitf {
-  0% {
-    background-position: 0% 50%; }
-  100% {
-    background-position: 100% 50%; } }
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
 
-/*# sourceMappingURL=compilado.css.map */
+.text-copy:nth-child(1){
+	stroke: #0F9FA8;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #FEB413 ;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #306086 ;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #0F9FA8;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #0F9FA8;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
+
+#separar {
+  padding: 3%;
+  display: inline-block;
+}
+
+.titulo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  text-decoration: underline;
+  color: #333333;
+}
+
+.boton {
+  color: #fff !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: #318aac;
+  border: 2px solid;
+  border-color: #318aac;
+  position: relative;
+}
+.boton:before {
+  content:"";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 1s ease;
+}
+.boton:hover:before {
+width: 100%;
+}
+
+.boton2 {
+  color: #fff !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: #318aac;
+  border: 2px solid;
+  border-color: #318aac;
+  position: relative;
+}
+.boton2:before {
+  content:"";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 0px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 1s ease;
+} 
+.boton2:hover:before {
+  height: 100%;
+}
+
+.boton3 {
+  color: #ef3a25 !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: rgba(0,0,0,0);
+  border: 2px solid;
+  border-color: #ef3a25;
+  transition: all 1s ease;
+  position: relative;
+}
+.boton3:hover {
+  background: #ef3a25;
+  color: white !important;
+}
+
+.boton4 {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: #318aac;
+  border: 2px solid;
+  border-color: #318aac;
+  position: relative;
+}
+.boton4:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+  transition: all 0.2s ease;
+}
+
+.boton5 {
+  color: #fff !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: #318aac;
+  position: relative;
+  border: 2px solid #318aac;
+  outline: 1px solid;
+  outline-color: rgba(49, 138, 172, 0.4);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.boton5:hover {
+  box-shadow: inset 0 0 20px rgba(49, 138, 172, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
+  outline-color: rgba(49, 138, 172, 0);
+  outline-offset: 80px;
+  text-shadow: 1px 1px 6px #fff;
+  
+}
