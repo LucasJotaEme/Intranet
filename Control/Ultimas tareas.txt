@@ -1,4 +1,2 @@
-Tareas para el fin de semana:
 
-Agregar SASS y cambiar el cartel.
 

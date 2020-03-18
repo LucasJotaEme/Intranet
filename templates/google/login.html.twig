@@ -1,32 +1,16 @@
 {% extends 'baseLogin.html.twig' %}
 
 {% block title %}Intranet - Login{% endblock %}
-
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+{% block icon %}
+    {{ parent() }}
+{% endblock %}
 
 {% block body %}
-
-<div class="container cuadroLogin">
-    <svg viewBox="0 0 960 300">
-        <symbol id="s-text">
-                <text text-anchor="middle" x="50%" y="80%">Intranet</text>
-        </symbol>
-
-        <g class = "g-ants">
-            <use xlink:href="#s-text" class="text-copy"></use>
-            <use xlink:href="#s-text" class="text-copy"></use>
-            <use xlink:href="#s-text" class="text-copy"></use>
-            <use xlink:href="#s-text" class="text-copy"></use>
-            <use xlink:href="#s-text" class="text-copy"></use>
-        </g>
-    </svg>
-
-    <div class="container" style="text-align:center;">
-    <section class=botones>
-      <h3 style="margin-bottom: 20px;">Iniciar sesión desde:</h3>
-      <div id="separar">
-          <a href="{{ path("connect_google")}}" class="boton3"><img style="width:50px;" src="{{ asset("img/logoGmail.png") }}" alt="Logo gmail">Gmail</a>
-      </div>
-    </section>
-    </div>
-</div>    
+    {{ parent() }}
 {% endblock %}
