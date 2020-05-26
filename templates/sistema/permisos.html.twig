@@ -19,13 +19,17 @@
 </style>
 
     <div>
-        <h3 style="text-align:center;margin-bottom: 25px;">Permisos a los sistemas</h3>
+        <h3 class="cuadroTitulos" >Permisos a los sistemas</h3>
     </div>
+    {% set contador=1 %}
     {% for sistema in sistemas %}
-        <div class="container permisoSistemas">
+        {%  set palabraDiv = "div" ~ contador %}
+        <div class="container permisoSistemas" onclick="$('#{{palabraDiv}}').slideToggle(300);" >
             <h5 style="color:white;margin-left: 10px;">{{ sistema.nombre }} - {{sistema.usuarios|length}} usuarios</h5>
         </div>
-        <div  id="idSistema" class="container">
+        {% set contador= contador +1  %}
+        <div style="display:none;" id="{{palabraDiv}}" class="container">
+            {%  set palabraDiv = "div" ~ contador %}
             {% for usuario in usuarios %}
                 {# {% if usuario in sistema.usuarios %}   #}
                     <div class="row" style="margin:20px;border-bottom: solid 1.5px grey;">
@@ -38,7 +42,7 @@
                             </div>
                         {% else %}
                             <div class="col-4" style="text-align:center;margin-bottom: 10px;">
-                                <a class="btn btn-primary" href="{{path('agregarPermiso', {'idSistema': sistema.id, 'idUsuario': usuario.id})}}">Agregar</a>
+                                <a class="btn" style="background-color:#0F9FA8;color:white;" href="{{path('agregarPermiso', {'idSistema': sistema.id, 'idUsuario': usuario.id})}}">Agregar</a>
                             </div>
                         {% endif %}
                     </div>

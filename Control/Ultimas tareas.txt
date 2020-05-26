@@ -1,2 +1,5 @@
+Terminé con el logeo automático.
 
+Falta borrar todo lo que está demás en Licitaciones, y hacer que vuelva.
+Además, utilizar el recodarme.
 

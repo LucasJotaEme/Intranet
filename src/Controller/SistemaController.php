@@ -33,6 +33,7 @@ class SistemaController extends AbstractController
     public function nuevoSistema(Request $request)
     {
         $sistema = new Sistema();
+        $sistema->setLogo("iconoUnraf.png");
         $formulario = $this->createForm(SistemaType::class,$sistema);
         $formulario->handleRequest($request);
         
@@ -62,7 +63,7 @@ class SistemaController extends AbstractController
         }
         
         return $this->render('sistema/nuevoSistema.html.twig', [
-            'formulario' => $formulario->createView()
+            'formulario' => $formulario->createView(),'imagen' => $sistema->getLogo()
         ]);
     }
     
@@ -161,5 +162,26 @@ class SistemaController extends AbstractController
         
         return $this->permisos($request);
     }
+    
+    /**
+     * @Route("/user/direccionamiento/{id}", name="direccionamiento")
+     */
+    public function direccionamiento(Request $request,$id){
+        $user = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $sistema= $em->getRepository(Sistema::class)->find($id);
+        
+        $url = $sistema->getUrl();
+        $rol="";
+        if (count($user->getRoles())==2){
+            $rol="ROLE_ADMIN";
+        }else{
+            $rol="ROLE_USER";
+        }
+        $url .= "/" . $user->getEmail() . "/" . $rol . "/" . $user->getEstado(); 
+        
+        return $this->redirect($url);
+    }
+    
     
 }

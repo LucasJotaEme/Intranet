@@ -5,13 +5,31 @@ html, body{
 }
 
 body{
-  background-image: url('../img/iconoUnraf.png');
-  background-size:900px;
-  opacity: 0.9;
-  background-repeat: no-repeat; 
+  background-image: url('../img/iconoUnrafOpaco.jpg');
+  background-size:850px;
+  background-repeat: repeat; 
   background-position: right bottom;
   font-family: Arial;
 
+}
+
+.cuadroLogin{
+    background-color:#F3F3F3;
+    padding: 5px 20px 20px 20px;
+    margin-top: 60px;
+    box-shadow: 5px 5px 18px #666; 
+}
+
+.fondo{
+    background-image: url('../img/fondoUnraf.jpg');
+    -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   
+   width: 100% ;
+   text-align: center;
+    
 }
 
 .imagenLogin{
@@ -22,7 +40,7 @@ body{
 svg {
     display: block;
     font: 10.5em 'Intranet';
-    width: 960px;
+    width: 860px;
     height: 300px;
     margin: 0 auto;
 }
@@ -37,28 +55,28 @@ svg {
 }
 
 .text-copy:nth-child(1){
-	stroke: #0F9FA8;
+	stroke: white;
 	animation-delay: -1;
 }
 
 .text-copy:nth-child(2){
-	stroke: #FEB413 ;
+	stroke: white ;
 	animation-delay: -2s;
 }
 
 .text-copy:nth-child(3){
-	stroke: #306086 ;
+	stroke: white ;
 	animation-delay: -3s;
 }
 
 .text-copy:nth-child(4){
-	stroke: #0F9FA8;
+	stroke: white;
 	animation-delay: -4s;
 }
 
 .text-copy:nth-child(5){
-	stroke: #0F9FA8;
-	animation-delay: -5s;
+	stroke: white;
+	animation-delay: -1s;
 }
 
 @keyframes stroke-offset{

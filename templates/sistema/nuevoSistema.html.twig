@@ -5,47 +5,73 @@
 {% block body %}
     
     {{ parent() }}
-    <div class="">
+    <div>
         <h3 style="text-align:center;">Sistemas >> Nuevo sistema</h3>
     </div>
-    <div class="container formularioSistema">
+    <div style="background-color:white" class="container-fluid formularioSistema">
+        <div class="row">
+        <div class="col-4">
+            <img class="card-img-top rounded imagenSistema" id="imagen" src="{{asset(('uploads/'~ imagen))}}" alt="Imagen del sistema">
+        </div>
+        <div class="col-8">
     {{ form_start(formulario, {'enctype':'multipart/form-data'})}}
-        <div class="form-group row">
+        <div style="margin-top: 30px;" class="form-group row">
             <div class="col-sm-2 col-form-label">
-                Nombre:
+                <h5>Nombre:</h5>
             </div>
-            <div class="col-sm-10">
-                {{ form_widget(formulario.nombre, {attr: {class: 'form-control'} })}}
+            <div class="col-sm-10 espaciado">
+                {{ form_widget(formulario.nombre, {attr: {class: 'form-control campoForm'} })}}
             </div>
         </div>
         <div class="form-group row">
             <div class="col-sm-2 col-form-label">
-                Imágen del sistema:
+                <h5>Imágen del sistema:</h5>
             </div>
-            <div class="col-sm-10">
-                {{ form_widget(formulario.logo, {attr: {accept:'application/.jpg,.jpeg,.png'}})}}
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm-2 col-form-label">
-                URL:
-            </div>
-            <div class="col-sm-10">
-                {{ form_widget(formulario.url, {attr: {class: 'form-control'} })}}
+            <div class="col-sm-10 espaciado ">
+                {{ form_widget(formulario.logo)}}
             </div>
         </div>
         <div class="form-group row">
             <div class="col-sm-2 col-form-label">
-                Descripción:
+                <h5>URL:</h5>
             </div>
-            <div class="col-sm-10">
-                {{ form_widget(formulario.descripcion, {attr: {class: 'form-control'} })}}
+            <div class="col-sm-10 espaciado ">
+                {{ form_widget(formulario.url, {attr: {class: 'form-control campoForm'} })}}
             </div>
         </div>
-        {{ form_widget(formulario.Listo, {attr: {class: 'container-fluid btn btn-primary colorBoton'} })}}
-        
+        <div class="form-group row">
+            <div class="col-sm-2 col-form-label">
+                <h5>Descripción:</h5>
+            </div>
+            <div class="col-sm-10 espaciado ">
+                {{ form_widget(formulario.descripcion, {attr: {class: 'form-control campoForm'} })}}
+            </div>
+        </div>
+    </div>
+            {{ form_widget(formulario.Listo, {attr: {class: 'container-fluid btn btn-primary colorBoton'} })}}
     {{ form_end(formulario) }}  
     </div>
+    
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+</div>
     
     {% block notificaciones %}
         {{ parent() }}
