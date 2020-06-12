@@ -19,6 +19,7 @@ class SistemaController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $usuario = $this->getUser();
         
+        
         $sistemas= $em->getRepository(Sistema::class)->findAll();
         
         //Se obtiene los sistemas del usuario, y se lo pasa al .twig.

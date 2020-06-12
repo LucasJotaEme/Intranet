@@ -122,28 +122,22 @@ h6{
     border-bottom:solid 0.5px #D4D4D4;
     
 }
+.cuadroSistema,.cuadroSistemaGris{
+}
 
-.cuadroSistema{
+.front{
     background-image: linear-gradient(to right, #049cab, #049cab);
-    margin:10px 0px 10px 5px;
     
 }
 
-.cuadroSistema:hover{
-    opacity: 0.9;
+.back{
+    background-image: linear-gradient(to right, #056b75, #03616a);
 }
 
 
 .cuadroSistemaGris{
-    background-image: linear-gradient(to right, #EBF0EF, #EBF0EF);
-    margin:10px 0px 10px 5px;
-    opacity: 0.9;
+    background-image: linear-gradient(to right, #8d9899, #adb7b8);
     
-}
-
-
-.cuadroSistemaGris:hover{
-    opacity: 0.9;
 }
 
 

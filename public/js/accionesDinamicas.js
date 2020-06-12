@@ -1,7 +1,9 @@
 $(function() { 
     var divLogin= $("#divLogin").hide();
+    var sistemas= $("#sistemas").hide();
     var mensajeLogin= $("#mensajeLogin").hide();
     divLogin.slideDown(800);
+    sistemas.slideDown();
     
     
     
@@ -30,7 +32,7 @@ $(function() {
     for (i=1;i<10;i++){
         elemento= '#card' + i;
         $(elemento).flip({
-            axis: 'y',
+            axis: 'x',
             trigger: 'hover',
             reverse: true
         }

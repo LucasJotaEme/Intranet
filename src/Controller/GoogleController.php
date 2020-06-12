@@ -3,10 +3,12 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Routing\Annotation\Route;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use App\Entity\User;
 
 class GoogleController extends AbstractController
 {
@@ -16,6 +18,25 @@ class GoogleController extends AbstractController
     public function login()
     {
         return $this->render('google/login.html.twig');
+    }
+    
+    /**
+     * @Route("/login/{email}", name="app_login")
+     */
+    public function loginApp($email)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $users = null;
+        $users= $em->getRepository(User::class)->findBy(['email'=>$email]);
+        
+        foreach ($users as  $user){
+            $token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
+            $this->get('security.token_storage')->setToken($token);
+            $this->get('session')->set('_security_main', serialize($token));
+        }
+        
+        
+        return $this->redirectToRoute('sistemas');
     }
     
     /**
