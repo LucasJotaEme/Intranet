@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Sistema;
+use App\Entity\Novedad;
 use App\Entity\User;
 use App\Form\SistemaType;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,10 +22,11 @@ class SistemaController extends AbstractController
         
         
         $sistemas= $em->getRepository(Sistema::class)->findAll();
+        $novedades= $em->getRepository(Novedad::class)->findAll();
         
         //Se obtiene los sistemas del usuario, y se lo pasa al .twig.
         return $this->render('sistema/acceso.html.twig', [
-            'sistemas' => $sistemas, 'tamanio' => count($sistemas), 'sistemasUsuario' => $usuario->getSistemas()
+            'sistemas' => $sistemas, 'tamanio' => count($sistemas), 'sistemasUsuario' => $usuario->getSistemas(), 'novedades' => $novedades
         ]);
     }
     

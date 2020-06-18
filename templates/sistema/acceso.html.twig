@@ -26,18 +26,18 @@
 
 {# Recorrido de los sistemas del usuario, recibido por parametro #}
 
-    <div class="row" style="margin:auto;">
-        
+    <div  style="margin:auto;">
+        <a id="verNovedades" class="btn btn-light" href="#">Ver novedades (PRUEBA)</a>
     </div>
 
     <div class="row" style="margin:auto;padding-left:40px;">
-        <div id="tituloSistema" class="col-7"  >
+        <div id="tituloSistema" class="col-md-8 col-8 col-sm-12"  >
             <h3 class="cuadroTitulos">Lista de sistemas</h3>
         </div>
-        <div id="tituloNovedades" class="col-5" >
+        <div id="tituloNovedades" class="col-md-4 col-4" >
             <h3 class="cuadroTitulos">Novedades</h3>
         </div>
-        <div id="sistemas" class="container-fluid col-7">
+        <div id="sistemas" class="container-fluid col-8">
             {% set contador=1 %}
             {% for sistema in sistemas %}
                 
@@ -75,7 +75,6 @@
                                     <p class="card-text" style="color:white;padding-top:10px;"># Seguir tus licitaciones.</p>
                                     <p class="card-text" style="color:white;padding-top:10px;"># Algún otro más</p>
                                 {% endif %}
-                                
                             </div>
                         </div>
 
@@ -124,7 +123,7 @@
                 </div>
         
         
-        <div id="novedades" class="col-5">
+        <div id="novedades" class="col-4">
             <div class=" container-fluid  cuadroNovedades col-6">
                 <h1 style="text-align:center;">Pendiente</h1>
             </div>

@@ -1,9 +1,20 @@
 $(function() { 
     var divLogin= $("#divLogin").hide();
     var sistemas= $("#sistemas").hide();
+    //var novedades= $("#novedades").hide();
+    
+    // var tituloNovedades= $("#tituloNovedades").hide();
     var mensajeLogin= $("#mensajeLogin").hide();
     divLogin.slideDown(800);
     sistemas.slideDown();
+    
+    $('#novedades').animate({
+           right: '-=600'
+           }, 458, 'swing', function() {
+
+           // Animation complete. CALLBACK?
+
+       });
     
     
     
@@ -24,6 +35,32 @@ $(function() {
             width: 210
         });
     });
+    
+    //NOVEDADES
+    
+    $('#verNovedades').hover(function() {
+
+       $('#novedades').animate({
+           right: '+=600'
+           }, 458, 'swing', function() {
+
+           // Animation complete. CALLBACK?
+
+       });
+
+    }, function() {
+
+           $('#novedades').animate({
+               right: '-=600'
+               }, 458, 'swing', function() {
+
+               // Animation complete. CALLBACK?
+
+           });
+
+    });
+    
+    
     
     //ACCESO SISTEMAS Y NOVEDADES
     
