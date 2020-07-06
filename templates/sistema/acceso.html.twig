@@ -26,17 +26,49 @@
 
 {# Recorrido de los sistemas del usuario, recibido por parametro #}
 
-    <div  style="margin:auto;">
-        <a id="verNovedades" class="btn btn-light" href="#">Ver novedades (PRUEBA)</a>
+    <div style="margin:20px;;">
+        <a href="#" id="verNovedades" style="background-color:#516878;color:white;" class="btn" >Ver novedades</a>
     </div>
+    
 
     <div class="row" style="margin:auto;padding-left:40px;">
-        <div id="tituloSistema" class="col-md-8 col-8 col-sm-12"  >
+
+        <div id="tituloNovedades" class="col-md-4 col-4 col-sm-12 container-fluid"  >
+            <h3 class="cuadroTitulos" style="background-image: linear-gradient(to right, #7596ad,#648093, #516878);box-shadow: 1px 1px 8px 1px #516878; ">Novedades</h3>
+        </div>
+
+        <div id="tituloSistema" class="col-md-8 col-8 col-sm-12 container-fluid"  >
             <h3 class="cuadroTitulos">Lista de sistemas</h3>
         </div>
-        <div id="tituloNovedades" class="col-md-4 col-4" >
-            <h3 class="cuadroTitulos">Novedades</h3>
+    </div>
+
+    
+
+    <div class="row" style="margin:auto;padding-left:40px;">
+    
+        <div id="novedades" class="container-fluid col-4">
+            <div class=" container-fluid col-6">
+                {% for novedad in novedades %}
+                <div style="margin-left:20px;margin-bottom:10px;  margin-right: 10px;">
+                    <div class="card cuadroNovedades" >
+                        <div class="card-img-bottom">
+                            <div style="background-color:#516878;" class="card-title" >
+                                <h5 style="text-align:center;">{{ novedad.fecha|date("d/m/Y") }}</h5>
+                            </div>
+                        </div>
+                        <div class="card-block" >
+                            
+                            <hr style="background-color:white">
+                            <P>Documento N° <b>{{ novedad.numeroDocumento }}</b></P>
+                            <P>{{ novedad.titulo }}</P>
+                            <P>{{ novedad.descripcion }}</P>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
+
         <div id="sistemas" class="container-fluid col-8">
             {% set contador=1 %}
             {% for sistema in sistemas %}
@@ -123,11 +155,7 @@
                 </div>
         
         
-        <div id="novedades" class="col-4">
-            <div class=" container-fluid  cuadroNovedades col-6">
-                <h1 style="text-align:center;">Pendiente</h1>
-            </div>
-        </div>
+        
     </div>
     <h5 style="margin-left:15px;color:grey;padding-top:13px;">Los permisos se solicitan a <b style="color:#FEB413;">soporte@unraf.edu.ar</b></h5>
     <div class="container">

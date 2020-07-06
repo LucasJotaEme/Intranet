@@ -37,6 +37,11 @@ class Novedad
      */
     private $descripcion;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $link;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Novedad
     public function setDescripcion(string $descripcion): self
     {
         $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(?string $link): self
+    {
+        $this->link = $link;
 
         return $this;
     }

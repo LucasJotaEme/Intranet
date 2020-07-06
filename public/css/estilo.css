@@ -7,7 +7,7 @@ html, body{
 }
 
 body{
-  background-image: url('../img/iconoUnrafNoOpaco.jpg');
+  
   background-size:450px;
   background-repeat: repeat; 
   background-position: right bottom;
@@ -163,8 +163,10 @@ h6{
 }
 
 .cuadroNovedades{
-    background-color:#F533A6;
+    padding: 8px;
     color:white;
+    background-color: #516878;
+    margin:10px 0px 10px 5px;
 }
 
 
@@ -189,6 +191,7 @@ h6{
     background-image: linear-gradient(to right, #70d6e2,#04c1d8, #04c1d8);
     margin:10px 0px 10px 5px;
 }
+
 
 
 

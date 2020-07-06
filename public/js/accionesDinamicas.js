@@ -1,7 +1,8 @@
 $(function() { 
     var divLogin= $("#divLogin").hide();
     var sistemas= $("#sistemas").hide();
-    //var novedades= $("#novedades").hide();
+    var novedades= $("#novedades").hide();
+    var tituloNovedades= $("#tituloNovedades").hide();
     
     // var tituloNovedades= $("#tituloNovedades").hide();
     var mensajeLogin= $("#mensajeLogin").hide();
@@ -9,14 +10,12 @@ $(function() {
     sistemas.slideDown();
     
     $('#novedades').animate({
-           right: '-=600'
-           }, 458, 'swing', function() {
+        left: '-=600'
+        }, 458, 'swing', function() {
 
-           // Animation complete. CALLBACK?
+        // Animation complete. CALLBACK?
 
-       });
-    
-    
+    });
     
     
     //LOGIN
@@ -39,19 +38,19 @@ $(function() {
     //NOVEDADES
     
     $('#verNovedades').hover(function() {
-
+        novedades.show();
+        tituloNovedades.show(300);
        $('#novedades').animate({
-           right: '+=600'
+           left: '+=600'
            }, 458, 'swing', function() {
-
-           // Animation complete. CALLBACK?
 
        });
 
     }, function() {
-
+        novedades.hide(200);
+        tituloNovedades.hide();
            $('#novedades').animate({
-               right: '-=600'
+               left: '-=600'
                }, 458, 'swing', function() {
 
                // Animation complete. CALLBACK?
