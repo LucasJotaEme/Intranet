@@ -15,7 +15,6 @@
     </head>
     <body>
     {% block body %}
-     
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             {# Este div es para dejar centrado Los botones #}
@@ -49,6 +48,10 @@
                 </li>
             </ul>
         </div>
+        {{ render(controller(
+        'App\\Controller\\FuncionesController::baseAction',
+        { 'max': 10 }
+    )) }}
     </nav>
                     
     {% block notificaciones %}

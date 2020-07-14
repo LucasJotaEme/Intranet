@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Novedad;
+use App\Entity\Sistema;
 
 class FuncionesController extends AbstractController
 {
@@ -28,5 +29,16 @@ class FuncionesController extends AbstractController
         
         
         return $this->redirectToRoute("http://localhost/Documentos/public/index.php/");
+    }
+
+    
+    public function baseAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $sistemas= $em->getRepository(Sistema::class)->findAll();
+        
+        return $this->render('base.html.twig', [
+            'sistemas' => $sistemas
+        ]);
     }
 }
