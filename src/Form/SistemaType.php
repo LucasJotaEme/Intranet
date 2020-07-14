@@ -19,6 +19,9 @@ class SistemaType extends AbstractType
             ->add('logo',FileType::class,['data_class' => null,'required'=>false,'multiple'=>false])
             ->add('url')
             ->add('descripcion',TextareaType::class)
+            ->add('palabra1')
+            ->add('palabra2')
+            ->add('palabra3')
             ->add('Listo',SubmitType::class)
         ;
     }

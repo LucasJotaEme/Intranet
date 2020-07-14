@@ -43,6 +43,21 @@ class Sistema
      */
     private $usuarios;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $palabra1;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $palabra2;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $palabra3;
+
     public function __construct()
     {
         $this->usuarios = new ArrayCollection();
@@ -120,6 +135,42 @@ class Sistema
         if ($this->usuarios->contains($usuario)) {
             $this->usuarios->removeElement($usuario);
         }
+
+        return $this;
+    }
+
+    public function getPalabra1(): ?string
+    {
+        return $this->palabra1;
+    }
+
+    public function setPalabra1(?string $palabra1): self
+    {
+        $this->palabra1 = $palabra1;
+
+        return $this;
+    }
+
+    public function getPalabra2(): ?string
+    {
+        return $this->palabra2;
+    }
+
+    public function setPalabra2(?string $palabra2): self
+    {
+        $this->palabra2 = $palabra2;
+
+        return $this;
+    }
+
+    public function getPalabra3(): ?string
+    {
+        return $this->palabra3;
+    }
+
+    public function setPalabra3(?string $palabra3): self
+    {
+        $this->palabra3 = $palabra3;
 
         return $this;
     }

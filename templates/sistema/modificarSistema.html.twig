@@ -24,7 +24,7 @@
     <div>
         <h3 style="text-align:center;">Sistemas >> Editar sistema</h3>
     </div>
-    <div style="background-color:white" class="container-fluid formularioSistema">
+    <div style="background-color:white" class="container formularioSistema">
         <div class="row">
         <div class="col-4">
             <img class="card-img-top rounded imagenSistema" id="imagen" src="{{asset(('uploads/'~ imagen))}}" alt="Imagen del sistema">
@@ -61,6 +61,16 @@
             </div>
             <div class="col-sm-10 espaciado ">
                 {{ form_widget(formulario.descripcion, {attr: {class: 'form-control campoForm'} })}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2 col-form-label">
+                <h5>Palabras Claves:</h5>
+            </div>
+            <div class="col-sm-10 espaciado ">
+                1#{{ form_widget(formulario.palabra1, {attr: {class: 'form-control campoForm'} })}}
+                2#{{ form_widget(formulario.palabra2, {attr: {class: 'form-control campoForm'} })}}
+                3#{{ form_widget(formulario.palabra3, {attr: {class: 'form-control campoForm'} })}}
             </div>
         </div>
     </div>

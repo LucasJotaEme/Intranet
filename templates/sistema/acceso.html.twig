@@ -26,7 +26,7 @@
 
 {# Recorrido de los sistemas del usuario, recibido por parametro #}
 
-    <div style="margin:20px;;">
+    <div style="margin-left:10px;margin-top:-20px;">
         <a href="#" id="verNovedades" style="background-color:#516878;color:white;" class="btn" >Ver novedades</a>
     </div>
     
@@ -98,9 +98,10 @@
                             <div class="card-block">
                                 {% if sistema in sistemasUsuario %}
                                     <h2 class="card-title" style="text-align:center;padding-top: 10px;color:white;">{{ sistema.nombre }}</h2>
-                                    <p class="card-text" style="color:white;padding-top:10px;"># Agregar, editar y eliminar tu compra.</p>
-                                    <p class="card-text" style="color:white;padding-top:10px;"># Seguir tus licitaciones.</p>
-                                    <p class="card-text" style="color:white;padding-top:10px;"># Algún otro más</p>
+                                    <hr style="background-color:white;">
+                                    <p class="card-text" style="color:white;padding-top:10px;">#{{sistema.palabra1}}</p>
+                                    <p class="card-text" style="color:white;padding-top:10px;">#{{sistema.palabra2}}</p>
+                                    <p class="card-text" style="color:white;padding-top:10px;">#{{sistema.palabra3}}</p>
                                 {% else %}
                                     <h2 class="card-title" style="color:#15374F;padding-top:10px;">{{ sistema.nombre }}</h2>
                                     <p class="card-text" style="color:white;padding-top:10px;"># Agregar, editar y eliminar tu compra.</p>
