@@ -4,5 +4,7 @@ Celeste: #0F9FA8 . RGB: R: 15 G: 159 B: 168
 Amarillo:#FEB413 R: 254 G: 180 B: 19
 Azul: #306086 R: 48 G: 96 B: 134
 
+Rosa: #fc447c
+
 
 Gris: #2B2B2B

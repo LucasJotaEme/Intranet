@@ -29,11 +29,10 @@
     <div style="margin-left:10px;margin-top:-20px;">
         <a href="#ventanaModal" data-toggle="modal" style="background-color:#516878;color:white;" class="btn" >Ver novedades</a>
     </div>
-    
 
-    <div style="margin:auto;padding-left:40px;">
-        <div class="col-md-8 container-fluid">
-            <h3 class="margin-bottom:10px;"><img src="{{ asset("img/iconoUnraf.png") }}" width="30" height="30" alt="Logo unraf">Sistemas internos</h3>
+    <div style="margin:auto;">
+        <div class="col-md-10 container-fluid">
+            <h3 class="margin-bottom:10px;"><img style="padding-bottom:5px;" src="{{ asset("img/iconoUnraf.png") }}" width="30" alt="Logo unraf">SISTEMAS INTERNOS</h3>
         </div>
     </div>
 
@@ -71,96 +70,10 @@
             </div>
         </div>
     </div>
-
-    <div class="row" style="margin:auto;padding-left:40px;">
     
-        <div id="sistemas" class="container-fluid col-5">
-            {% set contador=1 %}
-            {% for sistema in sistemas |slice(0,(sistemas|length)/2) %}
-                
-                {% set idContador='card' ~ contador %}
-
-                <div style="margin-left:20px;margin-bottom:10px;  margin-right: 10px;" id="{{idContador}}">
-                    {% set contador = contador + 1 %}    
-                    
-                    {% if sistema in sistemasUsuario %}                                        
-                    <div class="card cuadroSistema front">
-                    {% else %}
-                    <div class="card cuadroSistemaGris front">
-                    {% endif %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card-img-bottom">
-                                {% if sistema in sistemasUsuario %}                                        
-                                    <img class="card-img-top  imagenSistema" src="{{asset(('uploads/'~ sistema.logo))}}" alt="Imagen del sistema">
-                                {% else %}
-                                    <img class="card-img-top imagenGris" src="{{asset(('uploads/'~ sistema.logo))}}" alt="Imagen del sistema">
-                                {% endif %}
-                            </div>
-                            
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card-block">
-                                {% if sistema in sistemasUsuario %}
-                                    <h2 class="card-title" style="text-align:center;padding-top: 10px;color:white;">{{ sistema.nombre }}</h2>
-                                    <hr style="background-color:white;">
-                                    <p class="card-text" style="color:white;padding-top:10px;">#{{sistema.palabra1}}</p>
-                                    <p class="card-text" style="color:white;padding-top:10px;">#{{sistema.palabra2}}</p>
-                                    <p class="card-text" style="color:white;padding-top:10px;">#{{sistema.palabra3}}</p>
-                                {% else %}
-                                    <h2 class="card-title" style="color:#15374F;padding-top:10px;">{{ sistema.nombre }}</h2>
-                                    <p class="card-text" style="color:white;padding-top:10px;"># Agregar, editar y eliminar tu compra.</p>
-                                    <p class="card-text" style="color:white;padding-top:10px;"># Seguir tus licitaciones.</p>
-                                    <p class="card-text" style="color:white;padding-top:10px;"># Algún otro más</p>
-                                {% endif %}
-                            </div>
-                        </div>
-
-                      </div>
-                    </div>
-                    {% if sistema in sistemasUsuario %}                                        
-                    <div class="card cuadroSistema back">
-                    {% else %}
-                    <div class="card cuadroSistemaGris back">
-                    {% endif %}
-                        <div class="row">
-                        <div class="col-md-6">
-                            <div class="card-img-bottom">
-                                {% if sistema in sistemasUsuario %}                                        
-                                    <img class="card-img-top  imagenSistema" src="{{asset(('uploads/'~ sistema.logo))}}" alt="Imagen del sistema">
-                                {% else %}
-                                    <img class="card-img-top imagenGris" src="{{asset(('uploads/'~ sistema.logo))}}" alt="Imagen del sistema">
-                                {% endif %}
-                            </div>
-                            
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card-block">
-                                {% if sistema in sistemasUsuario %}
-                                    <p class="card-text" style="color:white;padding-top:10px;">{{ sistema.descripcion }}</p>
-                                    <a class="btn btn-light btn-lg" style="padding-left:45px; padding-right:45px;background-color: #fcb819;border:none;"  href="{{ path('direccionamiento', {'id': sistema.id}) }}">Conectar</a><br><br>
-                                {% else %}
-                                    <p class="card-text" style="color:white;padding-top:10px;">{{ sistema.descripcion }}</p>
-                                    <h5 style="color:#15374F;"><b>No tienes permisos para ingresar a este sistema</b></h5>
-                                {% endif %}
-                                
-                                {% if is_granted('ROLE_ADMIN') %}
-                                    <a class="btn btn-dark" data-toggle="editar" href="{{path('modificarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="editar" style="width:25px;" src="{{ asset("img/editar.png") }}" alt="Card image cap"></a>
-                                    <a class="btn btn-danger"  href="{{path('eliminarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="borrar" style="width:25px;" src="{{ asset("img/eliminar.png") }}" width="10"alt="Card image cap"></a> 
-                                {% endif %}
-                            </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-            {% else %}
-                <h2>No hay sistemas disponibles.</h2>
-            {% endfor %}
-            </div>
-
-
-            <div id="sistemas" class="container-fluid col-5">
+    <div id="sistemas" class="row" style="margin:auto;border-bottom: 3px solid #2B2B2B">
+    
+        <div  class="container-fluid col-xs-4 col-md-4">
             {% set contador=1 %}
             {% for sistema in sistemas |slice((sistemas|length)/2,sistemas|length) %}
                 
@@ -170,86 +83,74 @@
                     {% set contador = contador + 1 %}    
                     
                     {% if sistema in sistemasUsuario %}                                        
-                    <div class="card cuadroSistema front">
+                    <div class="box-part text-center cuadroSistema">
                     {% else %}
-                    <div class="card cuadroSistemaGris front">
+                    <div class="box-part text-center cuadroSistema">
                     {% endif %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card-img-bottom">
-                                {% if sistema in sistemasUsuario %}                                        
-                                    <img class="card-img-top  imagenSistema" src="{{asset(('uploads/'~ sistema.logo))}}" alt="Imagen del sistema">
-                                {% else %}
-                                    <img class="card-img-top imagenGris" src="{{asset(('uploads/'~ sistema.logo))}}" alt="Imagen del sistema">
-                                {% endif %}
-                            </div>
                             
+                        <img src="{{asset(('uploads/'~ sistema.logo))}}" class=" imagenSistema "></img>
+                        
+                        <div class="title">
+                            <h4 style="color:#306086"><b>{{sistema.nombre}}</b></h4>
                         </div>
-                        <div class="col-md-6">
-                            <div class="card-block">
-                                {% if sistema in sistemasUsuario %}
-                                    <h2 class="card-title" style="text-align:center;padding-top: 10px;color:white;">{{ sistema.nombre }}</h2>
-                                    <hr style="background-color:white;">
-                                    <p class="card-text" style="color:white;padding-top:10px;">#{{sistema.palabra1}}</p>
-                                    <p class="card-text" style="color:white;padding-top:10px;">#{{sistema.palabra2}}</p>
-                                    <p class="card-text" style="color:white;padding-top:10px;">#{{sistema.palabra3}}</p>
-                                {% else %}
-                                    <h2 class="card-title" style="color:#15374F;padding-top:10px;">{{ sistema.nombre }}</h2>
-                                    <p class="card-text" style="color:white;padding-top:10px;"># Agregar, editar y eliminar tu compra.</p>
-                                    <p class="card-text" style="color:white;padding-top:10px;"># Seguir tus licitaciones.</p>
-                                    <p class="card-text" style="color:white;padding-top:10px;"># Algún otro más</p>
-                                {% endif %}
-                            </div>
+                        
+                        <div class="text">
+                            <span style="color:grey;">{{sistema.descripcion}}</span>
                         </div>
+                        <hr>
+                        <a class="btn" style="background-color: #fc447c;color:white;"  href="{{ path('direccionamiento', {'id': sistema.id}) }}">Ingresar</a>
 
-                      </div>
-                    </div>
-                    {% if sistema in sistemasUsuario %}                                        
-                    <div class="card cuadroSistema back">
-                    {% else %}
-                    <div class="card cuadroSistemaGris back">
-                    {% endif %}
-                        <div class="row">
-                        <div class="col-md-6">
-                            <div class="card-img-bottom">
-                                {% if sistema in sistemasUsuario %}                                        
-                                    <img class="card-img-top  imagenSistema" src="{{asset(('uploads/'~ sistema.logo))}}" alt="Imagen del sistema">
-                                {% else %}
-                                    <img class="card-img-top imagenGris" src="{{asset(('uploads/'~ sistema.logo))}}" alt="Imagen del sistema">
-                                {% endif %}
-                            </div>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a class="btn btn-dark" data-toggle="editar" href="{{path('modificarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="editar" style="width:25px;" src="{{ asset("img/editar.png") }}" alt="Card image cap"></a>
+                            <a class="btn btn-danger"  href="{{path('eliminarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="borrar" style="width:25px;" src="{{ asset("img/eliminar.png") }}" width="10"alt="Card image cap"></a> 
+                        {% endif %}
                             
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card-block">
-                                {% if sistema in sistemasUsuario %}
-                                    <p class="card-text" style="color:white;padding-top:10px;">{{ sistema.descripcion }}</p>
-                                    <a class="btn btn-light btn-lg" style="padding-left:45px; padding-right:45px;background-color: #fcb819;border:none;"  href="{{ path('direccionamiento', {'id': sistema.id}) }}">Conectar</a><br><br>
-                                {% else %}
-                                    <p class="card-text" style="color:white;padding-top:10px;">{{ sistema.descripcion }}</p>
-                                    <h5 style="color:#15374F;"><b>No tienes permisos para ingresar a este sistema</b></h5>
-                                {% endif %}
-                                
-                                {% if is_granted('ROLE_ADMIN') %}
-                                    <a class="btn btn-dark" data-toggle="editar" href="{{path('modificarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="editar" style="width:25px;" src="{{ asset("img/editar.png") }}" alt="Card image cap"></a>
-                                    <a class="btn btn-danger"  href="{{path('eliminarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="borrar" style="width:25px;" src="{{ asset("img/eliminar.png") }}" width="10"alt="Card image cap"></a> 
-                                {% endif %}
-                            </div>
-                        </div>
-
-                      </div>
                     </div>
-                  </div>
+                </div>
+                    
             {% else %}
-                <h2>No hay sistemas disponibles.</h2>
+                <h2>Acá deberían aparecer los sistemas, pero no hay</h2>
+            {% endfor %}
+            </div>
+
+
+            <div class="container-fluid col-xs-4 col-md-4">
+            {% set contador=1 %}
+            {% for sistema in sistemas |slice(0,(sistemas|length)/2) %}
+                
+                {% set idContador='card' ~ contador %}
+
+                <div style="margin-left:20px;margin-bottom:10px;  margin-right: 10px;" id="{{idContador}}">
+                    {% set contador = contador + 1 %}    
+                    
+                    {% if sistema in sistemasUsuario %}                                        
+                    <div class="box-part text-center ">
+                    {% else %}
+                    <div class="box-part text-center cuadroSistemaGris">
+                    {% endif %}
+                            
+                            <img src="{{asset(('uploads/'~ sistema.logo))}}" style="width:90px;" aria-hidden="false"></img>
+                            
+                            <div class="title">
+                                <h4>{{sistema.nombre}}</h4>
+                            </div>
+                            
+                            <div class="text">
+                                <span>{{sistema.descripcion}}</span>
+                            </div>
+                            
+                            <a class="btn btn-light btn-lg"  href="{{ path('direccionamiento', {'id': sistema.id}) }}">Ingresar</a>
+
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="btn btn-dark" data-toggle="editar" href="{{path('modificarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="editar" style="width:25px;" src="{{ asset("img/editar.png") }}" alt="Card image cap"></a>
+                                <a class="btn btn-danger"  href="{{path('eliminarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="borrar" style="width:25px;" src="{{ asset("img/eliminar.png") }}" width="10"alt="Card image cap"></a> 
+                            {% endif %}
+                            
+                    </div>
+                </div>
             {% endfor %}
             </div>
   
-            
-            
-        
-        
-        
     </div>
     <h5 style="margin-left:15px;color:grey;padding-top:13px;">Los permisos se solicitan a <b style="color:#FEB413;">soporte@unraf.edu.ar</b></h5>
     <div class="container">
