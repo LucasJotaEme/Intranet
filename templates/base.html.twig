@@ -16,14 +16,17 @@
     <body>
     {% block body %}
     <nav class="navbar navbar-expand-md navbar-light">
-        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{{path('sistemas')}}"><img src="{{ asset("img/home.png") }}" width="30" height="30" alt="Home"></a>
+        <div class="w-100 order-1 order-md-0 dual-collapse2">
             {# Este div es para dejar centrado Los botones #}
-            <a class="navbar-brand" href="{{path('sistemas')}}"><img src="{{ asset("img/home.png") }}" width="30" height="30" alt="Home"></a>
         </div>
-        <div class="mx-auto order-0 ">
-            <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse dual-collapse2 mx-auto order-3">
+            <ul class="navbar-nav ml-auto ">
                 {% if is_granted('ROLE_ADMIN') %}
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown  ">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sistemas
                     </a>
@@ -36,9 +39,6 @@
                 </li>
                 {% endif %}
             </ul>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
@@ -48,10 +48,6 @@
                 </li>
             </ul>
         </div>
-        {{ render(controller(
-        'App\\Controller\\FuncionesController::baseAction',
-        { 'max': 10 }
-    )) }}
     </nav>
                     
     {% block notificaciones %}

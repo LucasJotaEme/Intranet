@@ -25,7 +25,7 @@ class SistemaController extends AbstractController
         $novedades= $em->getRepository(Novedad::class)->findAll();
         
         //Se obtiene los sistemas del usuario, y se lo pasa al .twig.
-        return $this->render('sistema/acceso.html.twig', [
+        return $this->render('sistema/acceso.html copy.twig', [
             'sistemas' => $sistemas, 'tamanio' => count($sistemas), 'sistemasUsuario' => $usuario->getSistemas(), 'novedades' => $novedades
         ]);
     }
