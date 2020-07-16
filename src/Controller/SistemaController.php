@@ -121,52 +121,6 @@ class SistemaController extends AbstractController
     }
     
     /**
-     * @Route("/admin/permisos/", name="permisos")
-     */
-    public function permisos(Request $request){
-        $em = $this->getDoctrine()->getManager();
-        $sistemas= $em->getRepository(Sistema::class)->findAll();
-        $usuarios= $em->getRepository(User::class)->findAll();
-        
-        return $this->render('sistema/permisos.html.twig', [
-            'sistemas' => $sistemas, 'usuarios' => $usuarios
-        ]);
-    }
-    
-    /**
-     * @Route("/admin/permisos/agregar/{idSistema}/{idUsuario}", name="agregarPermiso")
-     */
-    public function agregarPermiso(Request $request,$idSistema,$idUsuario){
-        $usuario=new User();
-        $sistema=new Sistema();
-        $em = $this->getDoctrine()->getManager();
-        
-        $sistema= $em->getRepository(Sistema::class)->find($idSistema);
-        $usuario= $em->getRepository(User::class)->find($idUsuario);
-        $sistema->addUsuario($usuario);
-        
-        $em->flush();
-        
-        return $this->permisos($request);
-    }
-    
-    /**
-     * @Route("/admin/permisos/quitar/{idSistema}/{idUsuario}", name="quitarPermiso")
-     */
-    public function quitarPermiso(Request $request,$idSistema,$idUsuario){
-        
-        $em = $this->getDoctrine()->getManager();
-        
-        $sistema= $em->getRepository(Sistema::class)->find($idSistema);
-        $usuario= $em->getRepository(User::class)->find($idUsuario);
-        $sistema->removeUsuario($usuario);
-        
-        $em->flush();
-        
-        return $this->permisos($request);
-    }
-    
-    /**
      * @Route("/user/direccionamiento/{id}", name="direccionamiento")
      */
     public function direccionamiento(Request $request,$id){

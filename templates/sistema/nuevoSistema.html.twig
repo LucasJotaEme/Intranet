@@ -14,10 +14,10 @@
     </div>
     <div style="background-color:white" class="container formularioSistema">
         <div class="row">
-            <div class="col-4">
-                <img class="card-img-top rounded imagenSistema" id="imagen" src="{{asset(('uploads/'~ imagen))}}" alt="Imagen del sistema">
+            <div class="col-xs-4 col-md-4">
+                <img class="card-img-top rounded imagenSistemaBorde" id="imagen" src="{{asset(('uploads/'~ imagen))}}" alt="Imagen del sistema">
             </div>
-        <div class="col-8">
+        <div class="col-xs-8 col-md-8">
             {{ form_start(formulario, {'enctype':'multipart/form-data'})}}
             <div style="margin-top: 30px;" class="form-group row">
                 <div class="col-sm-2 col-form-label">
@@ -31,7 +31,7 @@
                 <div class="col-2 col-form-label">
                     <h5>Imágen:</h5>
                 </div>
-                <div class="col-10 espaciado ">
+                <div class="col-sm-10 espaciado ">
                       {{form_widget ( formulario.logo , { attr : { accept : ' application / pdf, .png, .jpg, .ico ' , class : ' form-control campoForm' }})}}
                 </div>
             </div>
@@ -52,18 +52,8 @@
                 {{ form_widget(formulario.descripcion, {attr: {class: 'form-control campoForm'} })}}
             </div>
         </div>
-        <div class="form-group row">
-            <div class="col-sm-2 col-form-label">
-                <h5>Palabras Claves:</h5>
-            </div>
-            <div class="col-sm-10 espaciado ">
-                1#{{ form_widget(formulario.palabra1, {attr: {class: 'form-control campoForm'} })}}
-                2#{{ form_widget(formulario.palabra2, {attr: {class: 'form-control campoForm'} })}}
-                3#{{ form_widget(formulario.palabra3, {attr: {class: 'form-control campoForm'} })}}
-            </div>
-        </div>
     </div>
-            {{ form_widget(formulario.Listo, {attr: {class: 'container-fluid btn btn-primary colorBoton'} })}}
+            {{ form_widget(formulario.Crear, {attr: {class: 'container-fluid btn btn-primary colorBoton'} })}}
     {{ form_end(formulario) }}  
     </div>
     

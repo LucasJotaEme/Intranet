@@ -26,6 +26,10 @@ html, body{
     margin:20px 0px;
 }
 
+#ventanaModal{
+    opacity: 0.85;
+}
+
 .fa{
      color:#4183D7;
 }
@@ -135,8 +139,8 @@ h6{
 .formularioSistema{
     color:#306086;
     padding:20px;
-    border: solid 2px #DFE6E7;
-    
+    border-top: solid 2px #0F9FA8;
+    border-radius: 30px;
 }
 
 .separadorDatos{
@@ -150,6 +154,15 @@ h6{
       -moz-box-shadow: 0px 4px 11px -1px rgba(43,43,43,1);
       box-shadow: 0px 4px 11px -1px rgba(43,43,43,1);
     border-top: 5px solid #0F9FA8;
+    filter: brightness(100%);
+}
+
+.cuadroSistema:hover{
+    -webkit-box-shadow: 3px 6px 11px -1px rgba(43,43,43,1);
+      -moz-box-shadow: 3px 6px 11px -1px rgba(43,43,43,1);
+      box-shadow: 3px 6px 11px -1px rgba(43,43,43,1);
+    border-top: 5px solid #0F9FA8;
+    filter: brightness(110%);
 }
 
 .front{
@@ -163,8 +176,19 @@ h6{
 
 
 .cuadroSistemaGris{
-    background-image: linear-gradient(to right, #8d9899, #adb7b8);
-    
+    -webkit-box-shadow: 0px 4px 11px -1px rgba(43,43,43,1);
+      -moz-box-shadow: 0px 4px 11px -1px rgba(43,43,43,1);
+      box-shadow: 0px 4px 11px -1px rgba(43,43,43,1);
+    border-top: 5px solid #0F9FA8;
+    filter: brightness(100%);
+}
+
+.cuadroSistemaGris:hover{
+    -webkit-box-shadow: 3px 6px 11px -1px rgba(43,43,43,1);
+      -moz-box-shadow: 3px 6px 11px -1px rgba(43,43,43,1);
+      box-shadow: 3px 6px 11px -1px rgba(43,43,43,1);
+    border-top: 5px solid #0F9FA8;
+    filter: brightness(110%);
 }
 
 
@@ -180,6 +204,13 @@ h6{
     width:210px;
     padding:1px;
     border-radius: 4px;
+}
+
+.imagenSistemaBorde{
+    width:210px;
+    padding:1px;
+    border-radius:10px;
+    
 }
 
 .imagenGris{

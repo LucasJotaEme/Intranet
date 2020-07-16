@@ -36,6 +36,7 @@
         </div>
     </div>
 
+    {# Modal de novedades #}
     <div class="modal fade" id="ventanaModal">
         <div class="modal-dialog">
             <div class="modal-content scroll">
@@ -71,21 +72,23 @@
         </div>
     </div>
     
+
+
     <div id="sistemas" class="row" style="margin:auto;border-bottom: 3px solid #2B2B2B">
-    
+        {# Parte izquierda en donde aparecen los sistemas #}
         <div  class="container-fluid col-xs-4 col-md-4">
             {% set contador=1 %}
             {% for sistema in sistemas |slice((sistemas|length)/2,sistemas|length) %}
                 
                 {% set idContador='card' ~ contador %}
 
-                <div style="margin-left:20px;margin-bottom:10px;  margin-right: 10px;" id="{{idContador}}">
+                <div id="{{idContador}}">
                     {% set contador = contador + 1 %}    
                     
                     {% if sistema in sistemasUsuario %}                                        
                     <div class="box-part text-center cuadroSistema">
                     {% else %}
-                    <div class="box-part text-center cuadroSistema">
+                    <div class="box-part text-center cuadroSistemaGris">
                     {% endif %}
                             
                         <img src="{{asset(('uploads/'~ sistema.logo))}}" class=" imagenSistema "></img>
@@ -97,8 +100,9 @@
                         <div class="text">
                             <span style="color:grey;">{{sistema.descripcion}}</span>
                         </div>
+
                         <hr>
-                        <a class="btn" style="background-color: #fc447c;color:white;"  href="{{ path('direccionamiento', {'id': sistema.id}) }}">Ingresar</a>
+                        <a class="btn" style="background-color: #0F9FA8;color:white;"  href="{{ path('direccionamiento', {'id': sistema.id}) }}">Ingresar</a>
 
                         {% if is_granted('ROLE_ADMIN') %}
                             <a class="btn btn-dark" data-toggle="editar" href="{{path('modificarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="editar" style="width:25px;" src="{{ asset("img/editar.png") }}" alt="Card image cap"></a>
@@ -113,41 +117,49 @@
             {% endfor %}
             </div>
 
-
-            <div class="container-fluid col-xs-4 col-md-4">
+            {# Parte derecha en donde aparecen los sistemas #}
+            <div  class="container-fluid col-xs-4 col-md-4">
             {% set contador=1 %}
             {% for sistema in sistemas |slice(0,(sistemas|length)/2) %}
                 
                 {% set idContador='card' ~ contador %}
 
-                <div style="margin-left:20px;margin-bottom:10px;  margin-right: 10px;" id="{{idContador}}">
+                <div id="{{idContador}}">
                     {% set contador = contador + 1 %}    
                     
                     {% if sistema in sistemasUsuario %}                                        
-                    <div class="box-part text-center ">
+                    <div class="box-part text-center cuadroSistema">
                     {% else %}
                     <div class="box-part text-center cuadroSistemaGris">
                     {% endif %}
                             
-                            <img src="{{asset(('uploads/'~ sistema.logo))}}" style="width:90px;" aria-hidden="false"></img>
-                            
-                            <div class="title">
-                                <h4>{{sistema.nombre}}</h4>
-                            </div>
-                            
-                            <div class="text">
-                                <span>{{sistema.descripcion}}</span>
-                            </div>
-                            
-                            <a class="btn btn-light btn-lg"  href="{{ path('direccionamiento', {'id': sistema.id}) }}">Ingresar</a>
+                        <img src="{{asset(('uploads/'~ sistema.logo))}}" class=" imagenSistema "></img>
+                        
+                        <div class="title">
+                            <h4 style="color:#306086"><b>{{sistema.nombre}}</b></h4>
+                        </div>
+                        
+                        <div class="text">
+                            <span style="color:grey;">{{sistema.descripcion}}</span>
+                        </div>
 
-                            {% if is_granted('ROLE_ADMIN') %}
-                                <a class="btn btn-dark" data-toggle="editar" href="{{path('modificarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="editar" style="width:25px;" src="{{ asset("img/editar.png") }}" alt="Card image cap"></a>
-                                <a class="btn btn-danger"  href="{{path('eliminarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="borrar" style="width:25px;" src="{{ asset("img/eliminar.png") }}" width="10"alt="Card image cap"></a> 
-                            {% endif %}
-                            
+                        <hr>
+                        {% if sistema in sistemasUsuario %}                                        
+                            <a class="btn" style="background-color: #0F9FA8;color:white;"  href="{{ path('direccionamiento', {'id': sistema.id}) }}">Ingresar</a>
+                        {% else %}
+                            <button class="btn" style="background-color: grey;color:white;">Ingresar</button>
+                        {% endif %}
+
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a class="btn btn-dark" data-toggle="editar" href="{{path('modificarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="editar" style="width:25px;" src="{{ asset("img/editar.png") }}" alt="Card image cap"></a>
+                            <a class="btn btn-danger"  href="{{path('eliminarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="borrar" style="width:25px;" src="{{ asset("img/eliminar.png") }}" width="10"alt="Card image cap"></a> 
+                        {% endif %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a class="btn btn-warning" href="{{path('verPermisos', {'id': sistema.id})}}"><img class="card-img-top" title="editar" style="width:25px;" src="{{ asset("img/editar.png") }}" alt="Card image cap"></a>
+                        {% endif %}
                     </div>
                 </div>
+
             {% endfor %}
             </div>
   
