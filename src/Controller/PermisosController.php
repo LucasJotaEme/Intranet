@@ -6,7 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Sistema;
-use App\Entity\Novedad;
+use App\Entity\UserBusqueda;
+use App\Form\BusquedaUserType;
 use App\Entity\User;
 use App\Form\SistemaType;
 
@@ -18,12 +19,25 @@ class PermisosController extends AbstractController
      */
     public function permisos(Request $request,$id){
         $em = $this->getDoctrine()->getManager();
+
+        $form = $this->createForm(BusquedaUserType::class,new UserBusqueda());
+        $form->handleRequest($request);
+        $busqueda=$form->getData();
+
         $sistema= $em->getRepository(Sistema::class)->find($id);
         $usuarios= $em->getRepository(User::class)->findAll();
-        
-        return $this->render('permisos/permisos.html.twig', [
-            'sistema' => $sistema, 'usuarios' => $usuarios
+
+        if ($form->isSubmitted()){
+            return $this->render('permisos/permisos.html.twig', [
+            'sistema' => $sistema, 'usuarios' => $this->buscarUsuarios($busqueda),'formulario' => $form->createView()
         ]);
+        }
+        else{
+            return $this->render('permisos/permisos.html.twig', [
+            'sistema' => $sistema, 'usuarios' => $usuarios,'formulario' => $form->createView()
+        ]);
+        }
+        
     }
     
     /**
@@ -40,7 +54,7 @@ class PermisosController extends AbstractController
         
         $em->flush();
         
-        return $this->redirectToRoute('verPermisos');
+        return $this->permisos($request,$idSistema);
     }
     
     /**
@@ -56,6 +70,27 @@ class PermisosController extends AbstractController
         
         $em->flush();
         
-        return $this->redirectToRoute('verPermisos');
+        return $this->permisos($request, $idSistema);
+    }
+
+    //------------------ BUSQUEDAS A LA BD A PATA --------------------------
+
+    public function buscarUsuarios(UserBusqueda $busqueda){
+        
+        $manager=$this->getDoctrine()->getManager();
+        
+        $query = $manager->createQuery(
+        "SELECT u
+        FROM App\Entity\User u
+        WHERE u.email LIKE :email
+        ORDER BY u.id DESC
+        "
+        )->setParameter('email',$busqueda->getBuscar().'%');
+        
+        //Límite de resultados..
+        $query->setMaxResults(100);
+        
+        //Retorna busqueda de la compra..
+        return $query->getResult();
     }
 }
