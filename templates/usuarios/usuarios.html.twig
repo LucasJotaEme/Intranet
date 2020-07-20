@@ -17,6 +17,7 @@
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
+
 <div>
     <div>
         <h3 style="text-align:center;">Administración de ROLES<b></b></h3>
@@ -43,24 +44,56 @@
             {{ form_end(formulario) }}
             
         </div>
-
+    </div>
+    <table style="text-align:center;" class="table table-hover">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Email</th>
+        <th scope="col">Rol</th>
+        <th scope="col">Acción para rol</th>
+        </tr>
+    </thead>
     {% for usuario in usuarios %}
-    {# {% if usuario in sistema.usuarios %}   #}
-        <div class="row" style="margin:20px;border-bottom: solid 1.5px grey;">
-            <div class="col-8">
-                <h5 style="color:#2B2B2B;margin-top:10px;">{{ usuario.email }}</h5>
-                {% for rol in usuario.roles %}
-                    <h5 style="color:#2B2B2B;margin-top:10px;">{{ rol }}</h5>
-                {% endfor %}
-            </div>
-        </div>
-    {# {% endif %}   #}
+        <tbody style="">
+            <tr>
+            <th scope="row">{{ loop.index }}</th>
+            <td><h6 style="color:#fc447c">{{ usuario.email|trim('@unraf.edu.ar') }}</h6></td>
+            {% for rol in usuario.roles %}
+            {% if loop.last %}
+                <td><p style="color:#2B2B2B">{{ rol|slice(5,rol|length)}}</p></td>
+                    {% if rol=="ROLE_SUPERADMIN" %}
+                    <td>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+                            </label>
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+                            </label>
+                        </div>
+                    </td>
+                    {% elseif rol=="ROLE_ADMIN" %}
+                    <td>
+                        <a href="#" class="btn btn-success">Superadmin</a>
+                        <a href="#" class="btn btn-primary">User</a>
+                    </td>
+                    {% else %}
+                    <td>
+                        <a href="#" class="btn btn-dark">Admin</a>
+                        <a href="#" class="btn btn-success">SuperAdmin</a>
+                    </td>
+                    {% endif %}
+            {% endif %}  
+            {% endfor %}
+            </tr>
+        </tbody>
     {% else %}
         <div class="row" style="margin:20px;">
             <h3 style="color:grey;">No se encontraron usuarios</h3>
         </div>
     {% endfor %}  
-
+    
     </div>
     {% block notificaciones %}
         {{ parent() }}
