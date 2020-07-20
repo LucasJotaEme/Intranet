@@ -19,15 +19,13 @@
 </style>
 <div>
     <div>
-        <h3 style="text-align:center;">Permisos a <b>{{sistema.nombre}}</b></h3>
-    </div>
-    <div style="text-align:center;">
-        <img class="card-img-top  imagenSistema" src="{{asset(('uploads/'~ sistema.logo))}}" alt="Imagen del sistema">
+        <h3 style="text-align:center;">Administración de ROLES<b></b></h3>
     </div>
     <div  style="padding:10px; margin:10px;">
         <div >
-            <b> USUARIOS PERMITIDOS: {{ sistema.usuarios|length }} DE {{ usuarios|length }} </b>
+            <b> CANTIDAD DE USUARIOS: {{ usuarios|length }}</b>
         </div>
+        <hr>
         <div style="margin-top:5px;">
             {{ form_start(formulario, {'enctype':'multipart/form-data'})}}
             <div class="container campoForm" style="text-align:center;">
@@ -51,16 +49,10 @@
         <div class="row" style="margin:20px;border-bottom: solid 1.5px grey;">
             <div class="col-8">
                 <h5 style="color:#2B2B2B;margin-top:10px;">{{ usuario.email }}</h5>
+                {% for rol in usuario.roles %}
+                    <h5 style="color:#2B2B2B;margin-top:10px;">{{ rol }}</h5>
+                {% endfor %}
             </div>
-            {% if usuario in sistema.usuarios %}   
-                <div class="col-4" style="text-align:center;margin-bottom: 10px;">
-                    <a class="btn btn-danger" href="{{path('quitarPermiso', {'idSistema': sistema.id, 'idUsuario': usuario.id})}}">Quitar</a>
-                </div>
-            {% else %}
-                <div class="col-4" style="text-align:center;margin-bottom: 10px;">
-                    <a class="btn" style="background-color:#0F9FA8;color:white;" href="{{path('agregarPermiso', {'idSistema': sistema.id, 'idUsuario': usuario.id})}}">Agregar</a>
-                </div>
-            {% endif %}
         </div>
     {# {% endif %}   #}
     {% else %}
