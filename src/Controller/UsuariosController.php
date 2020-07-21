@@ -40,6 +40,23 @@ class UsuariosController extends AbstractController
         }
     }
 
+    /**
+     * @Route("/superadmin/convertingAdmin/{id}", name="cambioAdmin")
+     */
+    public function cambioAdmin(Request $request,$id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $usuario= $em->getRepository(User::class)->find($id);
+
+        $usuario->setRoles("{'ROLE_ADMIN'}");
+            
+        $em->persist($usuario);
+        return $this->render('usuarios/usuarios.html.twig', [
+            'usuarios' => $usuarios,'formulario' => $form->createView()
+        ]);
+    }
+
     //------------------ BUSQUEDAS A LA BD A PATA --------------------------
 
     public function buscarUsuarios(UserBusqueda $busqueda){
