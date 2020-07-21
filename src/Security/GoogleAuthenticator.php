@@ -49,7 +49,7 @@ class GoogleAuthenticator extends SocialAuthenticator
         if (!$user) {
             $user = new User();
             $user->setEmail($googleUser->getEmail());
-            $user->setRoles(['ROL_USER']);
+            $user->setRoles(['ROLE_USER']);
             $user->setUltimoAcceso($this->getFechActual());
             $user->setEstado("Alta");
             

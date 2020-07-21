@@ -41,7 +41,7 @@ class UsuariosController extends AbstractController
     }
 
     /**
-     * @Route("/superadmin/convertingAdmin/{id}", name="cambioAdmin")
+     * @Route("/superadmin/cambioAdmin/{id}", name="cambioAdmin")
      */
     public function cambioAdmin(Request $request,$id)
     {
@@ -49,12 +49,43 @@ class UsuariosController extends AbstractController
 
         $usuario= $em->getRepository(User::class)->find($id);
 
-        $usuario->setRoles("{'ROLE_ADMIN'}");
+        $usuario->setRoles(['ROLE_USER','ROLE_ADMIN']);
             
-        $em->persist($usuario);
-        return $this->render('usuarios/usuarios.html.twig', [
-            'usuarios' => $usuarios,'formulario' => $form->createView()
-        ]);
+        $em->flush($usuario);
+        
+        return $this->redirectToRoute('usuarios');
+    }
+
+    /**
+     * @Route("/superadmin/cambioUser/{id}", name="cambioUser")
+     */
+    public function cambioUser(Request $request,$id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $usuario= $em->getRepository(User::class)->find($id);
+
+        $usuario->setRoles(['ROLE_USER']);
+            
+        $em->flush($usuario);
+        
+        return $this->redirectToRoute('usuarios');
+    }
+
+    /**
+     * @Route("/superadmin/cambioSuperAdmin/{id}", name="cambioSuperAdmin")
+     */
+    public function cambioSuperAdmin(Request $request,$id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $usuario= $em->getRepository(User::class)->find($id);
+
+        $usuario->setRoles(['ROLE_USER','ROLE_ADMIN','ROLE_SUPERADMIN']);
+            
+        $em->flush($usuario);
+        
+        return $this->redirectToRoute('usuarios');
     }
 
     //------------------ BUSQUEDAS A LA BD A PATA --------------------------
