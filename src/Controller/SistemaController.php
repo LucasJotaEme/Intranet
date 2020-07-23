@@ -139,6 +139,28 @@ class SistemaController extends AbstractController
         
         return $this->redirect($url);
     }
+
+    /**
+     * @Route("/user/direccionamientoDocumentos", name="direccionamientoDocs")
+     */
+    public function direccionamientoDocumentos(Request $request){
+        $user = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $sistema= $em->getRepository(Sistema::class)->findBy(
+            ['nombre' => 'Documentos']
+        );
+        
+        $url = $sistema->getUrl();
+        $rol="";
+        if (count($user->getRoles())==2){
+            $rol="ROLE_ADMIN";
+        }else{
+            $rol="ROLE_USER";
+        }
+        $url .= "/" . $user->getEmail() . "/" . $rol . "/" . $user->getEstado(); 
+        
+        return $this->redirect($url);
+    }
     
     
 }

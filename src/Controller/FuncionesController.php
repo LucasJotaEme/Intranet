@@ -10,25 +10,23 @@ use App\Entity\Sistema;
 class FuncionesController extends AbstractController
 {
     /**
-     * @Route("/novedad/{fecha}/{numero}/{titulo}/{descripcion}/{link}", name="crearNovedad")
+     * @Route("/novedad/{fecha}/{numero}/{titulo}/", name="crearNovedad")
      */
-    public function crearNovedad($fecha,$numero,$titulo,$descripcion,$link)
+    public function crearNovedad($fecha,$numero,$titulo)
     {
         $manager = $this->getDoctrine()->getManager();
         
         $novedad = new Novedad();
-        $fechaDateTime = \DateTime::createFromFormat('Y-m-d H:i:s', $fecha); 
+        $fechaDateTime = \DateTime::createFromFormat('d-m-Y H:i:s', $fecha); 
         $novedad->setFecha($fechaDateTime);
         $novedad->setNumeroDocumento($numero);
         $novedad->setTitulo($titulo);
-        $novedad->setDescripcion($descripcion);
-        $novedad->setLink($link);
         
         $manager->persist($novedad);
         $manager->flush();
         
         
-        return $this->redirectToRoute("http://localhost/Documentos/public/index.php/");
+        return $this->redirectToRoute("direccionamientoDocs");
     }
 
     
