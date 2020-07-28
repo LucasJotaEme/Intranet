@@ -50,7 +50,7 @@ class SistemaController extends AbstractController
             
                 $extensionArchivo=$imagen->guessExtension();
                 $nombreArchivo= time().".".$extensionArchivo;
-                $imagen->move("uploads",$nombreArchivo);
+                $imagen->move("./uploads",$nombreArchivo);
                 $sistema->setLogo($nombreArchivo);
             }else{
                 $sistema->setLogo("iconoUnraf.png");
