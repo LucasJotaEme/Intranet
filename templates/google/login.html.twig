@@ -13,4 +13,19 @@
 
 {% block body %}
     {{ parent() }}
+    <div id="divLogin" class="container cuadroLogin">
+            <div style="margin-bottom:40px;margin-top:20px;">
+                <h1 style="color:white;">Bienvenido a la intranet de UNRaf</h1>
+            </div>
+            <div>
+                <h4 style="color:white;">Por favor, inicie sesión con su cuenta institucional:</h4>
+                <div id="separar">
+                    <a id="botonLogin" href="{{ path("connect_google")}}" style="padding:15px 50px 15px 50px;background-color:#fc447c;color:white;" class="btn btn-lg"><img style="width:50px;" src="{{ asset("img/logoGmail.png") }}" alt="Logo gmail">Login</a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:20px;">
+            <img style="width:200px;" src="{{ asset("img/logo-transparente.png") }}" alt="Logo unraf">
+        </div>  
+    </div>    
 {% endblock %}

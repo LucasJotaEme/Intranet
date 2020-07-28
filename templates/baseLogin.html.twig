@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Intranet{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -13,33 +13,9 @@
             <link rel="icon" href="{{ asset("img/iconoUnraf.png") }}">
         {% endblock icon %}
     </head>
-    <body>
-        <div id="divLogin" width: 75%; height: 100vh; class="container cuadroLogin fondo">
-            <svg viewBox="0 0 960 300">
-                <symbol id="s-text">
-                        <text text-anchor="middle" x="50%" y="60%">Intranet</text>
-                </symbol>
-                <g class = "g-ants">
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                </g>
-                <div class="container" style="text-align:center;">
-            <section class=botones>
-                <h2 style="margin-bottom: 20px;color:white;">Iniciar sesión desde:</h2>
-                <div id="separar">
-                    <a id="botonLogin" href="{{ path("connect_google")}}" style="padding:15px 50px 15px 50px;background-color:#fc447c;color:white;" class="btn btn-lg"><img style="width:50px;" src="{{ asset("img/logoGmail.png") }}" alt="Logo gmail">Gmail</a>
-                    <p id="mensajeLogin" style="color:white;">
-                        Sólo para cuentas con dominio UNRaf
-                    </p>
-                </div>
-            </section>
-        </div>
-            </svg>
-        </div>    
-    </body>
+    {% block body %}
+        
+    {% endblock body %}
     
     {% block javascripts %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

@@ -4,24 +4,19 @@ html, body{
   font-weight: 300;
 }
 
-body{
-  background-image: url('../img/iconoUnrafOpaco.jpg');
-  background-size:850px;
-  background-repeat: repeat; 
-  background-position: right bottom;
-  font-family: Arial;
-
-}
-
 .cuadroLogin{
-    background-color:#F3F3F3;
-    padding: 5px 20px 20px 20px;
-    margin-top: 60px;
+    background-color:#0F9FA8;
+    margin-top:140px;
+    padding: 5px 20px 20px 10px;
     box-shadow: 5px 5px 18px #666; 
+    -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   text-align: center;
 }
 
-.fondo{
-    background-image: url('../img/fondoUnraf.jpg');
+/*.fondo{
     -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
@@ -30,7 +25,7 @@ body{
    width: 100% ;
    text-align: center;
     
-}
+}*/
 
 .imagenLogin{
     -webkit-filter: grayscale(100%);
