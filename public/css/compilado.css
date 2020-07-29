@@ -6,6 +6,8 @@ html, body{
 
 .cuadroLogin{
     background-color:#0F9FA8;
+    border-radius:2px;
+    background-image: linear-gradient(to right, #11b8c4 ,#0F9FA8, #0f858d);
     margin-top:140px;
     padding: 5px 20px 20px 10px;
     box-shadow: 5px 5px 18px #666; 
@@ -13,7 +15,7 @@ html, body{
    -moz-background-size: cover;
    -o-background-size: cover;
    background-size: cover;
-   text-align: center;
+   padding-left: 40px;
 }
 
 /*.fondo{

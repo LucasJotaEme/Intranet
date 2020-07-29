@@ -26,13 +26,13 @@
 
 {# Recorrido de los sistemas del usuario, recibido por parametro #}
 
-    <div style="margin-left:10px;margin-top:-20px;">
+    <div style="margin-left:10px;margin-top:-20px;margin-bottom:20px;">
         <a href="#ventanaModal" data-toggle="modal" style="background-color:#516878;color:white;" class="btn" >Ver novedades</a>
     </div>
 
     <div style="margin:auto;">
-        <div class="col-md-10 container-fluid">
-            <h3 class="margin-bottom:10px;"><img style="padding-bottom:5px;" src="{{ asset("img/iconoUnraf.png") }}" width="30" alt="Logo unraf">SISTEMAS INTERNOS</h3>
+        <div class="container-fluid">
+            <h3><img style="padding-bottom:5px;" src="{{ asset("img/iconoUnraf.png") }}" width="30" alt="Logo unraf">SISTEMAS INTERNOS</h3>
         </div>
     </div>
 
@@ -74,100 +74,55 @@
     
 
 
-    <div id="sistemas" class="row divSistemas" style="">
-        {# Parte izquierda en donde aparecen los sistemas #}
-        <div class="container col-xs-5 col-md-5">
-            {% set contador=1 %}
-            {% for sistema in sistemas |slice((sistemas|length)/2,sistemas|length) %}
-                
-                {% set idContador='card' ~ contador %}
-
-                <div id="{{idContador}}">
-                    {% set contador = contador + 1 %}    
-                    
+    <div id="sistemas" class="divSistemas">
+        {# Parte donde aparecen los sistemas #}
+        {% for sistema in sistemas %}
+            {% if loop.index % 4 == 0 or loop.first %}
+            <div class="row">
+            {% endif %}
+                <div class="container col-xs-4 col-md-4">  
                     {% if sistema in sistemasUsuario %}                                        
                     <div class="box-part text-center cuadroSistema">
                     {% else %}
                     <div class="box-part text-center cuadroSistemaGris">
                     {% endif %}
-                            
-                        <img src="{{asset(('uploads/'~ sistema.logo))}}" class=" imagenSistema "></img>
-                        
-                        <div class="title">
-                            <h4 style="color:#306086"><b>{{sistema.nombre}}</b></h4>
-                        </div>
-                        
-                        <div class="text">
-                            <span style="color:grey;">{{sistema.descripcion}}</span>
-                        </div>
-
-                        <hr>
-                        <a class="btn" style="background-color: #0F9FA8;color:white;"  href="{{ path('direccionamiento', {'id': sistema.id}) }}">Ingresar</a>
-
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <a class="btn btn-dark" data-toggle="editar" href="{{path('modificarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="editar" style="width:25px;" src="{{ asset("img/editar.png") }}" alt="Card image cap"></a>
-                            <a class="btn btn-danger"  href="{{path('eliminarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="borrar" style="width:25px;" src="{{ asset("img/eliminar.png") }}" width="10"alt="Card image cap"></a> 
-                        {% endif %}
-                            
+                    <div style="width:40%;">        
+                    <img src="{{asset(('uploads/'~ sistema.logo))}}" style="width:50%;height:30%;" class=" imagenSistema "></img>
+                    </div>   
+                    <div class="title">
+                        <h4 style="color:#306086"><b>{{sistema.nombre}}</b></h4>
                     </div>
-                </div>
-                    
-            {% else %}
-                <h2>Acá deberían aparecer los sistemas, pero no hay</h2>
-            {% endfor %}
-            </div>
-
-            {# Parte derecha en donde aparecen los sistemas #}
-            <div  class="container-fluid col-xs-5 col-md-5">
-            {% set contador=1 %}
-            {% for sistema in sistemas |slice(0,(sistemas|length)/2) %}
-                
-                {% set idContador='card' ~ contador %}
-
-                <div id="{{idContador}}">
-                    {% set contador = contador + 1 %}    
-                    
-                    {% if sistema in sistemasUsuario %}                                        
-                    <div class="box-part text-center cuadroSistema">
-                    {% else %}
-                    <div class="box-part text-center cuadroSistemaGris">
-                    {% endif %}
-                            
-                        <img src="{{asset(('uploads/'~ sistema.logo))}}" class=" imagenSistema "></img>
-                        
-                        <div class="title">
-                            <h4 style="color:#306086"><b>{{sistema.nombre}}</b></h4>
-                        </div>
-                        
-                        <div class="text">
-                            <span style="color:grey;">{{sistema.descripcion}}</span>
-                        </div>
-
-                        <hr>
                         {% if sistema in sistemasUsuario %}                                        
                             <a class="btn" style="background-color: #0F9FA8;color:white;"  href="{{ path('direccionamiento', {'id': sistema.id}) }}">Ingresar</a>
                         {% else %}
                             <button class="btn" style="background-color: grey;color:white;">Ingresar</button>
                         {% endif %}
 
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <a class="btn btn-dark" data-toggle="editar" href="{{path('modificarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="editar" style="width:25px;" src="{{ asset("img/editar.png") }}" alt="Card image cap"></a>
-                            <a class="btn btn-danger"  href="{{path('eliminarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="borrar" style="width:25px;" src="{{ asset("img/eliminar.png") }}" width="10"alt="Card image cap"></a> 
-                        {% endif %}
-                        {% if is_granted('ROLE_ADMIN') %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a class="btn btn-dark" data-toggle="editar" href="{{path('modificarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="editar" style="width:25px;" src="{{ asset("img/editar.png") }}" alt="Card image cap"></a>
+                        <a class="btn btn-danger"  href="{{path('eliminarSistema', {'id': sistema.id})}}"><img class="card-img-top" title="borrar" style="width:25px;" src="{{ asset("img/eliminar.png") }}" width="10"alt="Card image cap"></a> 
+                        {% if is_granted('ROLE_SUPERADMIN') %}
                             <a class="btn btn-warning" href="{{path('verPermisos', {'id': sistema.id})}}"><img class="card-img-top" title="permisos" style="width:25px;" src="{{ asset("img/permisos2.png") }}" alt="Card image cap"></a>
                         {% endif %}
+                    {% endif %}               
+                    <div class="text">
+                        <span style="color:grey;">{{sistema.descripcion}}</span>
+                    </div>
                     </div>
                 </div>
-
+                {% if loop.index % 3 == 0 or loop.last %}
+                </div>
+                {% endif %}    
+            {% else %}
+                <h2>Acá deberían aparecer los sistemas, pero no hay</h2>
             {% endfor %}
+
             </div>
   
     </div>
-    <h5 style="margin-left:15px;color:grey;padding-top:13px;">Los permisos se solicitan a <b style="color:#FEB413;">soporte@unraf.edu.ar</b></h5>
-    <div class="container">
-        {#<a class="btn btn-primary" href="{{ path("app_logout") }}">Volver</a>#}
-    </div>
+    <footer style="background-color:grey;margin:auto;">
+        <h5 style="margin-left:15px;color:white;padding-top:5px;">Los permisos se solicitan a <b style="color:#FEB413;">soporte@unraf.edu.ar</b></h5>
+    </footer>
 
     {% block notificaciones %}
         {{ parent() }}
