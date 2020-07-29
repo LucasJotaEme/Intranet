@@ -6,6 +6,11 @@ html, body{
   
 }
 
+.divSistemas{
+    margin:20px 80px 20px 80px;
+    border-bottom: 3px solid #2B2B2B;
+}
+
 .scroll{
     max-height: 500px;
     overflow-y: scroll;

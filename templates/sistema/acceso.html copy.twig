@@ -74,9 +74,9 @@
     
 
 
-    <div id="sistemas" class="row" style="margin:auto;border-bottom: 3px solid #2B2B2B">
+    <div id="sistemas" class="row divSistemas" style="">
         {# Parte izquierda en donde aparecen los sistemas #}
-        <div  class="container-fluid col-xs-4 col-md-4">
+        <div class="container col-xs-5 col-md-5">
             {% set contador=1 %}
             {% for sistema in sistemas |slice((sistemas|length)/2,sistemas|length) %}
                 
@@ -118,7 +118,7 @@
             </div>
 
             {# Parte derecha en donde aparecen los sistemas #}
-            <div  class="container-fluid col-xs-4 col-md-4">
+            <div  class="container-fluid col-xs-5 col-md-5">
             {% set contador=1 %}
             {% for sistema in sistemas |slice(0,(sistemas|length)/2) %}
                 
