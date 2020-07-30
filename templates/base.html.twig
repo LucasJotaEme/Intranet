@@ -42,11 +42,10 @@
                 {% endif %}
             </ul>
         </div>
-        
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="https://mail.google.com/mail/u/0/#inbox?compose=new"><img src="{{ asset("img/soporte.jpg") }}" title="Soporte técnico" width="25" height="25" alt="Sesion"></a>
+                    <a class="nav-link" data-toggle="modal" href="#ventanaModal1"><img src="{{ asset("img/soporte.jpg") }}" title="Soporte técnico" width="25" height="25" alt="Sesion"></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('app_logout') }}"><img src="{{ asset("img/cerrarSesion.png") }}" width="19" height="19" alt="Sesion"> Cerrar sesión
@@ -54,9 +53,28 @@
                 </li>
             </ul>
         </div>
-
-        
     </nav>
+
+    {# Modal de AYUDA #}
+    <div class="modal fade" id="ventanaModal1">
+        <div class="modal-dialog">
+            <div class="modal-content scroll">
+
+                <div class="modal-header">
+                    <img src="{{ asset("img/soporte.jpg") }}" title="Soporte técnico" width="25" height="25" alt="Sesion">
+                    <h3 class="modal-title">Ayuda/Soporte técnico/Permisos</h3>
+                    <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    Se debe comunicar a soporte@unraf.edu.ar desde <a style="padding:0px;" class="nav-link" href="https://mail.google.com/mail/u/0/#inbox?compose=new"> aquí</a>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn container" style="text-align:center;background-color:#516878;color:white;" data-dismiss="modal">Aceptar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
                     
     {% block notificaciones %}
         {% for message in app.flashes('correcto') %}
