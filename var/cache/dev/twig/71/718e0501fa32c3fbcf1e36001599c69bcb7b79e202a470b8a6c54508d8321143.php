@@ -160,6 +160,27 @@ class __TwigTemplate_e8d30749d7373418b2cd4894a63c7ce6f85cf83605fc57c41f9c3a46ba7
         echo "    ";
         $this->displayParentBlock("body", $context, $blocks);
         echo "
+    <div id=\"divLogin\" class=\"container cuadroLogin\">
+            <div style=\"margin-bottom:40px;margin-top:20px;\">
+                <h1 style=\"color:white;\">Bienvenido a la intranet de <b>UNRaf</b></h1>
+            </div>
+            <div>
+                <h4 style=\"color:white;\">Por favor, inicie sesión con su cuenta institucional:</h4>
+                <div id=\"separar\">
+                    <a id=\"botonLogin\" href=\"";
+        // line 23
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connect_google");
+        echo "\" style=\"padding:15px 50px 15px 50px;background-color:#FEB413;color:white;\" class=\"btn btn-lg\">Login</a>
+                </div>
+            </div>
+        </div>
+        <div style=\"text-align:center;margin-top:20px;\">
+            <img style=\"width:200px;\" src=\"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/logo-transparente.png"), "html", null, true);
+        echo "\" alt=\"Logo unraf\">
+        </div>  
+    </div>    
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -181,7 +202,7 @@ class __TwigTemplate_e8d30749d7373418b2cd4894a63c7ce6f85cf83605fc57c41f9c3a46ba7
 
     public function getDebugInfo()
     {
-        return array (  160 => 15,  150 => 14,  137 => 11,  127 => 10,  114 => 8,  104 => 7,  91 => 5,  81 => 4,  62 => 3,  39 => 1,);
+        return array (  180 => 28,  172 => 23,  160 => 15,  150 => 14,  137 => 11,  127 => 10,  114 => 8,  104 => 7,  91 => 5,  81 => 4,  62 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -201,6 +222,21 @@ class __TwigTemplate_e8d30749d7373418b2cd4894a63c7ce6f85cf83605fc57c41f9c3a46ba7
 
 {% block body %}
     {{ parent() }}
+    <div id=\"divLogin\" class=\"container cuadroLogin\">
+            <div style=\"margin-bottom:40px;margin-top:20px;\">
+                <h1 style=\"color:white;\">Bienvenido a la intranet de <b>UNRaf</b></h1>
+            </div>
+            <div>
+                <h4 style=\"color:white;\">Por favor, inicie sesión con su cuenta institucional:</h4>
+                <div id=\"separar\">
+                    <a id=\"botonLogin\" href=\"{{ path(\"connect_google\")}}\" style=\"padding:15px 50px 15px 50px;background-color:#FEB413;color:white;\" class=\"btn btn-lg\">Login</a>
+                </div>
+            </div>
+        </div>
+        <div style=\"text-align:center;margin-top:20px;\">
+            <img style=\"width:200px;\" src=\"{{ asset(\"img/logo-transparente.png\") }}\" alt=\"Logo unraf\">
+        </div>  
+    </div>    
 {% endblock %}
 ", "google/login.html.twig", "/var/www/html/Intranet/templates/google/login.html.twig");
     }

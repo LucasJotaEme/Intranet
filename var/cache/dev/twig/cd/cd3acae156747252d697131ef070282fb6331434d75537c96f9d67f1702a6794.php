@@ -30,6 +30,7 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
             'icon' => [$this, 'block_icon'],
+            'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
         ];
     }
@@ -48,7 +49,7 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
 <html>
     <head>
         <meta charset=\"UTF-8\">
-\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+\t    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
         <title>";
         // line 6
         $this->displayBlock('title', $context, $blocks);
@@ -61,43 +62,15 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
         $this->displayBlock('icon', $context, $blocks);
         // line 15
         echo "    </head>
-    <body>
-        <div id=\"divLogin\" width: 75%; height: 100vh; class=\"container cuadroLogin fondo\">
-            <svg viewBox=\"0 0 960 300\">
-                <symbol id=\"s-text\">
-                        <text text-anchor=\"middle\" x=\"50%\" y=\"60%\">Intranet</text>
-                </symbol>
-                <g class = \"g-ants\">
-                    <use xlink:href=\"#s-text\" class=\"text-copy\"></use>
-                    <use xlink:href=\"#s-text\" class=\"text-copy\"></use>
-                    <use xlink:href=\"#s-text\" class=\"text-copy\"></use>
-                    <use xlink:href=\"#s-text\" class=\"text-copy\"></use>
-                    <use xlink:href=\"#s-text\" class=\"text-copy\"></use>
-                </g>
-                <div class=\"container\" style=\"text-align:center;\">
-            <section class=botones>
-                <h2 style=\"margin-bottom: 20px;color:white;\">Iniciar sesión desde:</h2>
-                <div id=\"separar\">
-                    <a id=\"botonLogin\" href=\"";
-        // line 33
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connect_google");
-        echo "\" style=\"padding:15px 50px 15px 50px;background-color:#fc447c;color:white;\" class=\"btn btn-lg\"><img style=\"width:50px;\" src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/logoGmail.png"), "html", null, true);
-        echo "\" alt=\"Logo gmail\">Gmail</a>
-                    <p id=\"mensajeLogin\" style=\"color:white;\">
-                        Sólo para cuentas con dominio UNRaf
-                    </p>
-                </div>
-            </section>
-        </div>
-            </svg>
-        </div>    
-    </body>
-    
     ";
-        // line 44
+        // line 16
+        $this->displayBlock('body', $context, $blocks);
+        // line 19
+        echo "    
+    ";
+        // line 20
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 56
+        // line 32
         echo "</html>
 ";
         
@@ -176,7 +149,28 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
 
     }
 
-    // line 44
+    // line 16
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        // line 17
+        echo "        
+    ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 20
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -186,14 +180,14 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 45
+        // line 21
         echo "            <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
             ";
-        // line 47
+        // line 23
         echo "            <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
             <script type=\"text/javascript\" src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
             <script src=\"";
-        // line 49
+        // line 25
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accionesDinamicas.js"), "html", null, true);
         echo "\"></script>
             
@@ -215,14 +209,9 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
         return "baseLogin.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  197 => 49,  193 => 47,  190 => 45,  180 => 44,  167 => 13,  157 => 12,  144 => 9,  141 => 8,  131 => 7,  112 => 6,  101 => 56,  99 => 44,  83 => 33,  63 => 15,  60 => 12,  58 => 7,  54 => 6,  47 => 1,);
+        return array (  191 => 25,  187 => 23,  184 => 21,  174 => 20,  163 => 17,  153 => 16,  140 => 13,  130 => 12,  117 => 9,  114 => 8,  104 => 7,  85 => 6,  74 => 32,  72 => 20,  69 => 19,  67 => 16,  64 => 15,  61 => 12,  59 => 7,  55 => 6,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -231,7 +220,7 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
 <html>
     <head>
         <meta charset=\"UTF-8\">
-\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+\t    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
         <title>{% block title %}Intranet{% endblock %}</title>
         {% block stylesheets %}
             <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
@@ -242,33 +231,9 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
             <link rel=\"icon\" href=\"{{ asset(\"img/iconoUnraf.png\") }}\">
         {% endblock icon %}
     </head>
-    <body>
-        <div id=\"divLogin\" width: 75%; height: 100vh; class=\"container cuadroLogin fondo\">
-            <svg viewBox=\"0 0 960 300\">
-                <symbol id=\"s-text\">
-                        <text text-anchor=\"middle\" x=\"50%\" y=\"60%\">Intranet</text>
-                </symbol>
-                <g class = \"g-ants\">
-                    <use xlink:href=\"#s-text\" class=\"text-copy\"></use>
-                    <use xlink:href=\"#s-text\" class=\"text-copy\"></use>
-                    <use xlink:href=\"#s-text\" class=\"text-copy\"></use>
-                    <use xlink:href=\"#s-text\" class=\"text-copy\"></use>
-                    <use xlink:href=\"#s-text\" class=\"text-copy\"></use>
-                </g>
-                <div class=\"container\" style=\"text-align:center;\">
-            <section class=botones>
-                <h2 style=\"margin-bottom: 20px;color:white;\">Iniciar sesión desde:</h2>
-                <div id=\"separar\">
-                    <a id=\"botonLogin\" href=\"{{ path(\"connect_google\")}}\" style=\"padding:15px 50px 15px 50px;background-color:#fc447c;color:white;\" class=\"btn btn-lg\"><img style=\"width:50px;\" src=\"{{ asset(\"img/logoGmail.png\") }}\" alt=\"Logo gmail\">Gmail</a>
-                    <p id=\"mensajeLogin\" style=\"color:white;\">
-                        Sólo para cuentas con dominio UNRaf
-                    </p>
-                </div>
-            </section>
-        </div>
-            </svg>
-        </div>    
-    </body>
+    {% block body %}
+        
+    {% endblock body %}
     
     {% block javascripts %}
             <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>

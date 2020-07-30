@@ -50,7 +50,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
 <html>
     <head>
         <meta charset=\"UTF-8\">
-\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+\t    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
         <title>";
         // line 6
         $this->displayBlock('title', $context, $blocks);
@@ -67,13 +67,13 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
     ";
         // line 18
         $this->displayBlock('body', $context, $blocks);
-        // line 77
+        // line 80
         echo "    </body>
     
     ";
-        // line 79
+        // line 82
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 102
+        // line 105
         echo "    
 </html>
 ";
@@ -212,8 +212,14 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         <div class=\"navbar-collapse collapse w-100 order-3 dual-collapse2\">
             <ul class=\"navbar-nav ml-auto\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"";
+                    <a class=\"nav-link\" href=\"https://mail.google.com/mail/u/0/#inbox?compose=new\"><img src=\"";
         // line 49
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/soporte.jpg"), "html", null, true);
+        echo "\" title=\"Soporte técnico\" width=\"25\" height=\"25\" alt=\"Sesion\"></a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+        // line 52
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/cerrarSesion.png"), "html", null, true);
@@ -227,9 +233,9 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
     </nav>
                     
     ";
-        // line 58
+        // line 61
         $this->displayBlock('notificaciones', $context, $blocks);
-        // line 75
+        // line 78
         echo "    
     ";
         
@@ -240,7 +246,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
 
     }
 
-    // line 58
+    // line 61
     public function block_notificaciones($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -250,15 +256,15 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "notificaciones"));
 
-        // line 59
+        // line 62
         echo "        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 59, $this->source); })()), "flashes", [0 => "correcto"], "method", false, false, false, 59));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 62, $this->source); })()), "flashes", [0 => "correcto"], "method", false, false, false, 62));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 60
+            // line 63
             echo "            <div id=\"notificacion\" class=\"alert alert-success float-right\">
                 ";
-            // line 61
+            // line 64
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
             </div>
@@ -267,15 +273,15 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 64
+        // line 67
         echo "        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 64, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 64));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 67, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 67));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 65
+            // line 68
             echo "            <div id=\"notificacion\" class=\"alert alert-danger\">
             ";
-            // line 66
+            // line 69
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
             </div>
@@ -284,15 +290,15 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 69
+        // line 72
         echo "        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 69, $this->source); })()), "flashes", [0 => "warning"], "method", false, false, false, 69));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 72, $this->source); })()), "flashes", [0 => "warning"], "method", false, false, false, 72));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 70
+            // line 73
             echo "            <div id=\"notificacion\" class=\"alert alert-warning\">
             ";
-            // line 71
+            // line 74
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
             </div>
@@ -301,7 +307,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 74
+        // line 77
         echo "    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -311,7 +317,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
 
     }
 
-    // line 79
+    // line 82
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -321,27 +327,27 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 80
+        // line 83
         echo "        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
         <script src=\"https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js\"></script>
         <script type=\"text/javascript\" src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
         <script src=\"";
-        // line 83
+        // line 86
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/app.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 84
+        // line 87
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/comportamientos.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 85
+        // line 88
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accionesDinamicas.js"), "html", null, true);
         echo "\"></script>
         <script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js\"></script>
         <script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js\"></script>
         <script type=\"text/javascript\" src=\"https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js\"></script>
         ";
-        // line 100
+        // line 103
         echo "
     ";
         
@@ -359,7 +365,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
 
     public function getDebugInfo()
     {
-        return array (  345 => 100,  338 => 85,  334 => 84,  330 => 83,  325 => 80,  315 => 79,  305 => 74,  296 => 71,  293 => 70,  288 => 69,  279 => 66,  276 => 65,  271 => 64,  262 => 61,  259 => 60,  254 => 59,  244 => 58,  233 => 75,  231 => 58,  217 => 49,  209 => 43,  202 => 39,  195 => 35,  188 => 30,  186 => 29,  181 => 26,  174 => 23,  168 => 19,  158 => 18,  145 => 14,  135 => 13,  121 => 9,  118 => 8,  108 => 7,  89 => 6,  77 => 102,  75 => 79,  71 => 77,  69 => 18,  65 => 16,  62 => 13,  60 => 7,  56 => 6,  49 => 1,);
+        return array (  351 => 103,  344 => 88,  340 => 87,  336 => 86,  331 => 83,  321 => 82,  311 => 77,  302 => 74,  299 => 73,  294 => 72,  285 => 69,  282 => 68,  277 => 67,  268 => 64,  265 => 63,  260 => 62,  250 => 61,  239 => 78,  237 => 61,  223 => 52,  217 => 49,  209 => 43,  202 => 39,  195 => 35,  188 => 30,  186 => 29,  181 => 26,  174 => 23,  168 => 19,  158 => 18,  145 => 14,  135 => 13,  121 => 9,  118 => 8,  108 => 7,  89 => 6,  77 => 105,  75 => 82,  71 => 80,  69 => 18,  65 => 16,  62 => 13,  60 => 7,  56 => 6,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -368,7 +374,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
 <html>
     <head>
         <meta charset=\"UTF-8\">
-\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+\t    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
         <title>{% block title %}Intranet{% endblock %}</title>
         {% block stylesheets %}
             <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
@@ -411,6 +417,9 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         
         <div class=\"navbar-collapse collapse w-100 order-3 dual-collapse2\">
             <ul class=\"navbar-nav ml-auto\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"https://mail.google.com/mail/u/0/#inbox?compose=new\"><img src=\"{{ asset(\"img/soporte.jpg\") }}\" title=\"Soporte técnico\" width=\"25\" height=\"25\" alt=\"Sesion\"></a>
+                </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"{{ path('app_logout') }}\"><img src=\"{{ asset(\"img/cerrarSesion.png\") }}\" width=\"19\" height=\"19\" alt=\"Sesion\"> Cerrar sesión
                     </a>

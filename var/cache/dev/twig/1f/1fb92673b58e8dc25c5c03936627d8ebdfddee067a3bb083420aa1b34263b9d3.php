@@ -176,13 +176,13 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
 ";
         // line 28
         echo "
-    <div style=\"margin-left:10px;margin-top:-20px;\">
+    <div style=\"margin-left:10px;margin-top:-20px;margin-bottom:20px;\">
         <a href=\"#ventanaModal\" data-toggle=\"modal\" style=\"background-color:#516878;color:white;\" class=\"btn\" >Ver novedades</a>
     </div>
 
     <div style=\"margin:auto;\">
-        <div class=\"col-md-10 container-fluid\">
-            <h3 class=\"margin-bottom:10px;\"><img style=\"padding-bottom:5px;\" src=\"";
+        <div class=\"container-fluid\">
+            <h3><img style=\"padding-bottom:5px;\" src=\"";
         // line 35
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/iconoUnraf.png"), "html", null, true);
         echo "\" width=\"30\" alt=\"Logo unraf\">SISTEMAS INTERNOS</h3>
@@ -280,97 +280,132 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
     
 
 
-    <div id=\"sistemas\" class=\"row\" style=\"margin:auto;border-bottom: 3px solid #2B2B2B\">
+    <div id=\"sistemas\" class=\"divSistemas\">
         ";
         // line 79
-        echo "        <div  class=\"container-fluid col-xs-4 col-md-4\">
-            ";
-        // line 80
-        $context["contador"] = 1;
-        // line 81
-        echo "            ";
+        echo "        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, (isset($context["sistemas"]) || array_key_exists("sistemas", $context) ? $context["sistemas"] : (function () { throw new RuntimeError('Variable "sistemas" does not exist.', 81, $this->source); })()), (twig_length_filter($this->env, (isset($context["sistemas"]) || array_key_exists("sistemas", $context) ? $context["sistemas"] : (function () { throw new RuntimeError('Variable "sistemas" does not exist.', 81, $this->source); })())) / 2), twig_length_filter($this->env, (isset($context["sistemas"]) || array_key_exists("sistemas", $context) ? $context["sistemas"] : (function () { throw new RuntimeError('Variable "sistemas" does not exist.', 81, $this->source); })()))));
+        $context['_seq'] = twig_ensure_traversable((isset($context["sistemas"]) || array_key_exists("sistemas", $context) ? $context["sistemas"] : (function () { throw new RuntimeError('Variable "sistemas" does not exist.', 79, $this->source); })()));
         $context['_iterated'] = false;
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
         foreach ($context['_seq'] as $context["_key"] => $context["sistema"]) {
-            // line 82
-            echo "                
-                ";
+            // line 80
+            echo "            ";
+            if ((0 === twig_compare((twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 80) % 4), 0) || twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 80))) {
+                // line 81
+                echo "            <div class=\"row\">
+            ";
+            }
             // line 83
-            $context["idContador"] = ("card" . (isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 83, $this->source); })()));
+            echo "                <div class=\"container col-xs-4 col-md-4\">  
+                    ";
             // line 84
-            echo "
-                <div id=\"";
-            // line 85
-            echo twig_escape_filter($this->env, (isset($context["idContador"]) || array_key_exists("idContador", $context) ? $context["idContador"] : (function () { throw new RuntimeError('Variable "idContador" does not exist.', 85, $this->source); })()), "html", null, true);
-            echo "\">
-                    ";
-            // line 86
-            $context["contador"] = ((isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 86, $this->source); })()) + 1);
-            echo "    
-                    
-                    ";
-            // line 88
-            if (twig_in_filter($context["sistema"], (isset($context["sistemasUsuario"]) || array_key_exists("sistemasUsuario", $context) ? $context["sistemasUsuario"] : (function () { throw new RuntimeError('Variable "sistemasUsuario" does not exist.', 88, $this->source); })()))) {
+            if (twig_in_filter($context["sistema"], (isset($context["sistemasUsuario"]) || array_key_exists("sistemasUsuario", $context) ? $context["sistemasUsuario"] : (function () { throw new RuntimeError('Variable "sistemasUsuario" does not exist.', 84, $this->source); })()))) {
                 echo "                                        
                     <div class=\"box-part text-center cuadroSistema\">
                     ";
             } else {
-                // line 91
+                // line 87
                 echo "                    <div class=\"box-part text-center cuadroSistemaGris\">
                     ";
             }
-            // line 93
-            echo "                            
-                        <img src=\"";
-            // line 94
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["sistema"], "logo", [], "any", false, false, false, 94))), "html", null, true);
-            echo "\" class=\" imagenSistema \"></img>
-                        
-                        <div class=\"title\">
-                            <h4 style=\"color:#306086\"><b>";
-            // line 97
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["sistema"], "nombre", [], "any", false, false, false, 97), "html", null, true);
+            // line 89
+            echo "
+                    <img src=\"";
+            // line 90
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["sistema"], "logo", [], "any", false, false, false, 90))), "html", null, true);
+            echo "\" style=\"width:20%;\" class=\" imagenSistema \"></img>
+                    <div class=\"title\">
+                        <h4 style=\"color:#306086\"><b>";
+            // line 92
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["sistema"], "nombre", [], "any", false, false, false, 92), "html", null, true);
             echo "</b></h4>
-                        </div>
-                        
-                        <div class=\"text\">
-                            <span style=\"color:grey;\">";
-            // line 101
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["sistema"], "descripcion", [], "any", false, false, false, 101), "html", null, true);
-            echo "</span>
-                        </div>
-
-                        <hr>
-                        <a class=\"btn\" style=\"background-color: #0F9FA8;color:white;\"  href=\"";
-            // line 105
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("direccionamiento", ["id" => twig_get_attribute($this->env, $this->source, $context["sistema"], "id", [], "any", false, false, false, 105)]), "html", null, true);
-            echo "\">Ingresar</a>
-
+                    </div>
                         ";
-            // line 107
+            // line 94
+            if (twig_in_filter($context["sistema"], (isset($context["sistemasUsuario"]) || array_key_exists("sistemasUsuario", $context) ? $context["sistemasUsuario"] : (function () { throw new RuntimeError('Variable "sistemasUsuario" does not exist.', 94, $this->source); })()))) {
+                echo "                                        
+                            <a class=\"btn\" style=\"background-color: #0F9FA8;color:white;\"  href=\"";
+                // line 95
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("direccionamiento", ["id" => twig_get_attribute($this->env, $this->source, $context["sistema"], "id", [], "any", false, false, false, 95)]), "html", null, true);
+                echo "\">Ingresar</a>
+                        ";
+            } else {
+                // line 97
+                echo "                            <button class=\"btn\" style=\"background-color: grey;color:white;\">Ingresar</button>
+                        ";
+            }
+            // line 99
+            echo "
+                    ";
+            // line 100
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 108
-                echo "                            <a class=\"btn btn-dark\" data-toggle=\"editar\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modificarSistema", ["id" => twig_get_attribute($this->env, $this->source, $context["sistema"], "id", [], "any", false, false, false, 108)]), "html", null, true);
+                // line 101
+                echo "                        <a class=\"btn btn-dark\" data-toggle=\"editar\" href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modificarSistema", ["id" => twig_get_attribute($this->env, $this->source, $context["sistema"], "id", [], "any", false, false, false, 101)]), "html", null, true);
                 echo "\"><img class=\"card-img-top\" title=\"editar\" style=\"width:25px;\" src=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/editar.png"), "html", null, true);
                 echo "\" alt=\"Card image cap\"></a>
-                            <a class=\"btn btn-danger\"  href=\"";
-                // line 109
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("eliminarSistema", ["id" => twig_get_attribute($this->env, $this->source, $context["sistema"], "id", [], "any", false, false, false, 109)]), "html", null, true);
+                        <a class=\"btn btn-danger\"  href=\"";
+                // line 102
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("eliminarSistema", ["id" => twig_get_attribute($this->env, $this->source, $context["sistema"], "id", [], "any", false, false, false, 102)]), "html", null, true);
                 echo "\"><img class=\"card-img-top\" title=\"borrar\" style=\"width:25px;\" src=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/eliminar.png"), "html", null, true);
                 echo "\" width=\"10\"alt=\"Card image cap\"></a> 
                         ";
+                // line 103
+                if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_SUPERADMIN")) {
+                    // line 104
+                    echo "                            <a class=\"btn btn-warning\" href=\"";
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("verPermisos", ["id" => twig_get_attribute($this->env, $this->source, $context["sistema"], "id", [], "any", false, false, false, 104)]), "html", null, true);
+                    echo "\"><img class=\"card-img-top\" title=\"permisos\" style=\"width:25px;\" src=\"";
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/permisos2.png"), "html", null, true);
+                    echo "\" alt=\"Card image cap\"></a>
+                        ";
+                }
+                // line 106
+                echo "                    ";
             }
-            // line 111
-            echo "                            
+            echo "               
+                    <div class=\"text\">
+                        <span style=\"color:grey;\">";
+            // line 108
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["sistema"], "descripcion", [], "any", false, false, false, 108), "html", null, true);
+            echo "</span>
+                    </div>
                     </div>
                 </div>
-                    
+                ";
+            // line 112
+            if ((0 === twig_compare((twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 112) % 3), 0) || twig_get_attribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, false, 112))) {
+                // line 113
+                echo "                </div>
+                ";
+            }
+            // line 114
+            echo "    
             ";
             $context['_iterated'] = true;
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
         }
         if (!$context['_iterated']) {
             // line 116
@@ -381,135 +416,15 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['sistema'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 118
-        echo "            </div>
-
-            ";
-        // line 121
-        echo "            <div  class=\"container-fluid col-xs-4 col-md-4\">
-            ";
-        // line 122
-        $context["contador"] = 1;
-        // line 123
-        echo "            ";
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, (isset($context["sistemas"]) || array_key_exists("sistemas", $context) ? $context["sistemas"] : (function () { throw new RuntimeError('Variable "sistemas" does not exist.', 123, $this->source); })()), 0, (twig_length_filter($this->env, (isset($context["sistemas"]) || array_key_exists("sistemas", $context) ? $context["sistemas"] : (function () { throw new RuntimeError('Variable "sistemas" does not exist.', 123, $this->source); })())) / 2)));
-        foreach ($context['_seq'] as $context["_key"] => $context["sistema"]) {
-            // line 124
-            echo "                
-                ";
-            // line 125
-            $context["idContador"] = ("card" . (isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 125, $this->source); })()));
-            // line 126
-            echo "
-                <div id=\"";
-            // line 127
-            echo twig_escape_filter($this->env, (isset($context["idContador"]) || array_key_exists("idContador", $context) ? $context["idContador"] : (function () { throw new RuntimeError('Variable "idContador" does not exist.', 127, $this->source); })()), "html", null, true);
-            echo "\">
-                    ";
-            // line 128
-            $context["contador"] = ((isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 128, $this->source); })()) + 1);
-            echo "    
-                    
-                    ";
-            // line 130
-            if (twig_in_filter($context["sistema"], (isset($context["sistemasUsuario"]) || array_key_exists("sistemasUsuario", $context) ? $context["sistemasUsuario"] : (function () { throw new RuntimeError('Variable "sistemasUsuario" does not exist.', 130, $this->source); })()))) {
-                echo "                                        
-                    <div class=\"box-part text-center cuadroSistema\">
-                    ";
-            } else {
-                // line 133
-                echo "                    <div class=\"box-part text-center cuadroSistemaGris\">
-                    ";
-            }
-            // line 135
-            echo "                            
-                        <img src=\"";
-            // line 136
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["sistema"], "logo", [], "any", false, false, false, 136))), "html", null, true);
-            echo "\" class=\" imagenSistema \"></img>
-                        
-                        <div class=\"title\">
-                            <h4 style=\"color:#306086\"><b>";
-            // line 139
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["sistema"], "nombre", [], "any", false, false, false, 139), "html", null, true);
-            echo "</b></h4>
-                        </div>
-                        
-                        <div class=\"text\">
-                            <span style=\"color:grey;\">";
-            // line 143
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["sistema"], "descripcion", [], "any", false, false, false, 143), "html", null, true);
-            echo "</span>
-                        </div>
-
-                        <hr>
-                        ";
-            // line 147
-            if (twig_in_filter($context["sistema"], (isset($context["sistemasUsuario"]) || array_key_exists("sistemasUsuario", $context) ? $context["sistemasUsuario"] : (function () { throw new RuntimeError('Variable "sistemasUsuario" does not exist.', 147, $this->source); })()))) {
-                echo "                                        
-                            <a class=\"btn\" style=\"background-color: #0F9FA8;color:white;\"  href=\"";
-                // line 148
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("direccionamiento", ["id" => twig_get_attribute($this->env, $this->source, $context["sistema"], "id", [], "any", false, false, false, 148)]), "html", null, true);
-                echo "\">Ingresar</a>
-                        ";
-            } else {
-                // line 150
-                echo "                            <button class=\"btn\" style=\"background-color: grey;color:white;\">Ingresar</button>
-                        ";
-            }
-            // line 152
-            echo "
-                        ";
-            // line 153
-            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 154
-                echo "                            <a class=\"btn btn-dark\" data-toggle=\"editar\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modificarSistema", ["id" => twig_get_attribute($this->env, $this->source, $context["sistema"], "id", [], "any", false, false, false, 154)]), "html", null, true);
-                echo "\"><img class=\"card-img-top\" title=\"editar\" style=\"width:25px;\" src=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/editar.png"), "html", null, true);
-                echo "\" alt=\"Card image cap\"></a>
-                            <a class=\"btn btn-danger\"  href=\"";
-                // line 155
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("eliminarSistema", ["id" => twig_get_attribute($this->env, $this->source, $context["sistema"], "id", [], "any", false, false, false, 155)]), "html", null, true);
-                echo "\"><img class=\"card-img-top\" title=\"borrar\" style=\"width:25px;\" src=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/eliminar.png"), "html", null, true);
-                echo "\" width=\"10\"alt=\"Card image cap\"></a> 
-                        ";
-            }
-            // line 157
-            echo "                        ";
-            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 158
-                echo "                            <a class=\"btn btn-warning\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("verPermisos", ["id" => twig_get_attribute($this->env, $this->source, $context["sistema"], "id", [], "any", false, false, false, 158)]), "html", null, true);
-                echo "\"><img class=\"card-img-top\" title=\"permisos\" style=\"width:25px;\" src=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/permisos2.png"), "html", null, true);
-                echo "\" alt=\"Card image cap\"></a>
-                        ";
-            }
-            // line 160
-            echo "                    </div>
-                </div>
-
-            ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['sistema'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 164
-        echo "            </div>
+        echo "
+            </div>
   
     </div>
-    <h5 style=\"margin-left:15px;color:grey;padding-top:13px;\">Los permisos se solicitan a <b style=\"color:#FEB413;\">soporte@unraf.edu.ar</b></h5>
-    <div class=\"container\">
-        ";
-        // line 170
-        echo "    </div>
 
     ";
-        // line 172
+        // line 123
         $this->displayBlock('notificaciones', $context, $blocks);
-        // line 175
+        // line 126
         echo "
 ";
         
@@ -520,7 +435,7 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
 
     }
 
-    // line 172
+    // line 123
     public function block_notificaciones($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -530,7 +445,7 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "notificaciones"));
 
-        // line 173
+        // line 124
         echo "        ";
         $this->displayParentBlock("notificaciones", $context, $blocks);
         echo "
@@ -555,7 +470,7 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
 
     public function getDebugInfo()
     {
-        return array (  534 => 173,  524 => 172,  513 => 175,  511 => 172,  507 => 170,  500 => 164,  491 => 160,  483 => 158,  480 => 157,  473 => 155,  466 => 154,  464 => 153,  461 => 152,  457 => 150,  452 => 148,  448 => 147,  441 => 143,  434 => 139,  428 => 136,  425 => 135,  421 => 133,  415 => 130,  410 => 128,  406 => 127,  403 => 126,  401 => 125,  398 => 124,  393 => 123,  391 => 122,  388 => 121,  384 => 118,  377 => 116,  368 => 111,  361 => 109,  354 => 108,  352 => 107,  347 => 105,  340 => 101,  333 => 97,  327 => 94,  324 => 93,  320 => 91,  314 => 88,  309 => 86,  305 => 85,  302 => 84,  300 => 83,  297 => 82,  291 => 81,  289 => 80,  286 => 79,  271 => 65,  262 => 62,  248 => 60,  244 => 58,  241 => 57,  239 => 56,  234 => 54,  227 => 52,  224 => 51,  206 => 50,  194 => 40,  187 => 35,  178 => 28,  175 => 26,  161 => 15,  151 => 14,  138 => 12,  128 => 11,  115 => 9,  105 => 8,  92 => 5,  82 => 4,  63 => 3,  40 => 1,);
+        return array (  449 => 124,  439 => 123,  428 => 126,  426 => 123,  419 => 118,  412 => 116,  398 => 114,  394 => 113,  392 => 112,  385 => 108,  379 => 106,  371 => 104,  369 => 103,  363 => 102,  356 => 101,  354 => 100,  351 => 99,  347 => 97,  342 => 95,  338 => 94,  333 => 92,  328 => 90,  325 => 89,  321 => 87,  315 => 84,  312 => 83,  308 => 81,  305 => 80,  286 => 79,  271 => 65,  262 => 62,  248 => 60,  244 => 58,  241 => 57,  239 => 56,  234 => 54,  227 => 52,  224 => 51,  206 => 50,  194 => 40,  187 => 35,  178 => 28,  175 => 26,  161 => 15,  151 => 14,  138 => 12,  128 => 11,  115 => 9,  105 => 8,  92 => 5,  82 => 4,  63 => 3,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -588,13 +503,13 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
 
 {# Recorrido de los sistemas del usuario, recibido por parametro #}
 
-    <div style=\"margin-left:10px;margin-top:-20px;\">
+    <div style=\"margin-left:10px;margin-top:-20px;margin-bottom:20px;\">
         <a href=\"#ventanaModal\" data-toggle=\"modal\" style=\"background-color:#516878;color:white;\" class=\"btn\" >Ver novedades</a>
     </div>
 
     <div style=\"margin:auto;\">
-        <div class=\"col-md-10 container-fluid\">
-            <h3 class=\"margin-bottom:10px;\"><img style=\"padding-bottom:5px;\" src=\"{{ asset(\"img/iconoUnraf.png\") }}\" width=\"30\" alt=\"Logo unraf\">SISTEMAS INTERNOS</h3>
+        <div class=\"container-fluid\">
+            <h3><img style=\"padding-bottom:5px;\" src=\"{{ asset(\"img/iconoUnraf.png\") }}\" width=\"30\" alt=\"Logo unraf\">SISTEMAS INTERNOS</h3>
         </div>
     </div>
 
@@ -636,99 +551,50 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
     
 
 
-    <div id=\"sistemas\" class=\"row\" style=\"margin:auto;border-bottom: 3px solid #2B2B2B\">
-        {# Parte izquierda en donde aparecen los sistemas #}
-        <div  class=\"container-fluid col-xs-4 col-md-4\">
-            {% set contador=1 %}
-            {% for sistema in sistemas |slice((sistemas|length)/2,sistemas|length) %}
-                
-                {% set idContador='card' ~ contador %}
-
-                <div id=\"{{idContador}}\">
-                    {% set contador = contador + 1 %}    
-                    
+    <div id=\"sistemas\" class=\"divSistemas\">
+        {# Parte donde aparecen los sistemas #}
+        {% for sistema in sistemas %}
+            {% if loop.index % 4 == 0 or loop.first %}
+            <div class=\"row\">
+            {% endif %}
+                <div class=\"container col-xs-4 col-md-4\">  
                     {% if sistema in sistemasUsuario %}                                        
                     <div class=\"box-part text-center cuadroSistema\">
                     {% else %}
                     <div class=\"box-part text-center cuadroSistemaGris\">
                     {% endif %}
-                            
-                        <img src=\"{{asset(('uploads/'~ sistema.logo))}}\" class=\" imagenSistema \"></img>
-                        
-                        <div class=\"title\">
-                            <h4 style=\"color:#306086\"><b>{{sistema.nombre}}</b></h4>
-                        </div>
-                        
-                        <div class=\"text\">
-                            <span style=\"color:grey;\">{{sistema.descripcion}}</span>
-                        </div>
 
-                        <hr>
-                        <a class=\"btn\" style=\"background-color: #0F9FA8;color:white;\"  href=\"{{ path('direccionamiento', {'id': sistema.id}) }}\">Ingresar</a>
-
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <a class=\"btn btn-dark\" data-toggle=\"editar\" href=\"{{path('modificarSistema', {'id': sistema.id})}}\"><img class=\"card-img-top\" title=\"editar\" style=\"width:25px;\" src=\"{{ asset(\"img/editar.png\") }}\" alt=\"Card image cap\"></a>
-                            <a class=\"btn btn-danger\"  href=\"{{path('eliminarSistema', {'id': sistema.id})}}\"><img class=\"card-img-top\" title=\"borrar\" style=\"width:25px;\" src=\"{{ asset(\"img/eliminar.png\") }}\" width=\"10\"alt=\"Card image cap\"></a> 
-                        {% endif %}
-                            
+                    <img src=\"{{asset(('uploads/'~ sistema.logo))}}\" style=\"width:20%;\" class=\" imagenSistema \"></img>
+                    <div class=\"title\">
+                        <h4 style=\"color:#306086\"><b>{{sistema.nombre}}</b></h4>
                     </div>
-                </div>
-                    
-            {% else %}
-                <h2>Acá deberían aparecer los sistemas, pero no hay</h2>
-            {% endfor %}
-            </div>
-
-            {# Parte derecha en donde aparecen los sistemas #}
-            <div  class=\"container-fluid col-xs-4 col-md-4\">
-            {% set contador=1 %}
-            {% for sistema in sistemas |slice(0,(sistemas|length)/2) %}
-                
-                {% set idContador='card' ~ contador %}
-
-                <div id=\"{{idContador}}\">
-                    {% set contador = contador + 1 %}    
-                    
-                    {% if sistema in sistemasUsuario %}                                        
-                    <div class=\"box-part text-center cuadroSistema\">
-                    {% else %}
-                    <div class=\"box-part text-center cuadroSistemaGris\">
-                    {% endif %}
-                            
-                        <img src=\"{{asset(('uploads/'~ sistema.logo))}}\" class=\" imagenSistema \"></img>
-                        
-                        <div class=\"title\">
-                            <h4 style=\"color:#306086\"><b>{{sistema.nombre}}</b></h4>
-                        </div>
-                        
-                        <div class=\"text\">
-                            <span style=\"color:grey;\">{{sistema.descripcion}}</span>
-                        </div>
-
-                        <hr>
                         {% if sistema in sistemasUsuario %}                                        
                             <a class=\"btn\" style=\"background-color: #0F9FA8;color:white;\"  href=\"{{ path('direccionamiento', {'id': sistema.id}) }}\">Ingresar</a>
                         {% else %}
                             <button class=\"btn\" style=\"background-color: grey;color:white;\">Ingresar</button>
                         {% endif %}
 
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <a class=\"btn btn-dark\" data-toggle=\"editar\" href=\"{{path('modificarSistema', {'id': sistema.id})}}\"><img class=\"card-img-top\" title=\"editar\" style=\"width:25px;\" src=\"{{ asset(\"img/editar.png\") }}\" alt=\"Card image cap\"></a>
-                            <a class=\"btn btn-danger\"  href=\"{{path('eliminarSistema', {'id': sistema.id})}}\"><img class=\"card-img-top\" title=\"borrar\" style=\"width:25px;\" src=\"{{ asset(\"img/eliminar.png\") }}\" width=\"10\"alt=\"Card image cap\"></a> 
-                        {% endif %}
-                        {% if is_granted('ROLE_ADMIN') %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a class=\"btn btn-dark\" data-toggle=\"editar\" href=\"{{path('modificarSistema', {'id': sistema.id})}}\"><img class=\"card-img-top\" title=\"editar\" style=\"width:25px;\" src=\"{{ asset(\"img/editar.png\") }}\" alt=\"Card image cap\"></a>
+                        <a class=\"btn btn-danger\"  href=\"{{path('eliminarSistema', {'id': sistema.id})}}\"><img class=\"card-img-top\" title=\"borrar\" style=\"width:25px;\" src=\"{{ asset(\"img/eliminar.png\") }}\" width=\"10\"alt=\"Card image cap\"></a> 
+                        {% if is_granted('ROLE_SUPERADMIN') %}
                             <a class=\"btn btn-warning\" href=\"{{path('verPermisos', {'id': sistema.id})}}\"><img class=\"card-img-top\" title=\"permisos\" style=\"width:25px;\" src=\"{{ asset(\"img/permisos2.png\") }}\" alt=\"Card image cap\"></a>
                         {% endif %}
+                    {% endif %}               
+                    <div class=\"text\">
+                        <span style=\"color:grey;\">{{sistema.descripcion}}</span>
+                    </div>
                     </div>
                 </div>
-
+                {% if loop.index % 3 == 0 or loop.last %}
+                </div>
+                {% endif %}    
+            {% else %}
+                <h2>Acá deberían aparecer los sistemas, pero no hay</h2>
             {% endfor %}
+
             </div>
   
-    </div>
-    <h5 style=\"margin-left:15px;color:grey;padding-top:13px;\">Los permisos se solicitan a <b style=\"color:#FEB413;\">soporte@unraf.edu.ar</b></h5>
-    <div class=\"container\">
-        {#<a class=\"btn btn-primary\" href=\"{{ path(\"app_logout\") }}\">Volver</a>#}
     </div>
 
     {% block notificaciones %}
