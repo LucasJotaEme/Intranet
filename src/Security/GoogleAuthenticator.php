@@ -91,7 +91,7 @@ class GoogleAuthenticator extends SocialAuthenticator
     public function start(Request $request, \Symfony\Component\Security\Core\Exception\AuthenticationException $authException = null)
     {
         $redireccion = new RedirectResponse('/');
-        $redireccion->setTargetUrl('http://localhost/Intranet/public/index.php/login');
+        $redireccion->setTargetUrl('http://intranet.unraf.edu.ar/Intranet/public/index.php/login');
         return $redireccion;
     }
     

@@ -20,6 +20,8 @@ class SistemaController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $usuario = $this->getUser();
         
+        $usuario->setUltimoAcceso($this->getFechActual());
+        $em->flush($usuario);
         
         $sistemas= $em->getRepository(Sistema::class)->findAll();
         $novedades= $em->getRepository(Novedad::class)->findAll();
@@ -160,6 +162,17 @@ class SistemaController extends AbstractController
         $url .= "/" . $user->getEmail() . "/" . $rol . "/" . $user->getEstado(); 
         
         return $this->redirect($url);
+    }
+
+    ############################# FUNCIONES ####################################
+
+    public function getFechActual(){
+        $fechaActual=  new \DateTime();
+        
+        //Se le resta 3 horas a la fecha para que sea correcta a la actual. Desconozco el motivo
+        $fechaActual->modify("-3 hours");
+        
+        return $fechaActual;
     }
     
     
