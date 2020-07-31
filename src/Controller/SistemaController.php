@@ -168,10 +168,7 @@ class SistemaController extends AbstractController
 
     public function getFechActual(){
         $fechaActual=  new \DateTime();
-        
-        //Se le resta 3 horas a la fecha para que sea correcta a la actual. Desconozco el motivo
-        $fechaActual->modify("-3 hours");
-        
+                
         return $fechaActual;
     }
     
