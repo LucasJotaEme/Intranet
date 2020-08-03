@@ -82,7 +82,7 @@
     <div id="sistemas" class="divSistemas">
         {# Parte donde aparecen los sistemas #}
         {% for sistema in sistemas %}
-            {% if loop.index % 4 == 0 or loop.first %}
+            {% if (loop.index -1) % 3 == 0 or loop.first %}
             <div class="row">
             {% endif %}
                 <div class="container col-xs-4 col-md-4">  
