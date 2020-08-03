@@ -53,6 +53,7 @@ class PermisosController extends AbstractController
         $sistema->addUsuario($usuario);
         
         $em->flush();
+        $this->addFlash('correcto', 'Se agregó el permiso');
         
         return $this->permisos($request,$idSistema);
     }
@@ -69,6 +70,7 @@ class PermisosController extends AbstractController
         $sistema->removeUsuario($usuario);
         
         $em->flush();
+        $this->addFlash('correcto', 'Se quitó el permiso');
         
         return $this->permisos($request, $idSistema);
     }

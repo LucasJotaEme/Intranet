@@ -52,7 +52,7 @@ class UsuariosController extends AbstractController
         $usuario->setRoles(['ROLE_USER','ROLE_ADMIN']);
             
         $em->flush($usuario);
-        
+        $this->addFlash('correcto', 'Se cambió el permiso a ADMIN');
         return $this->redirectToRoute('usuarios');
     }
 
@@ -68,7 +68,7 @@ class UsuariosController extends AbstractController
         $usuario->setRoles(['ROLE_USER']);
             
         $em->flush($usuario);
-        
+        $this->addFlash('correcto', 'Se cambió el permiso a USER');
         return $this->redirectToRoute('usuarios');
     }
 
@@ -84,7 +84,7 @@ class UsuariosController extends AbstractController
         $usuario->setRoles(['ROLE_USER','ROLE_ADMIN','ROLE_SUPERADMIN']);
             
         $em->flush($usuario);
-        
+        $this->addFlash('correcto', 'Se cambió el permiso a SUPERADMIN');
         return $this->redirectToRoute('usuarios');
     }
 

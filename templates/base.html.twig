@@ -78,18 +78,21 @@
                     
     {% block notificaciones %}
         {% for message in app.flashes('correcto') %}
-            <div id="notificacion" class="alert alert-success float-right">
+            <div id="notificacion" class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
                 {{ message }}
             </div>
         {% endfor %}
         {% for message in app.flashes('error') %}
-            <div id="notificacion" class="alert alert-danger">
-            {{ message }}
+            <div id="notificacion" class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
             </div>
         {% endfor %}
         {% for message in app.flashes('warning') %}
-            <div id="notificacion" class="alert alert-warning">
-            {{ message }}
+            <div id="notificacion" class="alert alert-warning alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
             </div>
         {% endfor %}
     {% endblock notificaciones %}

@@ -1,8 +1,11 @@
-$(function() { 
+$(document).ready(function(){
     var divLogin= $("#divLogin").hide();
     var sistemas= $("#sistemas").hide();
     var novedades= $("#novedades").hide();
     var tituloNovedades= $("#tituloNovedades").hide();
+    var notificacion = $('#notificacion');
+    
+    notificacion.slideToggle(5000);
     
     // var tituloNovedades= $("#tituloNovedades").hide();
     var mensajeLogin= $("#mensajeLogin").hide();
