@@ -101,7 +101,7 @@ class SistemaController extends AbstractController
             }
             
             $manager->flush();
-            
+            $this->addFlash('correcto', 'Se modificó el sistema correctamente');
             return $this->sistemas();
         }
         else{
@@ -117,6 +117,7 @@ class SistemaController extends AbstractController
     public function quitarCompra(Request $request,$id){
         $em = $this->getDoctrine()->getManager();
         $sistema= $em->getRepository(Sistema::class)->find($id);
+        $this->addFlash('correcto', 'Se eliminó el sistema '. $sistema->getNombre() );
         $em->remove($sistema);
         $em->flush();
         return $this->sistemas();
