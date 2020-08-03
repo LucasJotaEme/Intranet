@@ -4175,6 +4175,75 @@
         "homepage": "https://symfony.com"
     },
     {
+        "name": "symfony/google-mailer",
+        "version": "v5.0.11",
+        "version_normalized": "5.0.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/google-mailer.git",
+            "reference": "dd8a1d46944993fd548c790c5539a2f481b4b89e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/google-mailer/zipball/dd8a1d46944993fd548c790c5539a2f481b4b89e",
+            "reference": "dd8a1d46944993fd548c790c5539a2f481b4b89e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5",
+            "symfony/mailer": "^4.4|^5.0"
+        },
+        "require-dev": {
+            "symfony/http-client": "^4.4|^5.0"
+        },
+        "time": "2020-05-20T17:38:26+00:00",
+        "type": "symfony-bridge",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Mailer\\Bridge\\Google\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Google Mailer Bridge",
+        "homepage": "https://symfony.com",
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
         "name": "symfony/http-client",
         "version": "v5.0.10",
         "version_normalized": "5.0.10.0",
@@ -4613,17 +4682,17 @@
     },
     {
         "name": "symfony/mailer",
-        "version": "v5.0.10",
-        "version_normalized": "5.0.10.0",
+        "version": "v5.0.11",
+        "version_normalized": "5.0.11.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/mailer.git",
-            "reference": "55a7735cfb7a6b11c322aac2fd93b11e688da870"
+            "reference": "ae0579ff80c1f9b6db5a7a7053733b2568cb9001"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/mailer/zipball/55a7735cfb7a6b11c322aac2fd93b11e688da870",
-            "reference": "55a7735cfb7a6b11c322aac2fd93b11e688da870",
+            "url": "https://api.github.com/repos/symfony/mailer/zipball/ae0579ff80c1f9b6db5a7a7053733b2568cb9001",
+            "reference": "ae0579ff80c1f9b6db5a7a7053733b2568cb9001",
             "shasum": ""
         },
         "require": {
@@ -4647,7 +4716,7 @@
             "symfony/postmark-mailer": "^4.4|^5.0",
             "symfony/sendgrid-mailer": "^4.4|^5.0"
         },
-        "time": "2020-06-11T21:19:34+00:00",
+        "time": "2020-07-15T10:53:08+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4678,7 +4747,21 @@
             }
         ],
         "description": "Symfony Mailer Component",
-        "homepage": "https://symfony.com"
+        "homepage": "https://symfony.com",
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
     },
     {
         "name": "symfony/maker-bundle",
@@ -6356,6 +6439,75 @@
         ],
         "description": "Symfony Security Component - HTTP Integration",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "symfony/sendgrid-mailer",
+        "version": "v5.0.11",
+        "version_normalized": "5.0.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/sendgrid-mailer.git",
+            "reference": "67cedc0fc31f51ddddae31187f44707b45c10201"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/sendgrid-mailer/zipball/67cedc0fc31f51ddddae31187f44707b45c10201",
+            "reference": "67cedc0fc31f51ddddae31187f44707b45c10201",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5",
+            "symfony/mailer": "^4.4|^5.0"
+        },
+        "require-dev": {
+            "symfony/http-client": "^4.4|^5.0"
+        },
+        "time": "2020-07-23T08:36:09+00:00",
+        "type": "symfony-bridge",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Sendgrid Mailer Bridge",
+        "homepage": "https://symfony.com",
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
     },
     {
         "name": "symfony/serializer",

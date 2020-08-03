@@ -76,6 +76,8 @@ class ComposerStaticInitaffbcd169a8126f21743adfd25a7017b
             'Symfony\\Component\\OptionsResolver\\' => 34,
             'Symfony\\Component\\Notifier\\' => 27,
             'Symfony\\Component\\Mime\\' => 23,
+            'Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\' => 41,
+            'Symfony\\Component\\Mailer\\Bridge\\Google\\' => 39,
             'Symfony\\Component\\Mailer\\' => 25,
             'Symfony\\Component\\Intl\\' => 23,
             'Symfony\\Component\\Inflector\\' => 28,
@@ -322,6 +324,14 @@ class ComposerStaticInitaffbcd169a8126f21743adfd25a7017b
         'Symfony\\Component\\Mime\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/mime',
+        ),
+        'Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/sendgrid-mailer',
+        ),
+        'Symfony\\Component\\Mailer\\Bridge\\Google\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/google-mailer',
         ),
         'Symfony\\Component\\Mailer\\' => 
         array (
