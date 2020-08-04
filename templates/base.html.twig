@@ -67,21 +67,22 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <h6 style="color:#0F9FA8;">Mensaje:</h6>
-                        <select id="selectMotivo" class="form-control">
+                        <h6 style="color:#0F9FA8;">Motivo de consulta:</h6>
+                        <select id="selectMotivo" class="form-control campoForm">
                             <option>Permisos</option>
                             <option>Errores en la web</option>
                             <option>Soporte técnico</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <h6 style="color:#0F9FA8;">Mensaje:</h6>
-                        <textarea class="form-control" id="inputMensaje" placeholder="Ingrese el mensaje.."></textarea>
+                        <h6 style="color:#0F9FA8;">Descripción:</h6>
+                        <textarea class="form-control campoForm" id="inputMensaje" placeholder="Ingrese el mensaje.."></textarea>
+                        <p id="avisoMensaje" style="color:red;text-align:center;"></p>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <a onclick="envioMail()" class="btn container" data-dismiss="modal" style="text-align:center;background-color:#516878;color:white;" >Enviar</a>
+                    <a onclick="envioMail()" class="btn container" style="text-align:center;background-color:#516878;color:white;" >Enviar</a>
                 </div>
 
             </div>

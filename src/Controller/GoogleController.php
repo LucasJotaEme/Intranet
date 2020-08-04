@@ -90,7 +90,6 @@ class GoogleController extends AbstractController
         $texto.="------------------".$this->getFechActualString()."------------------\n";
         $texto.="Usuario: ".$usuario->getEmail()."\n";
         $texto.="Ip del usuario: ".$_SERVER['REMOTE_ADDR']."\n";
-        $texto.="Puerto: ".$_SERVER['REMOTE_PORT']."\n";
         
         $texto.="Hora actual: ".$this->getFechActualString()."\n";
         
