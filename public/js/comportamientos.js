@@ -20,3 +20,14 @@ $seleccionArchivos.addEventListener('change', () => {
   $imagenPrevisualizacion.src = objectURL;
 });
 
+
+function envioMail(){
+  var motivo= document.getElementById("selectMotivo");
+  var mensaje= document.getElementById("inputMensaje");
+
+  if (mensaje!=""){
+    location.href ="http://intranet.unraf.edu.ar/Intranet/public/index.php/user/email/" + motivo + "/" + mensaje;
+  }
+  
+}
+

@@ -17,7 +17,6 @@ return [
         '/connect/google' => [[['_route' => 'connect_google', '_controller' => 'App\\Controller\\GoogleController::connectAction'], null, null, null, false, false, null]],
         '/connect/google/check' => [[['_route' => 'connect_google_check', '_controller' => 'App\\Controller\\GoogleController::connectCheckAction'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\GoogleController::logout'], null, null, null, false, false, null]],
-        '/email' => [[['_route' => 'app_mailer_sendemail', '_controller' => 'App\\Controller\\MailerController::sendEmail'], null, null, null, false, false, null]],
         '/user/sistemas' => [[['_route' => 'sistemas', '_controller' => 'App\\Controller\\SistemaController::sistemas'], null, null, null, false, false, null]],
         '/admin/nuevoSistema' => [[['_route' => 'nuevoSistema', '_controller' => 'App\\Controller\\SistemaController::nuevoSistema'], null, null, null, false, false, null]],
         '/user/direccionamientoDocumentos' => [[['_route' => 'direccionamientoDocs', '_controller' => 'App\\Controller\\SistemaController::direccionamientoDocumentos'], null, null, null, false, false, null]],
@@ -42,23 +41,26 @@ return [
                 .')'
                 .'|/novedad/([^/]++)/([^/]++)/([^/]++)(*:204)'
                 .'|/login/([^/]++)(*:227)'
+                .'|/user/(?'
+                    .'|email/([^/]++)/([^/]++)(*:267)'
+                    .'|direccionamiento/([^/]++)(*:300)'
+                .')'
                 .'|/superadmin/(?'
                     .'|permisos/(?'
-                        .'|([^/]++)(*:270)'
-                        .'|agregar/([^/]++)/([^/]++)(*:303)'
-                        .'|quitar/([^/]++)/([^/]++)(*:335)'
+                        .'|([^/]++)(*:344)'
+                        .'|agregar/([^/]++)/([^/]++)(*:377)'
+                        .'|quitar/([^/]++)/([^/]++)(*:409)'
                     .')'
                     .'|cambio(?'
-                        .'|Admin/([^/]++)(*:367)'
-                        .'|User/([^/]++)(*:388)'
-                        .'|SuperAdmin/([^/]++)(*:415)'
+                        .'|Admin/([^/]++)(*:441)'
+                        .'|User/([^/]++)(*:462)'
+                        .'|SuperAdmin/([^/]++)(*:489)'
                     .')'
                 .')'
                 .'|/admin/(?'
-                    .'|modificarSistema/([^/]++)(*:460)'
-                    .'|eliminarSistema/([^/]++)(*:492)'
+                    .'|modificarSistema/([^/]++)(*:534)'
+                    .'|eliminarSistema/([^/]++)(*:566)'
                 .')'
-                .'|/user/direccionamiento/([^/]++)(*:532)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -71,16 +73,17 @@ return [
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         204 => [[['_route' => 'crearNovedad', '_controller' => 'App\\Controller\\FuncionesController::crearNovedad'], ['fecha', 'numero', 'titulo'], null, null, true, true, null]],
         227 => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\GoogleController::loginApp'], ['email'], null, null, false, true, null]],
-        270 => [[['_route' => 'verPermisos', '_controller' => 'App\\Controller\\PermisosController::permisos'], ['id'], null, null, false, true, null]],
-        303 => [[['_route' => 'agregarPermiso', '_controller' => 'App\\Controller\\PermisosController::agregarPermiso'], ['idSistema', 'idUsuario'], null, null, false, true, null]],
-        335 => [[['_route' => 'quitarPermiso', '_controller' => 'App\\Controller\\PermisosController::quitarPermiso'], ['idSistema', 'idUsuario'], null, null, false, true, null]],
-        367 => [[['_route' => 'cambioAdmin', '_controller' => 'App\\Controller\\UsuariosController::cambioAdmin'], ['id'], null, null, false, true, null]],
-        388 => [[['_route' => 'cambioUser', '_controller' => 'App\\Controller\\UsuariosController::cambioUser'], ['id'], null, null, false, true, null]],
-        415 => [[['_route' => 'cambioSuperAdmin', '_controller' => 'App\\Controller\\UsuariosController::cambioSuperAdmin'], ['id'], null, null, false, true, null]],
-        460 => [[['_route' => 'modificarSistema', '_controller' => 'App\\Controller\\SistemaController::modificarSistema'], ['id'], null, null, true, true, null]],
-        492 => [[['_route' => 'eliminarSistema', '_controller' => 'App\\Controller\\SistemaController::quitarCompra'], ['id'], null, null, true, true, null]],
-        532 => [
-            [['_route' => 'direccionamiento', '_controller' => 'App\\Controller\\SistemaController::direccionamiento'], ['id'], null, null, false, true, null],
+        267 => [[['_route' => 'app_mailer_sendemail', '_controller' => 'App\\Controller\\MailerController::sendEmail'], ['motivo', 'mensaje'], null, null, false, true, null]],
+        300 => [[['_route' => 'direccionamiento', '_controller' => 'App\\Controller\\SistemaController::direccionamiento'], ['id'], null, null, false, true, null]],
+        344 => [[['_route' => 'verPermisos', '_controller' => 'App\\Controller\\PermisosController::permisos'], ['id'], null, null, false, true, null]],
+        377 => [[['_route' => 'agregarPermiso', '_controller' => 'App\\Controller\\PermisosController::agregarPermiso'], ['idSistema', 'idUsuario'], null, null, false, true, null]],
+        409 => [[['_route' => 'quitarPermiso', '_controller' => 'App\\Controller\\PermisosController::quitarPermiso'], ['idSistema', 'idUsuario'], null, null, false, true, null]],
+        441 => [[['_route' => 'cambioAdmin', '_controller' => 'App\\Controller\\UsuariosController::cambioAdmin'], ['id'], null, null, false, true, null]],
+        462 => [[['_route' => 'cambioUser', '_controller' => 'App\\Controller\\UsuariosController::cambioUser'], ['id'], null, null, false, true, null]],
+        489 => [[['_route' => 'cambioSuperAdmin', '_controller' => 'App\\Controller\\UsuariosController::cambioSuperAdmin'], ['id'], null, null, false, true, null]],
+        534 => [[['_route' => 'modificarSistema', '_controller' => 'App\\Controller\\SistemaController::modificarSistema'], ['id'], null, null, true, true, null]],
+        566 => [
+            [['_route' => 'eliminarSistema', '_controller' => 'App\\Controller\\SistemaController::quitarCompra'], ['id'], null, null, true, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

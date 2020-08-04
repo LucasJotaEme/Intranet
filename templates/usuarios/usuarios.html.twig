@@ -59,7 +59,7 @@
         <tbody style="">
             <tr>
             <th scope="row">{{ loop.index }}</th>
-            <td><h6 style="color:#fc447c">{{ usuario.email|trim('@unraf.edu.ar') }}</h6></td>
+            <td><h6 style="color:#fc447c">{{ usuario.email|replace({'@unraf.edu.ar': ''})}}</h6></td>
             <td><h6 style="color:#fc447c">{{ usuario.ultimoAcceso|date("d/m H:i")}}</h6></td>
             {% for rol in usuario.roles %}
             {% if loop.last %}

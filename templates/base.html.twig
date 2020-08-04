@@ -55,21 +55,33 @@
         </div>
     </nav>
 
-    {# Modal de AYUDA #}
+    {# Modal de SOPORTE #}
     <div class="modal fade" id="ventanaModal1">
         <div class="modal-dialog">
             <div class="modal-content scroll">
 
                 <div class="modal-header">
                     <img src="{{ asset("img/soporte.jpg") }}" title="Soporte técnico" width="25" height="25" alt="Sesion">
-                    <h5 style="color:#0F9FA8" class="modal-title"> Ayuda/Soporte técnico/Permisos</h5>
+                    <h5 style="color:#0F9FA8;margin-left:10px;" class="modal-title">Soporte técnico/Errores/Permisos</h5>
                     <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                    Se debe comunicar a soporte@unraf.edu.ar desde <a style="padding:0px;" class="nav-link" href="https://mail.google.com/mail/u/0/#inbox?compose=new"> aquí</a>
+                    <div class="form-group">
+                        <h6 style="color:#0F9FA8;">Mensaje:</h6>
+                        <select id="selectMotivo" class="form-control">
+                            <option>Permisos</option>
+                            <option>Errores en la web</option>
+                            <option>Soporte técnico</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h6 style="color:#0F9FA8;">Mensaje:</h6>
+                        <textarea class="form-control" id="inputMensaje" placeholder="Ingrese el mensaje.."></textarea>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
-                    <button class="btn container" style="text-align:center;background-color:#516878;color:white;" data-dismiss="modal">Aceptar</button>
+                    <a onclick="envioMail()" class="btn container" data-dismiss="modal" style="text-align:center;background-color:#516878;color:white;" >Enviar</a>
                 </div>
 
             </div>
@@ -104,7 +116,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
         <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="{{ asset("js/app.js") }}"></script>
         <script src="{{ asset("js/comportamientos.js") }}"></script>
         <script src="{{ asset("js/accionesDinamicas.js") }}"></script>
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
