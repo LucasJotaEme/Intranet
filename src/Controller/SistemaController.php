@@ -21,7 +21,7 @@ class SistemaController extends AbstractController
         $usuario = $this->getUser();
         
         $usuario->setUltimoAcceso($this->getFechActual());
-        $this->crearLog($usuario);
+        //$this->crearLog($usuario);
         $em->flush($usuario);
         
         $sistemas= $em->getRepository(Sistema::class)->findAll();
@@ -172,38 +172,6 @@ class SistemaController extends AbstractController
         $fechaActual=  new \DateTime();
                 
         return $fechaActual;
-    }
-
-    private function crearLog($usuario){
-
-        //Se crea nombre del log, y la dirección.
-        $fp = fopen("uploads/logs/".$this->getFechActualString()."-iduser=".$usuario->getId(), "x+");
-        $texto="";
-        //Comienza el log
-
-        $texto.="------------------".$this->getFechActualString()."------------------\n";
-        $texto.="Usuario: ".$usuario->getEmail()."\n";
-        if (isset($_SERVER['HTTP_CLIENT_IP'])){
-            $texto.="Ip del usuario: ".$_SERVER['HTTP_CLIENT_IP']."\n";
-        }
-        $texto.="Hora actual: ".$this->getFechActualString()."\n";
-        
-        //Finaliza el log
-        $texto.="--------------------FIN--------------------";
-
-
-        if ($fp != 0){
-            fwrite($fp, $texto);
-        }
-
-        fclose($fp);
-    }
-
-    public function getFechActualString(){
-        $fechaActual=  new \DateTime();
-        
-        $fecha = $fechaActual->format('Y-m-d-H-i-s');
-        return $fecha;
     }
     
     

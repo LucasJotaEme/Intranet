@@ -66,6 +66,7 @@ class GoogleController extends AbstractController
         if (!$this->getUser()) {
             return new JsonResponse(array('status' => false, 'message' => "User not found!"));
         } else {
+	    $this->crearLog($this->getUser());
             return $this->redirectToRoute('sistemas');
         }
 
@@ -77,5 +78,37 @@ class GoogleController extends AbstractController
     public function logout()
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+    }
+
+    private function crearLog($usuario){
+
+        //Se crea nombre del log, y la dirección.
+        $fp = fopen("uploads/logs/".$this->getFechActualString()."-iduser=".$usuario->getId(), "x+");
+        $texto="";
+        //Comienza el log
+
+        $texto.="------------------".$this->getFechActualString()."------------------\n";
+        $texto.="Usuario: ".$usuario->getEmail()."\n";
+        $texto.="Ip del usuario: ".$_SERVER['REMOTE_ADDR']."\n";
+        $texto.="Puerto: ".$_SERVER['REMOTE_PORT']."\n";
+        
+        $texto.="Hora actual: ".$this->getFechActualString()."\n";
+        
+        //Finaliza el log
+        $texto.="--------------------FIN--------------------";
+
+
+        if ($fp != 0){
+            fwrite($fp, $texto);
+        }
+
+        fclose($fp);
+    }
+
+    public function getFechActualString(){
+        $fechaActual=  new \DateTime();
+        
+        $fecha = $fechaActual->format('Y-m-d-H-i-s');
+        return $fecha;
     }
 }
