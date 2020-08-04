@@ -22,10 +22,24 @@ class MailerController extends AbstractController
             //->cc('cc@example.com')
             //->bcc('bcc@example.com')
             //->replyTo('fabien@example.com')
-            //->priority(Email::PRIORITY_HIGH)
+            ->priority(Email::PRIORITY_HIGH)
             ->subject($motivo)
-            ->text($mensaje);
-	    //->html('<h3 style="color:blue;">Soporte intranet</h3><p>Hola</p>');
+            ->text('')
+	    ->html("
+		<div>
+			<div style='border:3 px solid #fc447c;width:500px; padding:15px;'>
+		        	<h2 style='color:#0F9FA8;text-align:center;'>Mensaje desde Intranet</h2>
+				<hr>
+				<h4>". $this->getUser()->getEmail() ."</h4>
+				<hr>
+				<h4 style='color:#fc447c;'>Motivo de mensaje: ". $motivo ."</h4>
+				<hr>
+				<h4 style='color:#2B2B2B;'>Mensaje: ". $mensaje ."</h4>
+				<hr>
+			</div>
+		</div>
+
+	    ");
 
         $mailer->send($email);
 	$this->addFlash('correcto', 'Se ha enviado el mail correctamente. Pronto tendrá su respuesta');
