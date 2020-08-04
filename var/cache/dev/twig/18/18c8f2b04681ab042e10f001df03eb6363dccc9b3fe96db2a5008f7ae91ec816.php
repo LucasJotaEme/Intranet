@@ -246,7 +246,7 @@ class __TwigTemplate_745d20b128de1a087703241b2b4d83f973a1d6682120483a333fff2baec
             echo "</th>
             <td><h6 style=\"color:#fc447c\">";
             // line 62
-            echo twig_escape_filter($this->env, twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["usuario"], "email", [], "any", false, false, false, 62), "@unraf.edu.ar"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["usuario"], "email", [], "any", false, false, false, 62), ["@unraf.edu.ar" => ""]), "html", null, true);
             echo "</h6></td>
             <td><h6 style=\"color:#fc447c\">";
             // line 63
@@ -480,7 +480,7 @@ $context["rol"], "ROLE_ADMIN")) {
         <tbody style=\"\">
             <tr>
             <th scope=\"row\">{{ loop.index }}</th>
-            <td><h6 style=\"color:#fc447c\">{{ usuario.email|trim('@unraf.edu.ar') }}</h6></td>
+            <td><h6 style=\"color:#fc447c\">{{ usuario.email|replace({'@unraf.edu.ar': ''})}}</h6></td>
             <td><h6 style=\"color:#fc447c\">{{ usuario.ultimoAcceso|date(\"d/m H:i\")}}</h6></td>
             {% for rol in usuario.roles %}
             {% if loop.last %}

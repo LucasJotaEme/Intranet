@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Intranet - Sistemas{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+{% block icon %}
+    {{ parent() }}
+{% endblock %}
+{% block body %}
+    {{ parent() }}
+    <div style="margin:auto;">
+        <div class="container-fluid">
+		<h5>Comunicación a soporte técnico</h5>
+        </div>
+    </div>
+
+    {% block notificaciones %}
+        {{ parent() }}
+    {% endblock notificaciones %}
+
+{% endblock %}
+

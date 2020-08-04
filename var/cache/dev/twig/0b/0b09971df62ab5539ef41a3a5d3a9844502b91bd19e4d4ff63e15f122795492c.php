@@ -155,13 +155,23 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
             </div>
         </div>
     </div>
+    <div class=\"row container-fluid\">
+        <div class=\"col-sm-5\">
+            <a class=\"container-fluid btn btn-secondary\" href=\"";
+        // line 58
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sistemas");
+        echo "\">Cancelar</a>
+        </div>
+        <div class=\"col-sm-7\">
             ";
-        // line 56
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 56, $this->source); })()), "Crear", [], "any", false, false, false, 56), 'widget', ["attr" => ["class" => "container-fluid btn btn-primary colorBoton"]]);
+        // line 61
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 61, $this->source); })()), "Crear", [], "any", false, false, false, 61), 'widget', ["attr" => ["class" => "container-fluid btn btn-primary colorBoton"]]);
         echo "
+        </div>
+    </div>
     ";
-        // line 57
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 57, $this->source); })()), 'form_end');
+        // line 64
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 64, $this->source); })()), 'form_end');
         echo "  
     </div>
     
@@ -169,9 +179,9 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
 </div>
     
     ";
-        // line 63
+        // line 70
         $this->displayBlock('notificaciones', $context, $blocks);
-        // line 66
+        // line 73
         echo "
 ";
         
@@ -182,7 +192,7 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
 
     }
 
-    // line 63
+    // line 70
     public function block_notificaciones($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -192,7 +202,7 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "notificaciones"));
 
-        // line 64
+        // line 71
         echo "        ";
         $this->displayParentBlock("notificaciones", $context, $blocks);
         echo "
@@ -217,7 +227,7 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
 
     public function getDebugInfo()
     {
-        return array (  196 => 64,  186 => 63,  175 => 66,  173 => 63,  164 => 57,  160 => 56,  153 => 52,  141 => 43,  130 => 35,  119 => 27,  110 => 21,  104 => 18,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  206 => 71,  196 => 70,  185 => 73,  183 => 70,  174 => 64,  168 => 61,  162 => 58,  153 => 52,  141 => 43,  130 => 35,  119 => 27,  110 => 21,  104 => 18,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -277,7 +287,14 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
             </div>
         </div>
     </div>
+    <div class=\"row container-fluid\">
+        <div class=\"col-sm-5\">
+            <a class=\"container-fluid btn btn-secondary\" href=\"{{ path('sistemas') }}\">Cancelar</a>
+        </div>
+        <div class=\"col-sm-7\">
             {{ form_widget(formulario.Crear, {attr: {class: 'container-fluid btn btn-primary colorBoton'} })}}
+        </div>
+    </div>
     {{ form_end(formulario) }}  
     </div>
     

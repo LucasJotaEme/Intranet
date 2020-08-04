@@ -26,7 +26,7 @@ function envioMail(){
   var mensaje= document.getElementById("inputMensaje");
 
   if (mensaje!=""){
-    location.href ="http://intranet.unraf.edu.ar/Intranet/public/index.php/user/email/" + motivo + "/" + mensaje;
+    location.href ="http://intranet.unraf.edu.ar/Intranet/public/index.php/user/email/" + motivo.options[motivo.selectedIndex].text + "/" + mensaje.value;
   }
   
 }

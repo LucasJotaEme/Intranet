@@ -67,13 +67,13 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
     ";
         // line 18
         $this->displayBlock('body', $context, $blocks);
-        // line 101
+        // line 113
         echo "    </body>
     
     ";
-        // line 103
+        // line 115
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 126
+        // line 137
         echo "    
 </html>
 ";
@@ -240,14 +240,26 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         // line 64
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/soporte.jpg"), "html", null, true);
         echo "\" title=\"Soporte técnico\" width=\"25\" height=\"25\" alt=\"Sesion\">
-                    <h5 style=\"color:#0F9FA8\" class=\"modal-title\"> Ayuda/Soporte técnico/Permisos</h5>
+                    <h5 style=\"color:#0F9FA8;margin-left:10px;\" class=\"modal-title\">Soporte técnico/Errores/Permisos</h5>
                     <button class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
                 </div>
                 <div class=\"modal-body\">
-                    Se debe comunicar a soporte@unraf.edu.ar desde <a style=\"padding:0px;\" class=\"nav-link\" href=\"https://mail.google.com/mail/u/0/#inbox?compose=new\"> aquí</a>
+                    <div class=\"form-group\">
+                        <h6 style=\"color:#0F9FA8;\">Mensaje:</h6>
+                        <select id=\"selectMotivo\" class=\"form-control\">
+                            <option>Permisos</option>
+                            <option>Errores en la web</option>
+                            <option>Soporte técnico</option>
+                        </select>
+                    </div>
+                    <div class=\"form-group\">
+                        <h6 style=\"color:#0F9FA8;\">Mensaje:</h6>
+                        <textarea class=\"form-control\" id=\"inputMensaje\" placeholder=\"Ingrese el mensaje..\"></textarea>
+                    </div>
+
                 </div>
                 <div class=\"modal-footer\">
-                    <button class=\"btn container\" style=\"text-align:center;background-color:#516878;color:white;\" data-dismiss=\"modal\">Aceptar</button>
+                    <a onclick=\"envioMail()\" class=\"btn container\" data-dismiss=\"modal\" style=\"text-align:center;background-color:#516878;color:white;\" >Enviar</a>
                 </div>
 
             </div>
@@ -255,9 +267,9 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
     </div>
                     
     ";
-        // line 79
+        // line 91
         $this->displayBlock('notificaciones', $context, $blocks);
-        // line 99
+        // line 111
         echo "    
     ";
         
@@ -268,7 +280,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
 
     }
 
-    // line 79
+    // line 91
     public function block_notificaciones($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -278,49 +290,13 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "notificaciones"));
 
-        // line 80
-        echo "        ";
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 80, $this->source); })()), "flashes", [0 => "correcto"], "method", false, false, false, 80));
-        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 81
-            echo "            <div id=\"notificacion\" class=\"alert alert-info alert-dismissable\">
-                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-                ";
-            // line 83
-            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-            echo "
-            </div>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 86
-        echo "        ";
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 86, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 86));
-        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 87
-            echo "            <div id=\"notificacion\" class=\"alert alert-danger alert-dismissable\">
-                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-                ";
-            // line 89
-            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-            echo "
-            </div>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 92
         echo "        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 92, $this->source); })()), "flashes", [0 => "warning"], "method", false, false, false, 92));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 92, $this->source); })()), "flashes", [0 => "correcto"], "method", false, false, false, 92));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 93
-            echo "            <div id=\"notificacion\" class=\"alert alert-warning alert-dismissable\">
+            echo "            <div id=\"notificacion\" class=\"alert alert-info alert-dismissable\">
                 <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
                 ";
             // line 95
@@ -333,6 +309,42 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 98
+        echo "        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 98, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 98));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 99
+            echo "            <div id=\"notificacion\" class=\"alert alert-danger alert-dismissable\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                ";
+            // line 101
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+            </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 104
+        echo "        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 104, $this->source); })()), "flashes", [0 => "warning"], "method", false, false, false, 104));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 105
+            echo "            <div id=\"notificacion\" class=\"alert alert-warning alert-dismissable\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                ";
+            // line 107
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+            </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 110
         echo "    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -342,7 +354,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
 
     }
 
-    // line 103
+    // line 115
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -352,27 +364,23 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 104
+        // line 116
         echo "        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
         <script src=\"https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js\"></script>
         <script type=\"text/javascript\" src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
         <script src=\"";
-        // line 107
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/app.js"), "html", null, true);
-        echo "\"></script>
-        <script src=\"";
-        // line 108
+        // line 119
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/comportamientos.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 109
+        // line 120
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accionesDinamicas.js"), "html", null, true);
         echo "\"></script>
         <script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js\"></script>
         <script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js\"></script>
         <script type=\"text/javascript\" src=\"https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js\"></script>
         ";
-        // line 124
+        // line 135
         echo "
     ";
         
@@ -390,7 +398,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
 
     public function getDebugInfo()
     {
-        return array (  376 => 124,  369 => 109,  365 => 108,  361 => 107,  356 => 104,  346 => 103,  336 => 98,  327 => 95,  323 => 93,  318 => 92,  309 => 89,  305 => 87,  300 => 86,  291 => 83,  287 => 81,  282 => 80,  272 => 79,  261 => 99,  259 => 79,  241 => 64,  234 => 59,  222 => 51,  216 => 48,  209 => 43,  202 => 39,  195 => 35,  188 => 30,  186 => 29,  181 => 26,  174 => 23,  168 => 19,  158 => 18,  145 => 14,  135 => 13,  121 => 9,  118 => 8,  108 => 7,  89 => 6,  77 => 126,  75 => 103,  71 => 101,  69 => 18,  65 => 16,  62 => 13,  60 => 7,  56 => 6,  49 => 1,);
+        return array (  384 => 135,  377 => 120,  373 => 119,  368 => 116,  358 => 115,  348 => 110,  339 => 107,  335 => 105,  330 => 104,  321 => 101,  317 => 99,  312 => 98,  303 => 95,  299 => 93,  294 => 92,  284 => 91,  273 => 111,  271 => 91,  241 => 64,  234 => 59,  222 => 51,  216 => 48,  209 => 43,  202 => 39,  195 => 35,  188 => 30,  186 => 29,  181 => 26,  174 => 23,  168 => 19,  158 => 18,  145 => 14,  135 => 13,  121 => 9,  118 => 8,  108 => 7,  89 => 6,  77 => 137,  75 => 115,  71 => 113,  69 => 18,  65 => 16,  62 => 13,  60 => 7,  56 => 6,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -452,21 +460,33 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         </div>
     </nav>
 
-    {# Modal de AYUDA #}
+    {# Modal de SOPORTE #}
     <div class=\"modal fade\" id=\"ventanaModal1\">
         <div class=\"modal-dialog\">
             <div class=\"modal-content scroll\">
 
                 <div class=\"modal-header\">
                     <img src=\"{{ asset(\"img/soporte.jpg\") }}\" title=\"Soporte técnico\" width=\"25\" height=\"25\" alt=\"Sesion\">
-                    <h5 style=\"color:#0F9FA8\" class=\"modal-title\"> Ayuda/Soporte técnico/Permisos</h5>
+                    <h5 style=\"color:#0F9FA8;margin-left:10px;\" class=\"modal-title\">Soporte técnico/Errores/Permisos</h5>
                     <button class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
                 </div>
                 <div class=\"modal-body\">
-                    Se debe comunicar a soporte@unraf.edu.ar desde <a style=\"padding:0px;\" class=\"nav-link\" href=\"https://mail.google.com/mail/u/0/#inbox?compose=new\"> aquí</a>
+                    <div class=\"form-group\">
+                        <h6 style=\"color:#0F9FA8;\">Mensaje:</h6>
+                        <select id=\"selectMotivo\" class=\"form-control\">
+                            <option>Permisos</option>
+                            <option>Errores en la web</option>
+                            <option>Soporte técnico</option>
+                        </select>
+                    </div>
+                    <div class=\"form-group\">
+                        <h6 style=\"color:#0F9FA8;\">Mensaje:</h6>
+                        <textarea class=\"form-control\" id=\"inputMensaje\" placeholder=\"Ingrese el mensaje..\"></textarea>
+                    </div>
+
                 </div>
                 <div class=\"modal-footer\">
-                    <button class=\"btn container\" style=\"text-align:center;background-color:#516878;color:white;\" data-dismiss=\"modal\">Aceptar</button>
+                    <a onclick=\"envioMail()\" class=\"btn container\" data-dismiss=\"modal\" style=\"text-align:center;background-color:#516878;color:white;\" >Enviar</a>
                 </div>
 
             </div>
@@ -501,7 +521,6 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
         <script src=\"https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js\"></script>
         <script type=\"text/javascript\" src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
-        <script src=\"{{ asset(\"js/app.js\") }}\"></script>
         <script src=\"{{ asset(\"js/comportamientos.js\") }}\"></script>
         <script src=\"{{ asset(\"js/accionesDinamicas.js\") }}\"></script>
         <script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js\"></script>

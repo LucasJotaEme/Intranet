@@ -28,6 +28,7 @@ class MailerController extends AbstractController
 	    //->html('<h3 style="color:blue;">Soporte intranet</h3><p>Hola</p>');
 
         $mailer->send($email);
+	$this->addFlash('correcto', 'Se ha enviado el mail correctamente. Pronto tendrá su respuesta');
 	return $this->redirectToRoute('sistemas');
         // ...
     }
