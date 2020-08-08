@@ -133,12 +133,7 @@ class SistemaController extends AbstractController
         $sistema= $em->getRepository(Sistema::class)->find($id);
         
         $url = $sistema->getUrl();
-        $rol="";
-        if (count($user->getRoles())==2){
-            $rol="ROLE_ADMIN";
-        }else{
-            $rol="ROLE_USER";
-        }
+        $rol=json_encode($user->getRoles(),TRUE);
         $url .= "/" . $user->getEmail() . "/" . $rol . "/" . $user->getEstado(); 
         
         return $this->redirect($url);
