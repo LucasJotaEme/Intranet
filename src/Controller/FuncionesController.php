@@ -7,21 +7,22 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Novedad;
 use App\Entity\Sistema;
 use App\Entity\User;
+use Symfony\Component\HttpFoundation\Request;
 
 class FuncionesController extends AbstractController
 {
     /**
-     * @Route("/novedad/{fecha}/{numero}/{titulo}/", name="crearNovedad")
+     * @Route("/novedad/{fecha}/{numero}/{titulo}/{id}", name="crearNovedad")
      */
-    public function crearNovedad($fecha,$numero,$titulo)
+    public function crearNovedad($fecha,$numero,$titulo,$id)
     {
-        
+        $url="";
         $manager = $this->getDoctrine()->getManager();
 
-        $user = $this->getUser();
+        $user= $manager->getRepository(User::class)->find($id);
 
-        $sistema= $manager->getRepository(Sistema::class)->findBy(
-            ['nombre' => 'Documentos']
+        $sistemas= $manager->getRepository(Sistema::class)->findBy(
+            ['nombre' => 'Novedades']
         );
         
         
@@ -35,10 +36,11 @@ class FuncionesController extends AbstractController
         $manager->flush();
         
         //Para direccionar de nuevo a documentos.
-        $url = end($sistema)->getUrl();
-        $rol=json_encode($user->getRoles(),TRUE);
-        $url .= "/" . $user->getEmail() . "/" . $rol . "/" . $user->getEstado(); 
+        foreach($sistemas as $sistema){
+            $url = $sistema->getUrl();
+            $url .= "/" . $user->getEmail();
         
+        }
         return $this->redirect($url);
     }
 

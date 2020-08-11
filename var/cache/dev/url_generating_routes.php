@@ -15,7 +15,7 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
-    'crearNovedad' => [['fecha', 'numero', 'titulo'], ['_controller' => 'App\\Controller\\FuncionesController::crearNovedad'], [], [['text', '/'], ['variable', '/', '[^/]++', 'titulo', true], ['variable', '/', '[^/]++', 'numero', true], ['variable', '/', '[^/]++', 'fecha', true], ['text', '/novedad']], [], []],
+    'crearNovedad' => [['fecha', 'numero', 'titulo', 'id'], ['_controller' => 'App\\Controller\\FuncionesController::crearNovedad'], [], [['variable', '/', '[^/]++', 'id', true], ['variable', '/', '[^/]++', 'titulo', true], ['variable', '/', '[^/]++', 'numero', true], ['variable', '/', '[^/]++', 'fecha', true], ['text', '/novedad']], [], []],
     'login' => [[], ['_controller' => 'App\\Controller\\GoogleController::login'], [], [['text', '/login']], [], []],
     'app_login' => [['email'], ['_controller' => 'App\\Controller\\GoogleController::loginApp'], [], [['variable', '/', '[^/]++', 'email', true], ['text', '/login']], [], []],
     'connect_google' => [[], ['_controller' => 'App\\Controller\\GoogleController::connectAction'], [], [['text', '/connect/google']], [], []],
