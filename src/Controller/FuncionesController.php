@@ -22,18 +22,18 @@ class FuncionesController extends AbstractController
         $user= $manager->getRepository(User::class)->find($id);
 
         $sistemas= $manager->getRepository(Sistema::class)->findBy(
-            ['nombre' => 'Novedades']
+            ['nombre' => 'Documentos']
         );
         
-        
+        $manag = $this->getDoctrine()->getManager();
         $novedad = new Novedad();
         $fechaDateTime = \DateTime::createFromFormat('d-m-Y H:i:s', $fecha); 
         $novedad->setFecha($fechaDateTime);
         $novedad->setNumeroDocumento($numero);
         $novedad->setTitulo($titulo);
         
-        $manager->persist($novedad);
-        $manager->flush();
+        $manag->persist($novedad);
+        $manag->flush();
         
         //Para direccionar de nuevo a documentos.
         foreach($sistemas as $sistema){
