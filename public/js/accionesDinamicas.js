@@ -5,7 +5,7 @@ $(document).ready(function(){
     var tituloNovedades= $("#tituloNovedades").hide();
     var notificacion = $('#notificacion');
     var ventanaModal= $("#ventanaModal").modal("show");
-    notificacion.slideToggle(5000);
+    //notificacion.slideToggle(5000);
     
     // var tituloNovedades= $("#tituloNovedades").hide();
     var mensajeLogin= $("#mensajeLogin").hide();

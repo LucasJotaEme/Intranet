@@ -22,6 +22,8 @@ return [
     'connect_google_check' => [[], ['_controller' => 'App\\Controller\\GoogleController::connectCheckAction'], [], [['text', '/connect/google/check']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\GoogleController::logout'], [], [['text', '/logout']], [], []],
     'app_mailer_sendemail' => [['motivo', 'mensaje'], ['_controller' => 'App\\Controller\\MailerController::sendEmail'], [], [['variable', '/', '[^/]++', 'mensaje', true], ['variable', '/', '[^/]++', 'motivo', true], ['text', '/user/email']], [], []],
+    'nuevaNovedad' => [[], ['_controller' => 'App\\Controller\\NovedadesController::nuevaNovedad'], [], [['text', '/admin/nuevaNovedad']], [], []],
+    'modificarNovedad' => [['id'], ['_controller' => 'App\\Controller\\NovedadesController::modificarNovedad'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/modificarNovedad']], [], []],
     'verPermisos' => [['id'], ['_controller' => 'App\\Controller\\PermisosController::permisos'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/superadmin/permisos']], [], []],
     'agregarPermiso' => [['idSistema', 'idUsuario'], ['_controller' => 'App\\Controller\\PermisosController::agregarPermiso'], [], [['variable', '/', '[^/]++', 'idUsuario', true], ['variable', '/', '[^/]++', 'idSistema', true], ['text', '/superadmin/permisos/agregar']], [], []],
     'quitarPermiso' => [['idSistema', 'idUsuario'], ['_controller' => 'App\\Controller\\PermisosController::quitarPermiso'], [], [['variable', '/', '[^/]++', 'idUsuario', true], ['variable', '/', '[^/]++', 'idSistema', true], ['text', '/superadmin/permisos/quitar']], [], []],

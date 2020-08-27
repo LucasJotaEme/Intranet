@@ -5,8 +5,8 @@
 
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
-require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/ContainerPnRDoHv/App_KernelDevDebugContainer.php';
+require dirname(__DIR__, 3).'\\vendor/autoload.php';
+require __DIR__.'/ContainerQILTH4r/App_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -30,11 +30,15 @@ $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'App\Controller\FuncionesController';
 $classes[] = 'App\Controller\GoogleController';
 $classes[] = 'App\Controller\MailerController';
+$classes[] = 'App\Controller\NovedadesController';
 $classes[] = 'App\Controller\PermisosController';
 $classes[] = 'App\Controller\SistemaController';
 $classes[] = 'App\Controller\UsuariosController';
+$classes[] = 'App\Controller\encriptado';
 $classes[] = 'App\Form\BusquedaUserType';
+$classes[] = 'App\Form\NovedadType';
 $classes[] = 'App\Form\SistemaType';
+$classes[] = 'App\Repository\NovedadIntranetRepository';
 $classes[] = 'App\Repository\NovedadRepository';
 $classes[] = 'App\Repository\SistemaRepository';
 $classes[] = 'App\Repository\UserRepository';

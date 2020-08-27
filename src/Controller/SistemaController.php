@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Sistema;
 use App\Entity\Novedad;
 use App\Entity\User;
+use App\Entity\NovedadIntranet;
 use App\Form\SistemaType;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -25,11 +26,11 @@ class SistemaController extends AbstractController
         $em->flush($usuario);
         
         $sistemas= $em->getRepository(Sistema::class)->findAll();
-        $novedades= $em->getRepository(Novedad::class)->findAll();
         
         //Se obtiene los sistemas del usuario, y se lo pasa al .twig.
         return $this->render('sistema/acceso.html copy.twig', [
-            'sistemas' => $sistemas, 'tamanio' => count($sistemas), 'sistemasUsuario' => $usuario->getSistemas(), 'novedades' => $novedades
+            'sistemas' => $sistemas, 'tamanio' => count($sistemas), 'sistemasUsuario' => $usuario->getSistemas(), 'novedades' => $this->buscarNovedades(),
+            'novedadesUNRaf' =>$this->buscarNovedadesUNRaf()
         ]);
     }
     
@@ -167,6 +168,54 @@ class SistemaController extends AbstractController
         $fechaActual=  new \DateTime();
                 
         return $fechaActual;
+    }
+
+    public function getFechActualString(){
+        $fechaActual=  new \DateTime();
+        $fecha = $fechaActual->format('Y-m-d');
+        return $fecha;
+    }
+
+    ############################# BUSQUEDA BD A PATA ################################
+
+    public function buscarNovedadesUNRaf(){
+        
+        $manager=$this->getDoctrine()->getManager();
+        $fecha=$this->getFechActualString();
+        
+        $query = $manager->createQuery(
+        "SELECT nu
+        FROM App\Entity\NovedadIntranet nu
+        WHERE '" .$fecha. "' >= nu.fechaPublicacion AND '" .$fecha. "'<= nu.fechaCaducidad
+         ORDER BY nu.fechaPublicacion DESC"
+        );
+        
+        //Límite de resultados..
+        $query->setMaxResults(100);
+        
+        //Retorna busqueda de la compra..
+        return $query->getResult();
+
+    }
+
+    public function buscarNovedades(){
+        
+        $manager=$this->getDoctrine()->getManager();
+        $fecha=$this->getFechActualString();
+        
+        $query = $manager->createQuery(
+        "SELECT nu
+        FROM App\Entity\Novedad nu
+        WHERE '" .$fecha. "' >= nu.fecha
+        ORDER BY nu.fecha DESC"
+        );
+        
+        //Límite de resultados..
+        $query->setMaxResults(100);
+        
+        //Retorna busqueda de la compra..
+        return $query->getResult();
+
     }
     
     

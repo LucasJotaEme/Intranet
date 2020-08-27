@@ -17,6 +17,7 @@ return [
         '/connect/google' => [[['_route' => 'connect_google', '_controller' => 'App\\Controller\\GoogleController::connectAction'], null, null, null, false, false, null]],
         '/connect/google/check' => [[['_route' => 'connect_google_check', '_controller' => 'App\\Controller\\GoogleController::connectCheckAction'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\GoogleController::logout'], null, null, null, false, false, null]],
+        '/admin/nuevaNovedad' => [[['_route' => 'nuevaNovedad', '_controller' => 'App\\Controller\\NovedadesController::nuevaNovedad'], null, null, null, false, false, null]],
         '/user/sistemas' => [[['_route' => 'sistemas', '_controller' => 'App\\Controller\\SistemaController::sistemas'], null, null, null, false, false, null]],
         '/admin/nuevoSistema' => [[['_route' => 'nuevoSistema', '_controller' => 'App\\Controller\\SistemaController::nuevoSistema'], null, null, null, false, false, null]],
         '/user/direccionamientoDocumentos' => [[['_route' => 'direccionamientoDocs', '_controller' => 'App\\Controller\\SistemaController::direccionamientoDocumentos'], null, null, null, false, false, null]],
@@ -45,21 +46,24 @@ return [
                     .'|email/([^/]++)/([^/]++)(*:276)'
                     .'|direccionamiento/([^/]++)(*:309)'
                 .')'
+                .'|/admin/(?'
+                    .'|modificar(?'
+                        .'|Novedad/([^/]++)(*:356)'
+                        .'|Sistema/([^/]++)(*:380)'
+                    .')'
+                    .'|eliminarSistema/([^/]++)(*:413)'
+                .')'
                 .'|/superadmin/(?'
                     .'|permisos/(?'
-                        .'|([^/]++)(*:353)'
-                        .'|agregar/([^/]++)/([^/]++)(*:386)'
-                        .'|quitar/([^/]++)/([^/]++)(*:418)'
+                        .'|([^/]++)(*:457)'
+                        .'|agregar/([^/]++)/([^/]++)(*:490)'
+                        .'|quitar/([^/]++)/([^/]++)(*:522)'
                     .')'
                     .'|cambio(?'
-                        .'|Admin/([^/]++)(*:450)'
-                        .'|User/([^/]++)(*:471)'
-                        .'|SuperAdmin/([^/]++)(*:498)'
+                        .'|Admin/([^/]++)(*:554)'
+                        .'|User/([^/]++)(*:575)'
+                        .'|SuperAdmin/([^/]++)(*:602)'
                     .')'
-                .')'
-                .'|/admin/(?'
-                    .'|modificarSistema/([^/]++)(*:543)'
-                    .'|eliminarSistema/([^/]++)(*:575)'
                 .')'
             .')/?$}sDu',
     ],
@@ -75,15 +79,16 @@ return [
         236 => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\GoogleController::loginApp'], ['emailEncriptado'], null, null, false, true, null]],
         276 => [[['_route' => 'app_mailer_sendemail', '_controller' => 'App\\Controller\\MailerController::sendEmail'], ['motivo', 'mensaje'], null, null, false, true, null]],
         309 => [[['_route' => 'direccionamiento', '_controller' => 'App\\Controller\\SistemaController::direccionamiento'], ['id'], null, null, false, true, null]],
-        353 => [[['_route' => 'verPermisos', '_controller' => 'App\\Controller\\PermisosController::permisos'], ['id'], null, null, false, true, null]],
-        386 => [[['_route' => 'agregarPermiso', '_controller' => 'App\\Controller\\PermisosController::agregarPermiso'], ['idSistema', 'idUsuario'], null, null, false, true, null]],
-        418 => [[['_route' => 'quitarPermiso', '_controller' => 'App\\Controller\\PermisosController::quitarPermiso'], ['idSistema', 'idUsuario'], null, null, false, true, null]],
-        450 => [[['_route' => 'cambioAdmin', '_controller' => 'App\\Controller\\UsuariosController::cambioAdmin'], ['id'], null, null, false, true, null]],
-        471 => [[['_route' => 'cambioUser', '_controller' => 'App\\Controller\\UsuariosController::cambioUser'], ['id'], null, null, false, true, null]],
-        498 => [[['_route' => 'cambioSuperAdmin', '_controller' => 'App\\Controller\\UsuariosController::cambioSuperAdmin'], ['id'], null, null, false, true, null]],
-        543 => [[['_route' => 'modificarSistema', '_controller' => 'App\\Controller\\SistemaController::modificarSistema'], ['id'], null, null, true, true, null]],
-        575 => [
-            [['_route' => 'eliminarSistema', '_controller' => 'App\\Controller\\SistemaController::quitarCompra'], ['id'], null, null, true, true, null],
+        356 => [[['_route' => 'modificarNovedad', '_controller' => 'App\\Controller\\NovedadesController::modificarNovedad'], ['id'], null, null, false, true, null]],
+        380 => [[['_route' => 'modificarSistema', '_controller' => 'App\\Controller\\SistemaController::modificarSistema'], ['id'], null, null, true, true, null]],
+        413 => [[['_route' => 'eliminarSistema', '_controller' => 'App\\Controller\\SistemaController::quitarCompra'], ['id'], null, null, true, true, null]],
+        457 => [[['_route' => 'verPermisos', '_controller' => 'App\\Controller\\PermisosController::permisos'], ['id'], null, null, false, true, null]],
+        490 => [[['_route' => 'agregarPermiso', '_controller' => 'App\\Controller\\PermisosController::agregarPermiso'], ['idSistema', 'idUsuario'], null, null, false, true, null]],
+        522 => [[['_route' => 'quitarPermiso', '_controller' => 'App\\Controller\\PermisosController::quitarPermiso'], ['idSistema', 'idUsuario'], null, null, false, true, null]],
+        554 => [[['_route' => 'cambioAdmin', '_controller' => 'App\\Controller\\UsuariosController::cambioAdmin'], ['id'], null, null, false, true, null]],
+        575 => [[['_route' => 'cambioUser', '_controller' => 'App\\Controller\\UsuariosController::cambioUser'], ['id'], null, null, false, true, null]],
+        602 => [
+            [['_route' => 'cambioSuperAdmin', '_controller' => 'App\\Controller\\UsuariosController::cambioSuperAdmin'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

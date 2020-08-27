@@ -40,8 +40,9 @@ footer{
     margin:20px 0px;
 }
 
-#ventanaModal{
-    opacity: 0.85;
+.modal-content{
+    background-color: transparent;
+    border:none;
 }
 
 .fa{
@@ -271,12 +272,22 @@ h6{
 
 /* ########NOTIFICACIONES######### */
 
-#notificacion{
+.correcto{
     background-color:#0F9FA8;
     color:white;
     -webkit-box-shadow: 1px 0px 59px -14px rgba(0,0,0,0.75);
     -moz-box-shadow: 1px 0px 59px -14px rgba(0,0,0,0.75);
     box-shadow: 1px 0px 59px -14px rgba(0,0,0,0.75);
+}
+
+.error{
+    -webkit-box-shadow: 1px 0px 59px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 0px 59px -14px rgba(0,0,0,0.75);
+    box-shadow: 1px 0px 59px -14px rgba(0,0,0,0.75);
+}
+
+.modal-backdrop {
+    background-color: rgba(0,0,0,.0001) !important;
 }
 
 
