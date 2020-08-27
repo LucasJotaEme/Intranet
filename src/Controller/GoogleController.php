@@ -9,6 +9,7 @@ use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\User;
+use App\encriptado;
 
 class GoogleController extends AbstractController
 {
@@ -21,14 +22,17 @@ class GoogleController extends AbstractController
     }
     
     /**
-     * @Route("/login/{email}", name="app_login")
+     * @Route("/login/{emailEncriptado}", name="app_login")
      */
-    public function loginApp($email)
+    public function loginApp($emailEncriptado)
     {
+        $encriptado = new encriptado();
         $em = $this->getDoctrine()->getManager();
         $users = null;
+
+        $email = $encriptado->desencriptar($emailEncriptado);
         $users= $em->getRepository(User::class)->findBy(['email'=>$email]);
-        
+
         foreach ($users as  $user){
             $token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
             $this->get('security.token_storage')->setToken($token);

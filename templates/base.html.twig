@@ -45,7 +45,7 @@
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" href="#ventanaModal1"><img src="{{ asset("img/soporte.jpg") }}" title="Soporte técnico" width="25" height="25" alt="Sesion"></a>
+                    <a class="nav-link" data-toggle="modal" href="#ventanaModal1"><img src="{{ asset("svg/signoPreguntaRedondo.svg") }}" title="Soporte técnico" width="25" height="25" alt="Sesion"></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('app_logout') }}"><img src="{{ asset("img/cerrarSesion.png") }}" width="19" height="19" alt="Sesion"> Cerrar sesión
@@ -61,13 +61,13 @@
             <div class="modal-content scroll">
 
                 <div class="modal-header">
-                    <img src="{{ asset("img/soporte.jpg") }}" title="Soporte técnico" width="25" height="25" alt="Sesion">
+                    <img src="{{ asset("svg/signoPreguntaRedondo.svg") }}" title="Soporte técnico" width="25" height="25" alt="Sesion">
                     <h5 style="color:#0F9FA8;margin-left:10px;" class="modal-title">Soporte técnico/Errores/Permisos</h5>
                     <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <h6 style="color:#0F9FA8;">Motivo de consulta:</h6>
+                        <h6 style="color:#306086;">Motivo de consulta:</h6>
                         <select id="selectMotivo" class="form-control campoForm">
                             <option>Permisos</option>
                             <option>Errores en la web</option>
@@ -75,14 +75,17 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <h6 style="color:#0F9FA8;">Descripción:</h6>
+                        <h6 style="color:#306086;">Descripción:</h6>
                         <textarea class="form-control campoForm" id="inputMensaje" placeholder="Ingrese el mensaje.."></textarea>
                         <p id="avisoMensaje" style="color:red;text-align:center;"></p>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <a onclick="envioMail()" class="btn container" style="text-align:center;background-color:#516878;color:white;" >Enviar</a>
+                    <a onclick="envioMail()" class="btn container" style="text-align:center;background-color:#306086;color:white;" >
+		    <img src="{{ asset("svg/telegram.svg") }}" title="Enviar" width="25" height="25" alt="Sesion">
+
+		    </a>
                 </div>
 
             </div>

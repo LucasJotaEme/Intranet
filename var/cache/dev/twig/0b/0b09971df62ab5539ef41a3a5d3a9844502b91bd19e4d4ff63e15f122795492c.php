@@ -88,10 +88,6 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
         // line 6
         $this->displayParentBlock("body", $context, $blocks);
         echo "
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 <div>
     <div>
         <h3 style=\"text-align:center;\">Sistemas >> Nuevo sistema</h3>
@@ -100,14 +96,14 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
         <div class=\"row\">
             <div class=\"col-xs-4 col-md-4\">
                 <img class=\"card-img-top rounded imagenSistemaBorde\" id=\"imagen\" src=\"";
-        // line 18
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . (isset($context["imagen"]) || array_key_exists("imagen", $context) ? $context["imagen"] : (function () { throw new RuntimeError('Variable "imagen" does not exist.', 18, $this->source); })()))), "html", null, true);
+        // line 14
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . (isset($context["imagen"]) || array_key_exists("imagen", $context) ? $context["imagen"] : (function () { throw new RuntimeError('Variable "imagen" does not exist.', 14, $this->source); })()))), "html", null, true);
         echo "\" alt=\"Imagen del sistema\">
             </div>
         <div class=\"col-xs-8 col-md-8\">
             ";
-        // line 21
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 21, $this->source); })()), 'form_start', ["enctype" => "multipart/form-data"]);
+        // line 17
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 17, $this->source); })()), 'form_start', ["enctype" => "multipart/form-data"]);
         echo "
             <div style=\"margin-top: 30px;\" class=\"form-group row\">
                 <div class=\"col-sm-2 col-form-label\">
@@ -115,8 +111,8 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
                 </div>
                 <div class=\"col-sm-10 espaciado\">
                     ";
-        // line 27
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 27, $this->source); })()), "nombre", [], "any", false, false, false, 27), 'widget', ["attr" => ["class" => "form-control campoForm"]]);
+        // line 23
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 23, $this->source); })()), "nombre", [], "any", false, false, false, 23), 'widget', ["attr" => ["class" => "form-control campoForm"]]);
         echo "
                 </div>
             </div>
@@ -126,8 +122,8 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
                 </div>
                 <div class=\"col-sm-10 espaciado \">
                       ";
-        // line 35
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 35, $this->source); })()), "logo", [], "any", false, false, false, 35), 'widget', ["attr" => ["accept" => " application / pdf, .png, .jpg, .ico ", "class" => " form-control campoForm"]]);
+        // line 31
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 31, $this->source); })()), "logo", [], "any", false, false, false, 31), 'widget', ["attr" => ["accept" => " application / pdf, .png, .jpg, .ico ", "class" => " form-control campoForm"]]);
         echo "
                 </div>
             </div>
@@ -137,8 +133,8 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
                 </div>
                 <div class=\"col-sm-10 espaciado \">
                     ";
-        // line 43
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 43, $this->source); })()), "url", [], "any", false, false, false, 43), 'widget', ["attr" => ["class" => "form-control campoForm"]]);
+        // line 39
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 39, $this->source); })()), "url", [], "any", false, false, false, 39), 'widget', ["attr" => ["class" => "form-control campoForm"]]);
         echo "
                 </div>
         </div>
@@ -149,8 +145,8 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
             </div>
             <div class=\"col-sm-10 espaciado \">
                 ";
-        // line 52
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 52, $this->source); })()), "descripcion", [], "any", false, false, false, 52), 'widget', ["attr" => ["class" => "form-control campoForm"]]);
+        // line 48
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 48, $this->source); })()), "descripcion", [], "any", false, false, false, 48), 'widget', ["attr" => ["class" => "form-control campoForm"]]);
         echo "
             </div>
         </div>
@@ -158,20 +154,20 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
     <div class=\"row container-fluid\">
         <div class=\"col-sm-5\">
             <a class=\"container-fluid btn btn-secondary\" href=\"";
-        // line 58
+        // line 54
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sistemas");
         echo "\">Cancelar</a>
         </div>
         <div class=\"col-sm-7\">
             ";
-        // line 61
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 61, $this->source); })()), "Crear", [], "any", false, false, false, 61), 'widget', ["attr" => ["class" => "container-fluid btn btn-primary colorBoton"]]);
+        // line 57
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 57, $this->source); })()), "Crear", [], "any", false, false, false, 57), 'widget', ["attr" => ["class" => "container-fluid btn btn-primary colorBoton"]]);
         echo "
         </div>
     </div>
     ";
-        // line 64
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 64, $this->source); })()), 'form_end');
+        // line 60
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 60, $this->source); })()), 'form_end');
         echo "  
     </div>
     
@@ -179,9 +175,9 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
 </div>
     
     ";
-        // line 70
+        // line 66
         $this->displayBlock('notificaciones', $context, $blocks);
-        // line 73
+        // line 69
         echo "
 ";
         
@@ -192,7 +188,7 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
 
     }
 
-    // line 70
+    // line 66
     public function block_notificaciones($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -202,7 +198,7 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "notificaciones"));
 
-        // line 71
+        // line 67
         echo "        ";
         $this->displayParentBlock("notificaciones", $context, $blocks);
         echo "
@@ -227,7 +223,7 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
 
     public function getDebugInfo()
     {
-        return array (  206 => 71,  196 => 70,  185 => 73,  183 => 70,  174 => 64,  168 => 61,  162 => 58,  153 => 52,  141 => 43,  130 => 35,  119 => 27,  110 => 21,  104 => 18,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  202 => 67,  192 => 66,  181 => 69,  179 => 66,  170 => 60,  164 => 57,  158 => 54,  149 => 48,  137 => 39,  126 => 31,  115 => 23,  106 => 17,  100 => 14,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -238,10 +234,6 @@ class __TwigTemplate_18dd50c96709e6c8fa10623411c43ac20a8db79f8c5c512ed70f2d04112
 
 {% block body %}
 {{ parent() }}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 <div>
     <div>
         <h3 style=\"text-align:center;\">Sistemas >> Nuevo sistema</h3>

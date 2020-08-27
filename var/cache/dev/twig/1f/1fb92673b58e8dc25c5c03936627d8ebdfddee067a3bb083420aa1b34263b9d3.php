@@ -184,13 +184,13 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
 
     ";
         // line 36
-        echo "    <div class=\"modal fade\" id=\"ventanaModal\">
+        echo "    <div class=\"modal fade\" id=\"ventanaModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"basicModal\" aria-hidden=\"true\">
         <div class=\"modal-dialog\">
             <div class=\"modal-content scroll\">
 
                 <div class=\"modal-header\">
                     <h3 class=\"modal-title\">Últimas novedades</h3>
-                    <button class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
+                    <button class=\"close\" data-dismiss=\"modal\">&times;</button>
                 </div>
 
                 <div style=\"border-left: 3px solid #516878 \" class=\"modal-body\">
@@ -296,13 +296,13 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
         foreach ($context['_seq'] as $context["_key"] => $context["sistema"]) {
             // line 76
             echo "            ";
-            if ((0 === twig_compare(((twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 76) - 1) % 3), 0) || twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 76))) {
+            if ((0 === twig_compare(((twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 76) - 1) % 4), 0) || twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 76))) {
                 // line 77
                 echo "            <div class=\"row\">
             ";
             }
             // line 79
-            echo "                <div class=\"container col-xs-4 col-md-4\">  
+            echo "                <div class=\"container col-xs-3 col-md-3\">  
                     ";
             // line 80
             if (twig_in_filter($context["sistema"], (isset($context["sistemasUsuario"]) || array_key_exists("sistemasUsuario", $context) ? $context["sistemasUsuario"] : (function () { throw new RuntimeError('Variable "sistemasUsuario" does not exist.', 80, $this->source); })()))) {
@@ -361,10 +361,10 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
                 // line 99
                 if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_SUPERADMIN")) {
                     // line 100
-                    echo "                            <a class=\"btn btn-warning\" href=\"";
+                    echo "                            <a class=\"btn btn-warning\" style=\"background-color:#FEB413;\" href=\"";
                     echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("verPermisos", ["id" => twig_get_attribute($this->env, $this->source, $context["sistema"], "id", [], "any", false, false, false, 100)]), "html", null, true);
                     echo "\"><img class=\"card-img-top\" title=\"permisos\" style=\"width:25px;\" src=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/permisos2.png"), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("svg/llave.svg"), "html", null, true);
                     echo "\" alt=\"Card image cap\"></a>
                         ";
                 }
@@ -382,7 +382,7 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
                 </div>
                 ";
             // line 108
-            if ((0 === twig_compare((twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 108) % 3), 0) || twig_get_attribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, false, 108))) {
+            if ((0 === twig_compare((twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 108) % 4), 0) || twig_get_attribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, false, 108))) {
                 // line 109
                 echo "                </div>
                 ";
@@ -503,13 +503,13 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
     </div>
 
     {# Modal de novedades #}
-    <div class=\"modal fade\" id=\"ventanaModal\">
+    <div class=\"modal fade\" id=\"ventanaModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"basicModal\" aria-hidden=\"true\">
         <div class=\"modal-dialog\">
             <div class=\"modal-content scroll\">
 
                 <div class=\"modal-header\">
                     <h3 class=\"modal-title\">Últimas novedades</h3>
-                    <button class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
+                    <button class=\"close\" data-dismiss=\"modal\">&times;</button>
                 </div>
 
                 <div style=\"border-left: 3px solid #516878 \" class=\"modal-body\">
@@ -543,10 +543,10 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
     <div id=\"sistemas\" class=\"divSistemas\">
         {# Parte donde aparecen los sistemas #}
         {% for sistema in sistemas %}
-            {% if (loop.index -1) % 3 == 0 or loop.first %}
+            {% if (loop.index -1) % 4 == 0 or loop.first %}
             <div class=\"row\">
             {% endif %}
-                <div class=\"container col-xs-4 col-md-4\">  
+                <div class=\"container col-xs-3 col-md-3\">  
                     {% if sistema in sistemasUsuario %}                                        
                     <div class=\"box-part text-center cuadroSistema\">
                     {% else %}
@@ -567,7 +567,7 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
                         <a class=\"btn btn-dark\" data-toggle=\"editar\" href=\"{{path('modificarSistema', {'id': sistema.id})}}\"><img class=\"card-img-top\" title=\"editar\" style=\"width:25px;\" src=\"{{ asset(\"img/editar.png\") }}\" alt=\"Card image cap\"></a>
                         <a class=\"btn btn-danger\"  href=\"{{path('eliminarSistema', {'id': sistema.id})}}\"><img class=\"card-img-top\" title=\"borrar\" style=\"width:25px;\" src=\"{{ asset(\"img/eliminar.png\") }}\" width=\"10\"alt=\"Card image cap\"></a> 
                         {% if is_granted('ROLE_SUPERADMIN') %}
-                            <a class=\"btn btn-warning\" href=\"{{path('verPermisos', {'id': sistema.id})}}\"><img class=\"card-img-top\" title=\"permisos\" style=\"width:25px;\" src=\"{{ asset(\"img/permisos2.png\") }}\" alt=\"Card image cap\"></a>
+                            <a class=\"btn btn-warning\" style=\"background-color:#FEB413;\" href=\"{{path('verPermisos', {'id': sistema.id})}}\"><img class=\"card-img-top\" title=\"permisos\" style=\"width:25px;\" src=\"{{ asset(\"svg/llave.svg\") }}\" alt=\"Card image cap\"></a>
                         {% endif %}
                     {% endif %}               
                     <div class=\"text\">
@@ -575,7 +575,7 @@ class __TwigTemplate_ce93cc0cb54332f74e7964a9de6c9c57424e64a7afe2ffe506ad0f08ba1
                     </div>
                     </div>
                 </div>
-                {% if loop.index % 3 == 0 or loop.last %}
+                {% if loop.index % 4 == 0 or loop.last %}
                 </div>
                 {% endif %}    
             {% else %}

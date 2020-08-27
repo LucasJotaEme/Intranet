@@ -66,17 +66,17 @@
                 <td><p style="color:#2B2B2B">{{ rol|slice(5,rol|length)}}</p></td>
                     {% if rol=="ROLE_SUPERADMIN" %}
                     <td>
-                        <a href="{{path('cambioUser', {'id': usuario.id})}}" class="btn btn-success">User</a>
+                        <a href="{{path('cambioUser', {'id': usuario.id})}}" class="btn btn-dark">User</a>
                         <a href="{{path('cambioAdmin',{'id': usuario.id})}}" class="btn btn-primary">Admin</a>
                     </td>
                     {% elseif rol=="ROLE_ADMIN" %}
                     <td>
                         <a href="{{path('cambioSuperAdmin',{'id': usuario.id})}}" class="btn btn-success">Superadmin</a>
-                        <a href="{{path('cambioUser',{'id': usuario.id})}}" class="btn btn-primary">User</a>
+                        <a href="{{path('cambioUser',{'id': usuario.id})}}" class="btn btn-dark">User</a>
                     </td>
                     {% else %}
                     <td>
-                        <a href="{{path('cambioAdmin', {'id': usuario.id})}}" class="btn btn-dark">Admin</a>
+                        <a href="{{path('cambioAdmin', {'id': usuario.id})}}" class="btn btn-primary">Admin</a>
                         <a href="{{path('cambioSuperAdmin',{'id': usuario.id})}}" class="btn btn-success">SuperAdmin</a>
                     </td>
                     {% endif %}

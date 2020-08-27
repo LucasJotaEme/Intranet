@@ -31,6 +31,7 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
             'stylesheets' => [$this, 'block_stylesheets'],
             'icon' => [$this, 'block_icon'],
             'body' => [$this, 'block_body'],
+            'notificaciones' => [$this, 'block_notificaciones'],
             'javascripts' => [$this, 'block_javascripts'],
         ];
     }
@@ -66,11 +67,17 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
         // line 16
         $this->displayBlock('body', $context, $blocks);
         // line 19
-        echo "    
+        echo "
     ";
         // line 20
+        $this->displayBlock('notificaciones', $context, $blocks);
+        // line 39
+        echo "}
+    
+    ";
+        // line 41
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 32
+        // line 53
         echo "</html>
 ";
         
@@ -171,6 +178,80 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
     }
 
     // line 20
+    public function block_notificaciones($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "notificaciones"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "notificaciones"));
+
+        // line 21
+        echo "        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "flashes", [0 => "correcto"], "method", false, false, false, 21));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 22
+            echo "            <div id=\"notificacion\" class=\"alert alert-info alert-dismissable\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                ";
+            // line 24
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+            </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 27
+        echo "        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 27));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 28
+            echo "            <div id=\"notificacion\" class=\"alert alert-danger alert-dismissable\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                ";
+            // line 30
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+            </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 33
+        echo "        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 33, $this->source); })()), "flashes", [0 => "warning"], "method", false, false, false, 33));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 34
+            echo "            <div id=\"notificacion\" class=\"alert alert-warning alert-dismissable\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                ";
+            // line 36
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+            </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 39
+        echo "    ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 41
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -180,14 +261,14 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 21
+        // line 42
         echo "            <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
             ";
-        // line 23
+        // line 44
         echo "            <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
             <script type=\"text/javascript\" src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
             <script src=\"";
-        // line 25
+        // line 46
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accionesDinamicas.js"), "html", null, true);
         echo "\"></script>
             
@@ -211,7 +292,7 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
 
     public function getDebugInfo()
     {
-        return array (  191 => 25,  187 => 23,  184 => 21,  174 => 20,  163 => 17,  153 => 16,  140 => 13,  130 => 12,  117 => 9,  114 => 8,  104 => 7,  85 => 6,  74 => 32,  72 => 20,  69 => 19,  67 => 16,  64 => 15,  61 => 12,  59 => 7,  55 => 6,  48 => 1,);
+        return array (  272 => 46,  268 => 44,  265 => 42,  255 => 41,  245 => 39,  236 => 36,  232 => 34,  227 => 33,  218 => 30,  214 => 28,  209 => 27,  200 => 24,  196 => 22,  191 => 21,  181 => 20,  170 => 17,  160 => 16,  147 => 13,  137 => 12,  124 => 9,  121 => 8,  111 => 7,  92 => 6,  81 => 53,  79 => 41,  75 => 39,  73 => 20,  70 => 19,  68 => 16,  65 => 15,  62 => 12,  60 => 7,  56 => 6,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -234,6 +315,27 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
     {% block body %}
         
     {% endblock body %}
+
+    {% block notificaciones %}
+        {% for message in app.flashes('correcto') %}
+            <div id=\"notificacion\" class=\"alert alert-info alert-dismissable\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('error') %}
+            <div id=\"notificacion\" class=\"alert alert-danger alert-dismissable\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('warning') %}
+            <div id=\"notificacion\" class=\"alert alert-warning alert-dismissable\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endblock notificaciones %}}
     
     {% block javascripts %}
             <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>

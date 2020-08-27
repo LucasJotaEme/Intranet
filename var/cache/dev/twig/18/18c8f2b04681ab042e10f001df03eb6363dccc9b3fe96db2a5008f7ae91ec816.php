@@ -285,7 +285,7 @@ class __TwigTemplate_745d20b128de1a087703241b2b4d83f973a1d6682120483a333fff2baec
                         <a href=\"";
                         // line 69
                         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cambioUser", ["id" => twig_get_attribute($this->env, $this->source, $context["usuario"], "id", [], "any", false, false, false, 69)]), "html", null, true);
-                        echo "\" class=\"btn btn-success\">User</a>
+                        echo "\" class=\"btn btn-dark\">User</a>
                         <a href=\"";
                         // line 70
                         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cambioAdmin", ["id" => twig_get_attribute($this->env, $this->source, $context["usuario"], "id", [], "any", false, false, false, 70)]), "html", null, true);
@@ -303,7 +303,7 @@ $context["rol"], "ROLE_ADMIN")) {
                         <a href=\"";
                         // line 75
                         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cambioUser", ["id" => twig_get_attribute($this->env, $this->source, $context["usuario"], "id", [], "any", false, false, false, 75)]), "html", null, true);
-                        echo "\" class=\"btn btn-primary\">User</a>
+                        echo "\" class=\"btn btn-dark\">User</a>
                     </td>
                     ";
                     } else {
@@ -312,7 +312,7 @@ $context["rol"], "ROLE_ADMIN")) {
                         <a href=\"";
                         // line 79
                         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cambioAdmin", ["id" => twig_get_attribute($this->env, $this->source, $context["usuario"], "id", [], "any", false, false, false, 79)]), "html", null, true);
-                        echo "\" class=\"btn btn-dark\">Admin</a>
+                        echo "\" class=\"btn btn-primary\">Admin</a>
                         <a href=\"";
                         // line 80
                         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cambioSuperAdmin", ["id" => twig_get_attribute($this->env, $this->source, $context["usuario"], "id", [], "any", false, false, false, 80)]), "html", null, true);
@@ -487,17 +487,17 @@ $context["rol"], "ROLE_ADMIN")) {
                 <td><p style=\"color:#2B2B2B\">{{ rol|slice(5,rol|length)}}</p></td>
                     {% if rol==\"ROLE_SUPERADMIN\" %}
                     <td>
-                        <a href=\"{{path('cambioUser', {'id': usuario.id})}}\" class=\"btn btn-success\">User</a>
+                        <a href=\"{{path('cambioUser', {'id': usuario.id})}}\" class=\"btn btn-dark\">User</a>
                         <a href=\"{{path('cambioAdmin',{'id': usuario.id})}}\" class=\"btn btn-primary\">Admin</a>
                     </td>
                     {% elseif rol==\"ROLE_ADMIN\" %}
                     <td>
                         <a href=\"{{path('cambioSuperAdmin',{'id': usuario.id})}}\" class=\"btn btn-success\">Superadmin</a>
-                        <a href=\"{{path('cambioUser',{'id': usuario.id})}}\" class=\"btn btn-primary\">User</a>
+                        <a href=\"{{path('cambioUser',{'id': usuario.id})}}\" class=\"btn btn-dark\">User</a>
                     </td>
                     {% else %}
                     <td>
-                        <a href=\"{{path('cambioAdmin', {'id': usuario.id})}}\" class=\"btn btn-dark\">Admin</a>
+                        <a href=\"{{path('cambioAdmin', {'id': usuario.id})}}\" class=\"btn btn-primary\">Admin</a>
                         <a href=\"{{path('cambioSuperAdmin',{'id': usuario.id})}}\" class=\"btn btn-success\">SuperAdmin</a>
                     </td>
                     {% endif %}
