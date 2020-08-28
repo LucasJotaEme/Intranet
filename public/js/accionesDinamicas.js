@@ -1,10 +1,25 @@
+
+
 $(document).ready(function(){
+
+    Cookies;
+    
+
     var divLogin= $("#divLogin").hide();
     var sistemas= $("#sistemas").hide();
     var novedades= $("#novedades").hide();
     var tituloNovedades= $("#tituloNovedades").hide();
     var notificacion = $('#notificacion');
-    var ventanaModal= $("#ventanaModal").modal("show");
+
+    
+
+    if (Cookies.get('dato')=="sinAbrir"){
+        var ventanaModal= $("#ventanaModal").modal("show");
+        Cookies.set('dato', 'abierto');
+    }else{
+        var ventanaModal= $("#ventanaModal").modal("hide");
+    }
+    localStorage.setItem("modalAbierto", true);
     //notificacion.slideToggle(5000);
     
     // var tituloNovedades= $("#tituloNovedades").hide();
@@ -24,6 +39,7 @@ $(document).ready(function(){
     //LOGIN
     
     $("#divLogin").hover(function(){
+    Cookies.set('dato', 'sinAbrir');
 	boton= $("#botonLogin");
         divLogin= $("#divLogin");
         mensajeLogin.slideDown(400);

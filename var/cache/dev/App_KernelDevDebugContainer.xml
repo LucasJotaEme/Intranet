@@ -415,20 +415,6 @@
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
     <service id="App\encriptado" class="App\encriptado" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\Core" class="App\lawe\Core" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\Crypto" class="App\lawe\Crypto" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\DerivedKeys" class="App\lawe\DerivedKeys" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\Encoding" class="App\lawe\Encoding" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\Exception\BadFormatException" class="App\lawe\Exception\BadFormatException" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\Exception\CryptoException" class="App\lawe\Exception\CryptoException" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\Exception\EnvironmentIsBrokenException" class="App\lawe\Exception\EnvironmentIsBrokenException" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\Exception\IOException" class="App\lawe\Exception\IOException" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\Exception\WrongKeyOrModifiedCiphertextException" class="App\lawe\Exception\WrongKeyOrModifiedCiphertextException" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\File" class="App\lawe\File" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\Key" class="App\lawe\Key" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\KeyOrPassword" class="App\lawe\KeyOrPassword" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\KeyProtectedByPassword" class="App\lawe\KeyProtectedByPassword" autowire="true" autoconfigure="true"/>
-    <service id="App\lawe\RuntimeTests" class="App\lawe\RuntimeTests" autowire="true" autoconfigure="true"/>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory" public="false"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener" public="false">
       <tag name="kernel.event_subscriber"/>

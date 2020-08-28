@@ -23,7 +23,7 @@ footer{
 .scroll{
     max-height: 500px;
     overflow-y: scroll;
-    scrollbar-color: #516878 white ;
+    /*scrollbar-color: #516878 white ;*/
 }
 
 .box{
@@ -41,8 +41,8 @@ footer{
 }
 
 .modal-content{
-    background-color: transparent;
-    border:none;
+    /*background-color: transparent;*/
+    border:2px solid #e7e7e7;
 }
 
 .fa{
@@ -288,6 +288,20 @@ h6{
 
 .modal-backdrop {
     background-color: rgba(0,0,0,.0001) !important;
+}
+
+
+/* ########## NOVEDAD ############### */
+
+.divNovedad{
+    -webkit-box-shadow: 3px 6px 11px -1px rgba(43,43,43,1);
+      -moz-box-shadow: 3px 6px 11px -1px rgba(43,43,43,1);
+      box-shadow: 3px 6px 11px -1px rgba(43,43,43,1);
+    background:#e7e7e7;
+    border-radius:7px;
+    padding:20px 5px;
+    margin:20px 0px;
+    border: 1px solid #e7e7e7;
 }
 
 

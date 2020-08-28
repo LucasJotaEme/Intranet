@@ -16,7 +16,7 @@
 {#<a class="btn btn-info" style="margin:10px;" href="{{ path("app_logout") }}">Cerrar sesión</a>#}
 
 {# Recorrido de los sistemas del usuario, recibido por parametro #}
-
+        
     <div style="margin-left:10px;margin-top:-20px;margin-bottom:20px;">
         
         <h4 style="color:#0F9FA8"><img src="{{ asset("svg/megaAviso.svg") }}" title="Novedades" width="25" height="25" alt=""> Novedades</h4>
@@ -79,31 +79,29 @@
     </div>
     {# ............ #}
 
+
     {# Modal de novedadesUNRaf #}
     <div class="modal fade" id="ventanaModalUNRaf" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content scroll">
 
-                <div class="modal-header">
-                    <h3 class="modal-title">Novedades UNRaf</h3>
+                <div style="" class="modal-header">
+                    <h3 class="modal-title"><img src="{{ asset("svg/campana.svg") }}" title="Novedades" width="25" height="25" alt=""> Novedades UNRaf</h3>
                     <button class="close" data-dismiss="modal">&times;</button>
                 </div>
 
-                <div style="border-left: 3px solid #516878 " class="modal-body">
+                <div class="modal-body">
                     {% for novedad in novedadesUNRaf %}
-                        <div>
-                            <h6 style="color:grey;">{{ novedad.fechaPublicacion|date("d/m/Y") }} - N° {{novedad.titulo}}</h6>
-                            <div style="margin:10px;color:grey;">
+                        <div class="divNovedad">
+                            <h6 style="color:#535353;">{{ novedad.fechaPublicacion|date("d/m/Y") }}</h6>
+                            <h6 style="color:#535353;"><b>{{novedad.titulo}}</b></h6>
+                            <div style="color:#535353;">
                                 {{novedad.descripcion}}
                                 {% if is_granted('ROLE_ADMIN') %}
                                 <br>
-                                <a href="{{ path('modificarNovedad', {'id': novedad.id}) }}"><img src="{{ asset("svg/pencil.svg") }}" title="Editar" width="20" height="20" alt=""></a>
+                                <a style="content-right" href="{{ path('modificarNovedad', {'id': novedad.id}) }}"><img src="{{ asset("svg/pencil.svg") }}" title="Editar" width="20" height="20" alt=""></a>
                                 {% endif %}
                             </div>
-                            {% if loop.last %}
-                            {% else %}
-                                <hr>
-                            {% endif %}
                         </div>
                     {% else %}
                         <div style="margin:20px;">
@@ -120,7 +118,7 @@
     </div>
     {# ............. #}
     
-
+    
 
     <div id="sistemas" class="divSistemas">
         {# Parte donde aparecen los sistemas #}
@@ -165,7 +163,6 @@
             {% endfor %}
 
             </div>
-  
     </div>
 
     {% block notificaciones %}
