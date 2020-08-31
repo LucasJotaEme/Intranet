@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
 
-    Cookies;
+    
     
 
     var divLogin= $("#divLogin").hide();
@@ -12,7 +12,7 @@ $(document).ready(function(){
     var notificacion = $('#notificacion');
 
     
-
+    var cookie = Cookies;
     if (Cookies.get('dato')=="sinAbrir"){
         var ventanaModal= $("#ventanaModal").modal("show");
         Cookies.set('dato', 'abierto');
