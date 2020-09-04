@@ -77,7 +77,7 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
     ";
         // line 41
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 53
+        // line 54
         echo "</html>
 ";
         
@@ -262,13 +262,14 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 42
-        echo "            <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
+        echo "            <script src=\"https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js\"></script>
+            <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
             ";
-        // line 44
+        // line 45
         echo "            <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
             <script type=\"text/javascript\" src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
             <script src=\"";
-        // line 46
+        // line 47
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accionesDinamicas.js"), "html", null, true);
         echo "\"></script>
             
@@ -292,7 +293,7 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
 
     public function getDebugInfo()
     {
-        return array (  272 => 46,  268 => 44,  265 => 42,  255 => 41,  245 => 39,  236 => 36,  232 => 34,  227 => 33,  218 => 30,  214 => 28,  209 => 27,  200 => 24,  196 => 22,  191 => 21,  181 => 20,  170 => 17,  160 => 16,  147 => 13,  137 => 12,  124 => 9,  121 => 8,  111 => 7,  92 => 6,  81 => 53,  79 => 41,  75 => 39,  73 => 20,  70 => 19,  68 => 16,  65 => 15,  62 => 12,  60 => 7,  56 => 6,  49 => 1,);
+        return array (  273 => 47,  269 => 45,  265 => 42,  255 => 41,  245 => 39,  236 => 36,  232 => 34,  227 => 33,  218 => 30,  214 => 28,  209 => 27,  200 => 24,  196 => 22,  191 => 21,  181 => 20,  170 => 17,  160 => 16,  147 => 13,  137 => 12,  124 => 9,  121 => 8,  111 => 7,  92 => 6,  81 => 54,  79 => 41,  75 => 39,  73 => 20,  70 => 19,  68 => 16,  65 => 15,  62 => 12,  60 => 7,  56 => 6,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -338,6 +339,7 @@ class __TwigTemplate_8f277673906b707fd4f7458b23f1c6e6ecbe978c34a8f57755826b327e8
     {% endblock notificaciones %}}
     
     {% block javascripts %}
+            <script src=\"https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js\"></script>
             <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
             {#<script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>#}
             <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>

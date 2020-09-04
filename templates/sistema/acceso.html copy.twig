@@ -26,6 +26,7 @@
         </div>
             {% if is_granted('ROLE_ADMIN') %}
                 <a href="{{path('nuevaNovedad')}}" style="background-color:#516878;color:white;" class="btn btn-secondary" ><img src="{{ asset("svg/plus.svg") }}" title="Novedad nueva" width="20" height="20" alt="">Nueva</a>
+                <a href="{{path('excel')}}" style="background-color:#1D6F42;color:white;" class="btn btn-secondary" ><img src="{{ asset("svg/excel.svg") }}" title="Novedad nueva" width="20" height="20" alt=""> Mesa examenes</a>
             {% endif %}
         
         <hr>
@@ -38,7 +39,7 @@
 
     <div style="margin:auto;">
         <div class="container-fluid">
-            <h3><img style="padding-bottom:5px;" src="{{ asset("img/iconoUnraf.png") }}" width="30" alt="Logo unraf">SISTEMAS INTERNOS</h3>
+            <h3><img style="padding-bottom:5px;" src="{{ asset("svg/server.svg") }}" width="30" alt="Logo unraf"> Sistemas internos</h3>
         </div>
     </div>
 

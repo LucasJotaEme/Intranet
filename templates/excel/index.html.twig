@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Intranet- Nueva novedad{% endblock %}
+
+{% block body %}
+{{ parent() }}
+<div>
+    <div>
+        <h3 style="text-align:center;">Generar excel</h3>
+    </div>
+    <div style="background-color:white;color:#1D6F42;" class="container">
+        <div class="row">
+            <div style="text-align:center;padding-top:25px;" class="col-xs-4 col-md-4">
+                <img  src="{{ asset("svg/excel.svg") }}" title="Novedad nueva" width="140" height="140" alt="">
+            </div>
+        <div class="col-xs-8 col-md-8">
+            {{ form_start(formulario, {'enctype':'multipart/form-data'})}}
+            <div style="margin-top: 30px;" class="form-group row">
+                <div class="col-sm-2 col-form-label">
+                    <h5>Turno:</h5>
+                </div>
+                <div class="col-sm-10 espaciado">
+                    {{ form_widget(formulario.turno, {attr: {class: 'form-control campoForm'} })}}
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-2 col-form-label">
+                    <h5>Llamado:</h5>
+                </div>
+                <div class="col-sm-10 espaciado ">
+                      {{ form_widget(formulario.llamado, {attr: {class: 'form-control campoForm'} })}}
+                </div>
+            </div>
+
+	    <div class="form-group row">
+                <div class="col-2 col-form-label">
+                    <h5>Año:</h5>
+                </div>
+                <div class="col-sm-10 espaciado ">
+                      {{ form_widget(formulario.anio, {attr: {class: 'form-control campoForm'} })}}
+                </div>
+            </div>
+
+            
+                        
+        </div>
+        
+    </div>
+    <div class="row container-fluid">
+        <div class="col-sm-6">
+            <a class="container-fluid btn btn-primary colorBoton" href="{{ path('sistemas') }}">Generar turnos</a>
+        </div>
+        <div class="col-sm-6">
+            {{ form_widget(formulario.Generar, {attr: {name: 'asdasd' , class: 'container-fluid btn btn-primary colorBoton'}})}}
+        </div>
+    </div>
+    {{ form_end(formulario) }}  
+    </div>
+    
+    </div>
+</div>
+    
+    {% block notificaciones %}
+        {{ parent() }}
+    {% endblock notificaciones %}
+{% endblock %}

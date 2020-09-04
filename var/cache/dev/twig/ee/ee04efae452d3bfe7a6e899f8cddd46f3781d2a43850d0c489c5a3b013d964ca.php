@@ -58,22 +58,22 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         ";
         // line 7
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 13
+        // line 11
         echo "        ";
         $this->displayBlock('icon', $context, $blocks);
-        // line 16
+        // line 14
         echo "    </head>
     <body>
     ";
-        // line 18
+        // line 16
         $this->displayBlock('body', $context, $blocks);
-        // line 117
+        // line 131
         echo "    </body>
     
     ";
-        // line 119
+        // line 133
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 141
+        // line 156
         echo "    
 </html>
 ";
@@ -120,8 +120,6 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         // line 9
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/estilo.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\">
-            
-            
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -131,7 +129,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
 
     }
 
-    // line 13
+    // line 11
     public function block_icon($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -141,7 +139,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "icon"));
 
-        // line 14
+        // line 12
         echo "            <link rel=\"icon\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/iconoUnraf.png"), "html", null, true);
         echo "\">
@@ -154,7 +152,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
 
     }
 
-    // line 18
+    // line 16
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -164,61 +162,101 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 19
+        // line 17
         echo "    <nav class=\"navbar navbar-expand-md navbar-light\">
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\".dual-collapse2\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
-        <a class=\"navbar-brand\" href=\"";
-        // line 23
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sistemas");
-        echo "\"><img src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/home.png"), "html", null, true);
-        echo "\" width=\"30\" height=\"30\" alt=\"Home\"></a>
+        ";
+        // line 21
+        if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "request", [], "any", false, false, false, 21), "pathinfo", [], "any", false, false, false, 21), "/user/sistemas")) {
+            // line 22
+            echo "        <a class=\"navbar-brand\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sistemas");
+            echo "\"><img src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("svg/home.svg"), "html", null, true);
+            echo "\" width=\"30\" height=\"30\" alt=\"Home\"></a>
+        ";
+        } else {
+            // line 24
+            echo "        <a class=\"navbar-brand\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sistemas");
+            echo "\"><img src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("svg/home-blanco.svg"), "html", null, true);
+            echo "\" width=\"30\" height=\"30\" alt=\"Home\"></a>
+        ";
+        }
+        // line 26
+        echo "        
         <div class=\"w-100 order-1 order-md-0 dual-collapse2\">
             ";
-        // line 26
+        // line 29
         echo "        </div>
         <div class=\"collapse navbar-collapse dual-collapse2 mx-auto order-3\">
             <ul class=\"navbar-nav ml-auto \">
+                
                 ";
-        // line 29
+        // line 33
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 30
+            // line 34
             echo "                <li class=\"nav-item dropdown  \">
                     <a class=\"nav-link dropdown-toggle\" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                        Sistemas
-                    </a>
+                        ";
+            // line 36
+            if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "request", [], "any", false, false, false, 36), "pathinfo", [], "any", false, false, false, 36), "/admin/nuevoSistema")) {
+                // line 37
+                echo "                        <b style=\"border-bottom:2px solid grey;\">Sistemas</b>
+                        ";
+            } else {
+                // line 39
+                echo "                        Sistemas
+                        ";
+            }
+            // line 41
+            echo "                    </a>
                     <div class=\"dropdown-menu itemMenu\" aria-labelledby=\"navbarDropdownMenuLink\">
                       <a class=\"formMenu dropdown-item\" href=\"";
-            // line 35
+            // line 43
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("nuevoSistema");
             echo "\">Nuevo sistema</a>
                     </div>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-            // line 39
+            // line 47
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("usuarios");
-            echo "\">Usuarios</a>
+            echo "\">
+                    ";
+            // line 48
+            if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 48, $this->source); })()), "request", [], "any", false, false, false, 48), "pathinfo", [], "any", false, false, false, 48), "/superadmin/usuarios")) {
+                // line 49
+                echo "                        <b style=\"border-bottom:2px solid grey;\">Usuarios</b>
+                        ";
+            } else {
+                // line 51
+                echo "                        Usuarios
+                        ";
+            }
+            // line 53
+            echo "                    </a>
                 </li>
                 
                 ";
         }
-        // line 43
+        // line 57
         echo "            </ul>
         </div>
         <div class=\"navbar-collapse collapse w-100 order-3 dual-collapse2\">
             <ul class=\"navbar-nav ml-auto\">
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" data-toggle=\"modal\" href=\"#ventanaModal1\"><img src=\"";
-        // line 48
+        // line 62
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("svg/signoPreguntaRedondo.svg"), "html", null, true);
         echo "\" title=\"Soporte técnico\" width=\"25\" height=\"25\" alt=\"Sesion\"></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-        // line 51
+        // line 65
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/cerrarSesion.png"), "html", null, true);
@@ -230,14 +268,14 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
     </nav>
 
     ";
-        // line 59
+        // line 73
         echo "    <div class=\"modal fade\" id=\"ventanaModal1\">
         <div class=\"modal-dialog\">
             <div class=\"modal-content scroll\">
 
                 <div class=\"modal-header\">
                     <img src=\"";
-        // line 64
+        // line 78
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("svg/signoPreguntaRedondo.svg"), "html", null, true);
         echo "\" title=\"Soporte técnico\" width=\"25\" height=\"25\" alt=\"Sesion\">
                     <h5 style=\"color:#0F9FA8;margin-left:10px;\" class=\"modal-title\">Soporte técnico/Errores/Permisos</h5>
@@ -262,7 +300,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
                 <div class=\"modal-footer\">
                     <a onclick=\"envioMail()\" class=\"btn container\" style=\"text-align:center;background-color:#306086;color:white;\" >
 \t\t    <img src=\"";
-        // line 86
+        // line 100
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("svg/telegram.svg"), "html", null, true);
         echo "\" title=\"Enviar\" width=\"25\" height=\"25\" alt=\"Sesion\">
 
@@ -274,9 +312,9 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
     </div>
                     
     ";
-        // line 95
+        // line 109
         $this->displayBlock('notificaciones', $context, $blocks);
-        // line 115
+        // line 129
         echo "    
     ";
         
@@ -287,7 +325,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
 
     }
 
-    // line 95
+    // line 109
     public function block_notificaciones($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -297,52 +335,16 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "notificaciones"));
 
-        // line 96
+        // line 110
         echo "        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 96, $this->source); })()), "flashes", [0 => "correcto"], "method", false, false, false, 96));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 110, $this->source); })()), "flashes", [0 => "correcto"], "method", false, false, false, 110));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 97
-            echo "            <div id=\"notificacion\" class=\"alert alert-info alert-dismissable\">
-                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-                ";
-            // line 99
-            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-            echo "
-            </div>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 102
-        echo "        ";
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 102, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 102));
-        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 103
-            echo "            <div id=\"notificacion\" class=\"alert alert-danger alert-dismissable\">
-                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-                ";
-            // line 105
-            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-            echo "
-            </div>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 108
-        echo "        ";
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 108, $this->source); })()), "flashes", [0 => "warning"], "method", false, false, false, 108));
-        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 109
-            echo "            <div id=\"notificacion\" class=\"alert alert-warning alert-dismissable\">
-                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-                ";
             // line 111
+            echo "            <div id=\"notificacion\" class=\"container alert alert-info alert-dismissable\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                ";
+            // line 113
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
             </div>
@@ -351,7 +353,43 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 114
+        // line 116
+        echo "        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 116, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 116));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 117
+            echo "            <div id=\"notificacion\" class=\"container alert alert-danger alert-dismissable\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                ";
+            // line 119
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+            </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 122
+        echo "        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 122, $this->source); })()), "flashes", [0 => "warning"], "method", false, false, false, 122));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 123
+            echo "            <div id=\"notificacion\" class=\"container alert alert-warning alert-dismissable\">
+                <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                ";
+            // line 125
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+            </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 128
         echo "    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -361,7 +399,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
 
     }
 
-    // line 119
+    // line 133
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -371,23 +409,24 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 120
-        echo "        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
+        // line 134
+        echo "        <script src=\"https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js\"></script>
+        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
         <script src=\"https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js\"></script>
         <script type=\"text/javascript\" src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
         <script src=\"";
-        // line 123
+        // line 138
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/comportamientos.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 124
+        // line 139
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accionesDinamicas.js"), "html", null, true);
         echo "\"></script>
         <script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js\"></script>
         <script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js\"></script>
         <script type=\"text/javascript\" src=\"https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js\"></script>
         ";
-        // line 139
+        // line 154
         echo "
     ";
         
@@ -405,7 +444,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
 
     public function getDebugInfo()
     {
-        return array (  391 => 139,  384 => 124,  380 => 123,  375 => 120,  365 => 119,  355 => 114,  346 => 111,  342 => 109,  337 => 108,  328 => 105,  324 => 103,  319 => 102,  310 => 99,  306 => 97,  301 => 96,  291 => 95,  280 => 115,  278 => 95,  266 => 86,  241 => 64,  234 => 59,  222 => 51,  216 => 48,  209 => 43,  202 => 39,  195 => 35,  188 => 30,  186 => 29,  181 => 26,  174 => 23,  168 => 19,  158 => 18,  145 => 14,  135 => 13,  121 => 9,  118 => 8,  108 => 7,  89 => 6,  77 => 141,  75 => 119,  71 => 117,  69 => 18,  65 => 16,  62 => 13,  60 => 7,  56 => 6,  49 => 1,);
+        return array (  430 => 154,  423 => 139,  419 => 138,  413 => 134,  403 => 133,  393 => 128,  384 => 125,  380 => 123,  375 => 122,  366 => 119,  362 => 117,  357 => 116,  348 => 113,  344 => 111,  339 => 110,  329 => 109,  318 => 129,  316 => 109,  304 => 100,  279 => 78,  272 => 73,  260 => 65,  254 => 62,  247 => 57,  241 => 53,  237 => 51,  233 => 49,  231 => 48,  227 => 47,  220 => 43,  216 => 41,  212 => 39,  208 => 37,  206 => 36,  202 => 34,  200 => 33,  194 => 29,  190 => 26,  182 => 24,  174 => 22,  172 => 21,  166 => 17,  156 => 16,  143 => 12,  133 => 11,  121 => 9,  118 => 8,  108 => 7,  89 => 6,  77 => 156,  75 => 133,  71 => 131,  69 => 16,  65 => 14,  62 => 11,  60 => 7,  56 => 6,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -419,8 +458,6 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         {% block stylesheets %}
             <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
             <link href=\"{{ asset(\"css/estilo.css\") }}\" rel=\"stylesheet\" type=\"text/css\">
-            
-            
         {% endblock %}
         {% block icon %}
             <link rel=\"icon\" href=\"{{ asset(\"img/iconoUnraf.png\") }}\">
@@ -432,23 +469,39 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\".dual-collapse2\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
-        <a class=\"navbar-brand\" href=\"{{path('sistemas')}}\"><img src=\"{{ asset(\"img/home.png\") }}\" width=\"30\" height=\"30\" alt=\"Home\"></a>
+        {% if app.request.pathinfo == \"/user/sistemas\" %}
+        <a class=\"navbar-brand\" href=\"{{path('sistemas')}}\"><img src=\"{{ asset(\"svg/home.svg\") }}\" width=\"30\" height=\"30\" alt=\"Home\"></a>
+        {% else %}
+        <a class=\"navbar-brand\" href=\"{{path('sistemas')}}\"><img src=\"{{ asset(\"svg/home-blanco.svg\") }}\" width=\"30\" height=\"30\" alt=\"Home\"></a>
+        {% endif %}
+        
         <div class=\"w-100 order-1 order-md-0 dual-collapse2\">
             {# Este div es para dejar centrado Los botones #}
         </div>
         <div class=\"collapse navbar-collapse dual-collapse2 mx-auto order-3\">
             <ul class=\"navbar-nav ml-auto \">
+                
                 {% if is_granted('ROLE_ADMIN') %}
                 <li class=\"nav-item dropdown  \">
                     <a class=\"nav-link dropdown-toggle\" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                        {% if app.request.pathinfo == \"/admin/nuevoSistema\" %}
+                        <b style=\"border-bottom:2px solid grey;\">Sistemas</b>
+                        {% else %}
                         Sistemas
+                        {% endif %}
                     </a>
                     <div class=\"dropdown-menu itemMenu\" aria-labelledby=\"navbarDropdownMenuLink\">
                       <a class=\"formMenu dropdown-item\" href=\"{{ path('nuevoSistema') }}\">Nuevo sistema</a>
                     </div>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{ path('usuarios') }}\">Usuarios</a>
+                    <a class=\"nav-link\" href=\"{{ path('usuarios') }}\">
+                    {% if app.request.pathinfo == \"/superadmin/usuarios\" %}
+                        <b style=\"border-bottom:2px solid grey;\">Usuarios</b>
+                        {% else %}
+                        Usuarios
+                        {% endif %}
+                    </a>
                 </li>
                 
                 {% endif %}
@@ -506,19 +559,19 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
                     
     {% block notificaciones %}
         {% for message in app.flashes('correcto') %}
-            <div id=\"notificacion\" class=\"alert alert-info alert-dismissable\">
+            <div id=\"notificacion\" class=\"container alert alert-info alert-dismissable\">
                 <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
                 {{ message }}
             </div>
         {% endfor %}
         {% for message in app.flashes('error') %}
-            <div id=\"notificacion\" class=\"alert alert-danger alert-dismissable\">
+            <div id=\"notificacion\" class=\"container alert alert-danger alert-dismissable\">
                 <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
                 {{ message }}
             </div>
         {% endfor %}
         {% for message in app.flashes('warning') %}
-            <div id=\"notificacion\" class=\"alert alert-warning alert-dismissable\">
+            <div id=\"notificacion\" class=\"container alert alert-warning alert-dismissable\">
                 <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
                 {{ message }}
             </div>
@@ -529,6 +582,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
     </body>
     
     {% block javascripts %}
+        <script src=\"https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js\"></script>
         <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
         <script src=\"https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js\"></script>
         <script type=\"text/javascript\" src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
