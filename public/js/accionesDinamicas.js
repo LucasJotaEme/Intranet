@@ -10,22 +10,37 @@ $(document).ready(function(){
     var novedades= $("#novedades").hide();
     var tituloNovedades= $("#tituloNovedades").hide();
     var notificacion = $('#notificacion');
-
+    var allNovedades= $("#allNovedades");
+    var flechaAbajo= $("#flechaAbajo");
+    var flechaArriba= $("#flechaArriba");
     
     var cookie = Cookies;
-    if (Cookies.get('dato')=="sinAbrir"){
-        var ventanaModal= $("#ventanaModal").modal("show");
-        Cookies.set('dato', 'abierto');
+    if (Cookies.get('dato')=="abierto"){
+        allNovedades.show(300);
+        flechaAbajo.hide();
     }else{
-        var ventanaModal= $("#ventanaModal").modal("hide");
+        allNovedades.hide(300);
+        flechaArriba.hide();
     }
     localStorage.setItem("modalAbierto", true);
     //notificacion.slideToggle(5000);
     
     // var tituloNovedades= $("#tituloNovedades").hide();
+
+
     var mensajeLogin= $("#mensajeLogin").hide();
     divLogin.slideDown(800);
     sistemas.slideDown();
+
+    $( "#flechaArriba" ).click(function() {
+        allNovedades.hide(300);
+        Cookies.set('dato', 'cerrado');
+    });
+
+    $( "#flechaAbajo" ).click(function() {
+        allNovedades.hide(300);
+        Cookies.set('dato', 'abierto');
+    });
     
     $('#novedades').animate({
         left: '-=600'
