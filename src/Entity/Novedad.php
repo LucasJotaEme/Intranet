@@ -42,6 +42,21 @@ class Novedad
      */
     private $link;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $version;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $idParametro;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $estado;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +118,42 @@ class Novedad
     public function setLink(?string $link): self
     {
         $this->link = $link;
+
+        return $this;
+    }
+
+    public function getVersion(): ?int
+    {
+        return $this->version;
+    }
+
+    public function setVersion(?int $version): self
+    {
+        $this->version = $version;
+
+        return $this;
+    }
+
+    public function getIdParametro(): ?int
+    {
+        return $this->idParametro;
+    }
+
+    public function setIdParametro(int $idParametro): self
+    {
+        $this->idParametro = $idParametro;
+
+        return $this;
+    }
+
+    public function getEstado(): ?string
+    {
+        return $this->estado;
+    }
+
+    public function setEstado(?string $estado): self
+    {
+        $this->estado = $estado;
 
         return $this;
     }

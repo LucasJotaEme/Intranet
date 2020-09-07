@@ -13,9 +13,9 @@ use App\encriptado;
 class FuncionesController extends AbstractController
 {
     /**
-     * @Route("/novedad/{fecha}/{numero}/{titulo}/{email}", name="crearNovedad")
+     * @Route("/novedad/{fecha}/{numero}/{titulo}/{email}/{version}/{id}", name="crearNovedad")
      */
-    public function crearNovedad($fecha,$numero,$titulo,$email)
+    public function crearNovedad($fecha,$numero,$titulo,$email,$version,$id)
     {
         $url="";
         $manager = $this->getDoctrine()->getManager();
@@ -23,18 +23,38 @@ class FuncionesController extends AbstractController
         //$user= $manager->getRepository(User::class)->findBy();
 
         $sistemas= $manager->getRepository(Sistema::class)->findBy(
-            ['nombre' => 'Cambiar']
+            ['nombre' => 'Documentos']
         );
         
         $manag = $this->getDoctrine()->getManager();
         $novedad = new Novedad();
         $fechaDateTime = \DateTime::createFromFormat('d-m-Y H:i:s', $fecha); 
-        $novedad->setFecha($fechaDateTime);
-        $novedad->setNumeroDocumento($numero);
-        $novedad->setTitulo($titulo);
-        
-        $manag->persist($novedad);
-        $manag->flush();
+
+        //Para ver si ya existe una novedad
+        $novedades= $manager->getRepository(Sistema::class)->findBy(
+            ['idParametro' => $id]
+        );
+
+        if ($novedades!=null){
+            $novedad->setFecha($fechaDateTime);
+            $novedad->setNumeroDocumento($numero);
+            $novedad->setTitulo($titulo);
+            $novedad->setVersion($version);
+            $novedad->setIdParametro($id);
+            $novedad->setEstado("Nuevo");
+            
+            $manag->persist($novedad);
+            $manag->flush();
+        }else{
+            foreach($novedades as $editarNovedad){
+                $editarNovedad->setFecha($fechaDateTime);
+                $editarNovedad->setTitulo($titulo);
+                $editarNovedad->setNumeroDocumento($numero);
+                $editarNovedad->setVersion($version);
+                $editarNovedad->setEstado("Editado");
+                $manag->flush();
+            }
+        }
         
         //Para direccionar de nuevo a documentos.
         foreach($sistemas as $sistema){

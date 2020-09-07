@@ -24,7 +24,10 @@ footer{
     max-height: 300px;
     overflow-y: scroll;
     
-    scrollbar-color: #cacaca;
+    scrollbar-face-color: #6685CA;
+    scrollbar-highlight-color: #6685CA;
+    scrollbar-3dlight-color:#FFFFFF;
+    
 }
 
 .box{
@@ -308,7 +311,8 @@ h6{
 
 
 .bordeGris{
-    border:2px solid #cacaca;
+    border-left:2px solid #cacaca;
+    border-right:2px solid #cacaca;
     border-radius:7px;
 }
 

@@ -36,3 +36,11 @@ function envioMail(){
   
 }
 
+function leerMas(elemento){
+   if (elemento.innerHTML == "Leer más")
+    elemento.innerHTML = "Leer menos";
+   else{
+    elemento.innerHTML = "Leer más";
+   }
+}
+
