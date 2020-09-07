@@ -2,11 +2,8 @@
 
 $(document).ready(function(){
 
-    
-    
-
     var divLogin= $("#divLogin").hide();
-    var sistemas= $("#sistemas").hide();
+    var sistemas= $("#sistemas").show();
     var novedades= $("#novedades").hide();
     var tituloNovedades= $("#tituloNovedades").hide();
     var notificacion = $('#notificacion');
@@ -16,10 +13,10 @@ $(document).ready(function(){
     
     var cookie = Cookies;
     if (Cookies.get('dato')=="abierto"){
-        allNovedades.show(300);
+        allNovedades.show();
         flechaAbajo.hide();
     }else{
-        allNovedades.hide(300);
+        allNovedades.hide();
         flechaArriba.hide();
     }
     localStorage.setItem("modalAbierto", true);
@@ -30,31 +27,23 @@ $(document).ready(function(){
 
     var mensajeLogin= $("#mensajeLogin").hide();
     divLogin.slideDown(800);
-    sistemas.slideDown();
+    //sistemas.show();
 
     $( "#flechaArriba" ).click(function() {
-        allNovedades.hide(300);
         Cookies.set('dato', 'cerrado');
+        allNovedades.hide(500);
     });
 
     $( "#flechaAbajo" ).click(function() {
-        allNovedades.hide(300);
         Cookies.set('dato', 'abierto');
-    });
-    
-    $('#novedades').animate({
-        left: '-=600'
-        }, 458, 'swing', function() {
-
-        // Animation complete. CALLBACK?
-
+        allNovedades.show(500);
     });
     
     
     //LOGIN
     
     $("#divLogin").hover(function(){
-    Cookies.set('dato', 'sinAbrir');
+    Cookies.set('dato', 'abierto');
 	boton= $("#botonLogin");
         divLogin= $("#divLogin");
         mensajeLogin.slideDown(400);
@@ -93,21 +82,6 @@ $(document).ready(function(){
 
     });
     
-    
-    
-    //ACCESO SISTEMAS Y NOVEDADES
-    
-    
-    var elemento;
-    for (i=1;i<10;i++){
-        elemento= '#card' + i;
-        $(elemento).flip({
-            axis: 'x',
-            trigger: 'hover',
-            reverse: true
-        }
-        );
-    }
 
     
     

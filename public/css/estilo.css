@@ -94,7 +94,7 @@ body{
 /* BASE HTML */
 
 nav{
-    box-shadow: 5px 5px 18px #666;   
+    box-shadow: 1px 1px 7px grey;   
     margin-bottom: 50px;
     background-color:white;
 }
