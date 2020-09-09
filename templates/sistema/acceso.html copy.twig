@@ -29,16 +29,18 @@
             <h4 style="text-align:center;color:#0F9FA8"><img src="{{ asset("svg/campana.svg") }}" title="Novedades" width="25" height="25" alt="">Novedades de gestión</h4>
             <div class="scroll">
                 <div style="padding:15px">
+
+                    {% set contador = 0 %}
                     {% for novedad in novedades %}
+                        {% set mas = "mas" ~ contador %}
+                        {% set contador = contador +1 %}
                         <div class="divNovedad">
                             <h6 style="color:#535353;">{{ novedad.fecha|date("d/m/Y") }}</h6>
                             <h6 style="color:#535353;"><b>{{novedad.titulo}}</b></h6>
                             <div style="color:#535353;">
-                                {{novedad.descripcion}}
-                                {% if is_granted('ROLE_ADMIN') %}
-                                <br>
-                                <a style="content-right" href="{{ path('modificarNovedad', {'id': novedad.id}) }}"><img src="{{ asset("svg/pencil.svg") }}" title="Editar" width="20" height="20" alt=""></a>
-                                {% endif %}
+                                <p>{{novedad.titulo|slice(0,25)}}<span id="{{mas}}" class="collapse">{{novedad.descripcion|slice(5,255)}}</span>
+                                    <a href="#" onclick="leerMas(this)" data-toggle="collapse" data-target="#{{mas}}">Leer más</a>
+                                </p>
                             </div>
                         </div>
                     {% else %}
@@ -55,7 +57,6 @@
             <div class="scroll">
                 <div style="padding:15px;">
                     <a href="{{path('nuevaNovedad')}}"><img src="{{ asset("svg/plus-circle.svg") }}" title="Nueva novedad" width="30" height="30" alt="Nueva"></a>
-                    {% set contador = 0 %}
                     {% for novedad in novedadesUNRaf %}
                         {% set mas = "mas" ~ contador %}
                         {% set contador = contador +1 %}
